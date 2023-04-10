@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-named-instance: 'Syne Bold', 'Syne ExtraBold', 'Syne Medium', 'Syne Regular', 'Syne SemiBold';
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  src: url('/fonts/QuattrocentoSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  src: url('/fonts/QuattrocentoSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  src: url('/fonts/QuattrocentoSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  src: url('/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+    @apply bg-white scroll-smooth;
+}
