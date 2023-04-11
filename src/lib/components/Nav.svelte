@@ -13,7 +13,7 @@
         {/if}
     </a>
     <!-- Hamburger menu button -->
-    <button class="ml-auto mr-4 md:hidden focus:outline-none" on:click={() => menuOpen = !menuOpen}>
+    <button class="ml-auto mr-4 sm:hidden focus:outline-none" on:click={() => menuOpen = !menuOpen}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-6 h-6 stroke-grey-600" stroke-width=2>
             {#if menuOpen}
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -23,11 +23,11 @@
         </svg>
     </button>
     <!-- Main navigation links -->
-    <ul class="hidden ml-auto md:flex flex-row p-3 md:mr-5 font-syne text-grey-500 dark:text-grey-400" class:grid={menuOpen}>
+    <ul class="hidden ml-auto sm:flex flex-row p-3 sm:mr-5 font-syne text-grey-500 dark:text-grey-400" class:grid={menuOpen}>
         <li><a href="/about" class="block py-2 pr-4 pl-3 hover:text-grey-700 dark:hover:text-grey-500">About</a></li>
         <li><a href="/projects" class="block py-2 pr-4 pl-3 hover:text-grey-700 dark:hover:text-grey-500">Projects</a></li>
         <li><a href="/competitions" class="block py-2 pr-4 pl-3 hover:text-grey-700 dark:hover:text-grey-500">Competitions</a></li>
-        <li><a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md md:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:text-primary-200 dark:hover:text-primary-300">Sign in</a></li>
+        <li><a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:text-primary-200 dark:hover:text-primary-300">Sign in</a></li>
     </ul>
     <button class="bg-gray-200 hover:bg-gray-300 px-3 py-2 mr-5" on:click=   {toggleTheme}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-grey-600">
