@@ -3,8 +3,6 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {},
-<<<<<<< HEAD
-=======
     colors: {
       transparent: 'transparent',
       primary: {
@@ -58,7 +56,6 @@ module.exports = {
       'syne': ['Syne', 'sans-serif'],
       'quattrocento': ['Quattrocento Sans', 'sans-serif']
     }
->>>>>>> master
   },
   plugins: [],
 }

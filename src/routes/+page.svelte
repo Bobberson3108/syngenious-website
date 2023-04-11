@@ -1,10 +1,4 @@
 <script lang="ts">
-<<<<<<< HEAD
-    import CommunityDashboard from "$lib/components/CommunityDashboard.svelte";
-</script>
-
-<CommunityDashboard></CommunityDashboard>
-=======
     import { onMount } from 'svelte';
     import AOS from 'aos';
     import 'aos/dist/aos.css';
@@ -58,4 +52,3 @@
         </div>
     </div>
 </div>
->>>>>>> master

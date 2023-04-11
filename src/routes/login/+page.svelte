@@ -2,20 +2,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<<<<<<< HEAD
-<script lang="ts">
-    import type {PageData} from './$types';
-
-    export let data: PageData;
-    
-    let isLoginForm = true;
-
-
-  // Handle form submission for login
-  function handleLoginSubmit(event: Event) {
-    event.preventDefault();
-    // TODO: Handle login form submission
-=======
 <script lang="ts" context="module">
   import type { Load } from '@sveltejs/kit';
   import { goto } from '$app/navigation';
@@ -45,7 +31,6 @@
     
     // Use signIn method to authenticate the user
     // await signIn('credentials', { username, password });
->>>>>>> master
   }
 
   // Handle form submission for sign-up
@@ -60,11 +45,7 @@
 </script>
 
 <div class="grid h-[80vh] place-items-center">
-<<<<<<< HEAD
-    {#if isLoginForm}
-=======
   {#if isLoginForm}
->>>>>>> master
     <!-- Login Form -->
     <form on:submit={handleLoginSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">

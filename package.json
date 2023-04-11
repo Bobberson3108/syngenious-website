@@ -12,11 +12,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
-<<<<<<< HEAD
-		"@sveltejs/kit": "next",
-=======
 		"@sveltejs/kit": "^1.15.2",
->>>>>>> master
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"autoprefixer": "^10.4.11",
@@ -35,10 +31,7 @@
 	"dependencies": {
 		"@auth/core": "^0.5.1",
 		"@auth/sveltekit": "^0.3.0",
-<<<<<<< HEAD
-=======
 		"aos": "^2.3.4",
->>>>>>> master
 		"mongodb": "^5.1.0",
 		"undici": "^5.12.0"
 	}
