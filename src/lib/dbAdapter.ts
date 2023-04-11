@@ -5,12 +5,20 @@ export default function MongoDBAdapter(){
   return {
 
     async createUser(user) {
+<<<<<<< HEAD
+=======
+      console.log("createUser")
+>>>>>>> master
       const usersCollection = await getCollection('users');
       const { insertedId } = await usersCollection.insertOne(user);
       return { ...user, id: insertedId };
     },
 
     async getUser(id) {
+<<<<<<< HEAD
+=======
+      console.log("getUser")
+>>>>>>> master
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ _id: new ObjectId(id) });
       return user ? { ...user, id: user._id } : null;
@@ -48,6 +56,10 @@ export default function MongoDBAdapter(){
     },
 
     async linkAccount(data) {
+<<<<<<< HEAD
+=======
+      console.log("linkAccount")
+>>>>>>> master
       const accountsCollection = await getCollection('accounts');
       const account = { ...data, userId: new ObjectId(data.userId) };
       await accountsCollection.insertOne(account);
@@ -60,12 +72,20 @@ export default function MongoDBAdapter(){
     },
 
     async createSession(session) {
+<<<<<<< HEAD
+=======
+      console.log("createSession")
+>>>>>>> master
       const sessionsCollection = await getCollection('sessions');
       const { insertedId } = await sessionsCollection.insertOne(session);
       return { ...session, id: insertedId };
     },
 
     async getSessionAndUser(sessionToken) {
+<<<<<<< HEAD
+=======
+      console.log("getSessionAndUser")
+>>>>>>> master
       const sessionsCollection = await getCollection('sessions');
       const session = await sessionsCollection.findOne({ sessionToken });
       if (!session) return null;
@@ -73,7 +93,10 @@ export default function MongoDBAdapter(){
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ _id: session.userId });
       if (!user) return null;
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
       return { session: { ...session, id: session._id }, user: { ...user, id: user._id } };
     },
 
@@ -93,6 +116,10 @@ export default function MongoDBAdapter(){
     },
 
     async createVerificationToken(verificationToken) {
+<<<<<<< HEAD
+=======
+      console.log("createVerificationToken")
+>>>>>>> master
       const verificationTokensCollection = await getCollection('verification_tokens');
       const { insertedId } = await verificationTokensCollection.insertOne(verificationToken);
       return { ...verificationToken, id: insertedId };
