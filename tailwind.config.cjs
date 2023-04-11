@@ -6,15 +6,15 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       primary: {
-        100: '#EBE9FF',
-        200: '#C9C4FF',
-        300: '#A79FFF',
+        100: '#C9C4FF',
+        200: '#ABA4FF',
+        300: '#9887FF',
         400: '#856AFF',
         500: '#6345FF',
         600: '#482AFF',
         700: '#2E0FFF',
         800: '#1607C2', // Original primary color
-        900: '#0A0181',
+        900: '#0C0935',
       },
       secondary: {
         100: '#F9FDE4',
@@ -57,5 +57,6 @@ module.exports = {
       'quattrocento': ['Quattrocento Sans', 'sans-serif']
     }
   },
+  darkMode: 'class',
   plugins: [],
 }
