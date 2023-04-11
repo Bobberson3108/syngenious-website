@@ -72,19 +72,6 @@
         </span>
         </div>
         <div class="mt-4">
-<<<<<<< HEAD
-        <hr class="border-gray-400">
-        <p class="text-center my-4 font-bold">OR</p>
-        <a href="https://discord.com/api/oauth2/authorize?client_id=1015009145482649760&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Flogin&response_type=code&scope=identify" class="bg-[#635def] px-5 py-3 rounded-md hover:bg-[#433fa2] transition block w-full">
-            <span class="text-white font-semibold text-xl"><i class="fa-brands fa-discord mr-2"></i> Sign in with Discord</span>
-        </a>
-        </div>
-    </form>
-    {:else}
-        <!-- Sign-up Form -->
-        <form on:submit={handleSignupSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-       <div class="mb-4">
-=======
           <hr class="border-gray-400">
           <p class="text-center my-4 font-bold">OR</p>
           <button on:click={() => signIn('discord')} class="bg-[#635def] px-5 py-3 rounded-md hover:bg-[#433fa2] transition block w-full">
@@ -96,7 +83,6 @@
         <!-- Sign-up Form -->
     <form on:submit={handleSignupSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
->>>>>>> master
         <h1 class="text-3xl font-bold mb-4">Create an account</h1>
       </div>
       <div class="mb-4">
@@ -128,15 +114,9 @@
       <div class="mt-4">
         <hr class="border-gray-400">
         <p class="text-center my-4 font-bold">OR</p>
-<<<<<<< HEAD
-        <a href="https://discord.com/api/oauth2/authorize?client_id=1015009145482649760&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Flogin&response_type=code&scope=identify" class="bg-[#635def] px-5 py-3 rounded-md hover:bg-[#433fa2] transition block w-full">
-          <span class="text-white font-semibold text-xl"><i class="fa-brands fa-discord mr-2"></i> Sign up with Discord</span>
-        </a>
-=======
         <button on:click={() => signIn('discord')} class="bg-[#635def] px-5 py-3 rounded-md hover:bg-[#433fa2] transition block w-full">
           <span class="text-white font-semibold text-xl"><i class="fa-brands fa-discord mr-2"></i> Sign up with Discord</span>
         </button>  
->>>>>>> master
       </div>
     </form>
   {/if}
