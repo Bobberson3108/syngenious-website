@@ -32,7 +32,7 @@
             <div class="ml-0 sm:ml-10 text-center flex items-center justify-center">
                 <div data-aos="fade-up">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne text-secondary-400">Get your projects out there</h1>
-                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl font-quattrocento text-primary-100 hover:text-primary-200">In our discord.</h2></a>
+                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl font-quattrocento text-white hover:text-primary-100">In our discord.</h2></a>
                 </div>
             </div>
             

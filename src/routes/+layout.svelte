@@ -17,5 +17,7 @@
     });
 </script>
 
-<Nav/>
-<slot />
+<div class="min-h-screen min-w-screen">
+    <Nav/>
+    <slot />
+</div>

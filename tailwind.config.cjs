@@ -27,7 +27,7 @@ module.exports = {
         800: '#584104',
         900: '#2F1E00',
       },
-      white: '#FAFAFA',
+      white: '#f2f2fc',
       black: '#000000',
       complementary: {
         100: '#E6DFFF',
