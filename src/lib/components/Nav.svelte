@@ -18,12 +18,12 @@
 </script>
 
 
-<nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90">
+<nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 pb-2 sm:pb-0">
     <a href="/" class="flex ml-7">
         {#if $theme === 'dark'}
             <img src="img\logo\Syngenious_dark.png" class="h-12 w-12 text-primary-"/>
         {:else}
-            <img src="img\logo\Syngenious.png" class="h-8 w-8 md:h-12 md:w-12"/>
+            <img src="img\logo\Syngenious.png" class="h-12 md:w-12"/>
         {/if}
     </a>
     <!-- Hamburger menu button -->
