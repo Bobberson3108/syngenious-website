@@ -14,7 +14,7 @@ module.exports = {
         600: '#482AFF',
         700: '#2E0FFF',
         800: '#1607C2', // Original primary color
-        900: '#0C0935',
+        900: '#100585',
       },
       secondary: {
         100: '#F9FDE4',
@@ -29,6 +29,7 @@ module.exports = {
       },
       white: '#f2f2fc',
       black: '#000000',
+      night: '#0C0935',
       complementary: {
         100: '#E6DFFF',
         200: '#CDBEFF',

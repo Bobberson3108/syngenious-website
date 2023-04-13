@@ -18,7 +18,7 @@
 </script>
 
 
-<nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-primary-900 bg-opacity-95 dark:bg-opacity-90">
+<nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90">
     <a href="/" class="flex ml-7">
         {#if $theme === 'dark'}
             <img src="img\logo\Syngenious_dark.png" class="h-12 w-12 text-primary-"/>
@@ -52,7 +52,7 @@
                         </svg>
                     </button>
                     {#if profileMenuOpen}
-                        <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-white dark:bg-primary-900 bg-opacity-95 dark:bg-opacity-90 text-grey-500 dark:text-grey-400">
+                        <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 text-grey-500 dark:text-grey-400">
                             <li><a href="/profile" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</a></li>
                             <li><a href="/settings" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</a></li>
                             <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
@@ -89,7 +89,7 @@
         right: 0;
         width: 100%;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-        @apply dark:bg-primary-900 dark:bg-opacity-95 dark:drop-shadow-sm;
+        @apply dark:bg-night dark:bg-opacity-95 dark:drop-shadow-sm;
     }
 </style>
 

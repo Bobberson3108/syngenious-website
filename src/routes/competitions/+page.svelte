@@ -26,8 +26,8 @@
                 <p class="font-bold text-primary-600 dark:text-primary-400">Entries to be submitted by Friday 14th April. <br>Winners announched on Friday 21st April.</p>
 
                 <div class="w-full flex justify-center my-4">
-                    <a href="/competitions/enter" class="text-center text-primary-100 text-2xl font-syne border-2 p-2 rounded-md 
-                    bg-complementary-700 hover:bg-complementary-800">Enter now</a>
+                    <a href="/competitions/enter" class="text-center text-primary-100 text-2xl font-syne p-2
+                    bg-primary-800 hover:bg-primary-900">Enter now</a>
                 </div>
             </div>
         </div>
