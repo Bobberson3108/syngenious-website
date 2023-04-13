@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="w-screen py-16 sm:py-24 md:py-32 pl-4 sm:pl-6 md:pl-8 lg:pl-12 bg-primary-800 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary-800 dark:to-primary-700 -skew-y-12">
+    <div class="w-screen py-16 sm:py-24 md:py-32 pl-4 sm:pl-6 md:pl-8 lg:pl-12 bg-primary-800 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary-900 dark:to-primary-800 -skew-y-12">
         <div class="flex-row flex justify-between">
             <div class="ml-0 sm:ml-10 text-center flex items-center justify-center">
                 <div data-aos="fade-up">

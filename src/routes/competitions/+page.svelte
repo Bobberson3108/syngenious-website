@@ -27,7 +27,7 @@
 
                 <div class="w-full flex justify-center my-4">
                     <a href="/competitions/enter" class="text-center text-primary-100 text-2xl font-syne p-2
-                    bg-primary-800 hover:bg-primary-900">Enter now</a>
+                    bg-primary-700 hover:bg-primary-800 dark:bg-primary-800 dark:hover:bg-primary-900">Enter now</a>
                 </div>
             </div>
         </div>
