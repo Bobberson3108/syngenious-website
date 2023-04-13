@@ -1,6 +1,20 @@
 <script lang="ts">
-  let menuOpen = false;
   import { theme, toggleTheme } from '$lib/themeStore';
+  import { page } from '$app/stores';
+  import { signOut } from '@auth/sveltekit/client';
+
+  let menuOpen = false;
+  let profileMenuOpen = false;
+
+  const toggleProfileMenu = () => {
+    profileMenuOpen = !profileMenuOpen;
+  };
+
+  const closeProfileMenu = () => {
+    profileMenuOpen = false;
+  };
+
+  console.log($page.data.session);
 </script>
 
 
@@ -23,14 +37,38 @@
         </svg>
     </button>
     <!-- Main navigation links -->
-    <ul class="hidden ml-auto sm:flex flex-row p-3 sm:mr-5 font-syne text-grey-500 dark:text-grey-400" class:grid={menuOpen}>
+    <ul class="hidden ml-auto sm:flex flex-row p-3 font-syne text-grey-500 dark:text-grey-400" class:grid={menuOpen}>
         <li><a href="/about" class="block py-2 pr-4 pl-3 hover:text-grey-700 dark:hover:text-grey-500">About</a></li>
         <li><a href="/projects" class="block py-2 pr-4 pl-3 hover:text-grey-700 dark:hover:text-grey-500">Projects</a></li>
         <li><a href="/competitions" class="block py-2 pr-4 pl-3 hover:text-grey-700 dark:hover:text-grey-500">Competitions</a></li>
-        <li><a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300">Sign in</a></li>
+        {#if Object.keys($page.data.session || {}).length > 0}
+        <li class="flex items-center sm:flex-none">
+            {#if $page.data.session.user.image}
+                <div class="relative"> <!-- Add this wrapper div -->
+                    <button on:click={toggleProfileMenu} on:blur={closeProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500">
+                        <img src="{$page.data.session.user.image}" alt="Profile picture" class="rounded-full w-8 h-8 drop-shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    {#if profileMenuOpen}
+                        <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-white dark:bg-primary-900 bg-opacity-95 dark:bg-opacity-90 text-grey-500 dark:text-grey-400">
+                            <li><a href="/profile" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</a></li>
+                            <li><a href="/settings" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</a></li>
+                            <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
+                            <li><button on:click={() => signOut()} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
+                        </ul>
+                    {/if}
+                </div>
+            {/if}
+            <span class="sm:hidden block py-2 pr-4 pl-3">{$page.data.session.user.name}</span>
+        </li>
+        {:else}
+          <li><a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300">Sign in</a></li>
+        {/if}
     </ul>
-    <button class="bg-gray-200 hover:bg-gray-300 px-3 py-2 mr-5" on:click=   {toggleTheme}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-grey-600">
+    <button class="px-3 py-2 mr-5" on:click=   {toggleTheme}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-grey-600 dark:stroke-grey-400 hover:stroke-grey-700 dark:hover:stroke-grey-500">
             {#if $theme === 'light'}
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
             {:else}

@@ -32,7 +32,7 @@
             <div class="ml-0 sm:ml-10 text-center flex items-center justify-center">
                 <div data-aos="fade-up">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne text-secondary-400">Get your projects out there</h1>
-                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl font-quattrocento text-white hover:text-primary-100">In our discord.</h2></a>
+                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl font-quattrocento underline  text-white hover:text-primary-100 dark:text-primary-100 dark:hover:text-primary-200">In our discord.</h2></a>
                 </div>
             </div>
             
@@ -43,11 +43,10 @@
     </div>
     <div class="w-screen py-8 pl-4 sm:pl-6 md:pl-8 lg:pl-12">
         <div class="mt-24 sm:mt-48 flex flex-col sm:flex-row justify-between items-center" data-aos="fade-up">
-            <!-- Added responsive width and max-width classes -->
             <img class="w-48 sm:w-64 md:w-72 lg:w-auto max-w-full mb-8 sm:mb-0 dark:invert" src="img\external-trophy-award-and-success-wanicon-lineal-wanicon.png">
             <div class="text-center justify-center w-full" data-aos="fade-up">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne dark:text-white">Make your<br>mark in our<br> competitions.</h1>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-quattrocento text-primary-700 hover:text-primary-500 dark:text-secondary-500 dark:hover:text-secondary-600">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-quattrocento underline text-primary-700 hover:text-primary-500 dark:text-secondary-500 dark:hover:text-secondary-600">
                     <a href="/competitions">See what's on right now</a>
                 </h2>
             </div>
