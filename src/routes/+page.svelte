@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="w-screen py-8 pl-4 sm:pl-6 md:pl-8 lg:pl-12">
-        <div class="mt-24 sm:mt-48 flex flex-col sm:flex-row justify-between items-center" data-aos="fade-up">
+        <div class="mt-24 sm:mt-48 flex flex-col sm:flex-row justify-between" data-aos="fade-up">
             <img class="w-48 sm:w-64 md:w-72 lg:w-auto max-w-full mb-8 sm:mb-0 dark:invert" src="img\external-trophy-award-and-success-wanicon-lineal-wanicon.png">
             <div class="text-center justify-center w-full" data-aos="fade-up">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne dark:text-white">Make your<br>mark in our<br> competitions.</h1>
