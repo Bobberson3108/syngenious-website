@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
     import { onMount } from 'svelte';
     import AOS from 'aos';
     import 'aos/dist/aos.css';
@@ -93,4 +93,4 @@
         </div>
     </div>
 </div>
-
+ -->
