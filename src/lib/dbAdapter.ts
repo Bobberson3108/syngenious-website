@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import { getCollection } from '$lib/db';
 
 export default function MongoDBAdapter(){
@@ -7,21 +7,21 @@ export default function MongoDBAdapter(){
     async createUser(user) {
       console.log("createUser")
       const usersCollection = await getCollection('users');
-      const { insertedId } = await usersCollection.insertOne(user);
-      return { ...user, id: insertedId };
+      await usersCollection.insertOne(user);
+      return user;
     },
 
     async getUser(id) {
       console.log("getUser")
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ _id: new ObjectId(id) });
-      return user ? { ...user, id: user._id } : null;
+      return user||null;
     },
 
     async getUserByEmail(email) {
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ email });
-      return user ? { ...user, id: user._id } : null;
+      return user||null;
     },
 
     async getUserByAccount({ providerAccountId, provider }) {
@@ -31,26 +31,33 @@ export default function MongoDBAdapter(){
 
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ _id: account.userId });
-      return user ? { ...user, id: user._id } : null;
+      return user||null;
     },
 
     async updateUser(user) {
+      console.log("updateUser")
       const usersCollection = await getCollection('users');
       const { value } = await usersCollection.findOneAndUpdate(
-        { _id: new ObjectId(user.id) },
-        { $set: { ...user, id: undefined } },
+        { _id: user._id },
+        { $set: user },
         { returnOriginal: false },
       );
-      return value ? { ...value, id: value._id } : null;
+      return value||null;
     },
 
     async deleteUser(id) {
+      const userId = new ObjectId(id);
       const usersCollection = await getCollection('users');
-      await usersCollection.deleteOne({ _id: new ObjectId(id) });
+      await usersCollection.deleteOne({ _id: userId });
+      
+      const accountsCollection = await getCollection('accounts');
+      await accountsCollection.deleteMany({ userId: userId });
+
+      const sessionsCollection = await getCollection('sessions');
+      await sessionsCollection.deleteMany({ userId: userId });
     },
 
     async linkAccount(data) {
-      console.log("linkAccount")
       const accountsCollection = await getCollection('accounts');
       const account = { ...data, userId: new ObjectId(data.userId) };
       await accountsCollection.insertOne(account);
@@ -65,12 +72,12 @@ export default function MongoDBAdapter(){
     async createSession(session) {
       console.log("createSession")
       const sessionsCollection = await getCollection('sessions');
-      const { insertedId } = await sessionsCollection.insertOne(session);
-      return { ...session, id: insertedId };
+      await sessionsCollection.insertOne(session);
+      return session;
     },
 
     async getSessionAndUser(sessionToken) {
-      console.log("getSessionAndUser")
+      // console.log("getSessionAndUser")
       const sessionsCollection = await getCollection('sessions');
       const session = await sessionsCollection.findOne({ sessionToken });
       if (!session) return null;
@@ -78,36 +85,38 @@ export default function MongoDBAdapter(){
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ _id: session.userId });
       if (!user) return null;
-      return { session: { ...session, id: session._id }, user: { ...user, id: user._id } };
+      return { session, user };
     },
 
     async updateSession(session) {
+      console.log("updateSession")
       const sessionsCollection = await getCollection('sessions');
       const { value } = await sessionsCollection.findOneAndUpdate(
            { sessionToken: session.sessionToken },
-        { $set: { ...session, id: undefined } },
+        { $set: session },
         { returnOriginal: false },
       );
-      return value ? { ...value, id: value._id } : null;
+      return value||null;
     },
 
     async deleteSession(sessionToken) {
       const sessionsCollection = await getCollection('sessions');
-      await sessionsCollection.deleteOne({ sessionToken });
+      console.log("session token: " + sessionToken)
+      await sessionsCollection.findOneAndDelete({ sessionToken });
     },
 
     async createVerificationToken(verificationToken) {
-      console.log("createVerificationToken")
       const verificationTokensCollection = await getCollection('verification_tokens');
-      const { insertedId } = await verificationTokensCollection.insertOne(verificationToken);
-      return { ...verificationToken, id: insertedId };
+      await verificationTokensCollection.insertOne(verificationToken);
+      return verificationToken;
     },
 
     async useVerificationToken({ identifier, token }) {
+      console.log("useVerificationToken")
       const verificationTokensCollection = await getCollection('verification_tokens');
       const { value } = await verificationTokensCollection.findOneAndDelete({ identifier, token });
 
-      return value ? { ...value, id: value._id } : null;
+      return  value||null;
     },
   };
 }

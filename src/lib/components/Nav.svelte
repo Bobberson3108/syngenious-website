@@ -14,16 +14,15 @@
     profileMenuOpen = false;
   };
 
-  console.log($page.data.session);
 </script>
 
 
 <nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 pb-2 sm:pb-0">
     <a href="/" class="flex ml-7">
         {#if $theme === 'dark'}
-            <img src="img\logo\Syngenious_dark.png" class="h-12 w-12 text-primary-"/>
+            <img src="/img/logo/Syngenious_dark.png" class="h-12 w-12 text-primary-" alt="logo"/>
         {:else}
-            <img src="img\logo\Syngenious.png" class="h-12 w-12"/>
+            <img src="/img/logo/Syngenious.png" class="h-12 w-12" alt="logo"/>
         {/if}
     </a>
     <!-- Hamburger menu button -->
@@ -44,10 +43,10 @@
         {#if Object.keys($page.data.session || {}).length > 0}
         <li class="flex items-center sm:flex-none">
             {#if $page.data.session.user.image}
-                <div class="relative"> <!-- Add this wrapper div -->
-                    <button on:click={toggleProfileMenu} on:blur={closeProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500">
+                <div class="relative" on:blur={closeProfileMenu} >
+                    <button on:click={toggleProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500">
                         <img src="{$page.data.session.user.image}" alt="Profile picture" class="rounded-full w-8 h-8 drop-shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden sm:block w-4 h-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
@@ -56,7 +55,7 @@
                             <li><a href="/profile" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</a></li>
                             <li><a href="/settings" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</a></li>
                             <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
-                            <li><button on:click={() => signOut()} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
+                            <li><button on:click={signOut} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
                         </ul>
                     {/if}
                 </div>

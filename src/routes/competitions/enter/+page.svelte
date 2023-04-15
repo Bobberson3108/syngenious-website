@@ -15,22 +15,6 @@
     const urlParams = new URLSearchParams(window.location.search);
     competitionType = urlParams.get('competition') || 'art';
   });
-
-  async function handleSubmit() {
-    if (!files.length || !description) return;
-
-    const formData = new FormData();
-    Array.prototype.forEach.call(files, file => formData.append('files', file));
-    formData.append('description', description);
-    formData.append('competitionType', competitionType);
-
-    try {
-      await submitEntry(formData);
-      alert('Entry submitted successfully');
-    } catch (error) {
-      alert('Error submitting entry');
-    }
-  }
 </script>
 
 <h1
@@ -43,7 +27,8 @@
 <div class="px-10 py-5" data-aos="fade-up" data-aos-delay="50">
   <form
     class="flex flex-col items-center w-full max-w-lg mx-auto dark:text-grey-300 rounded-sm p-3 border-[3px]"
-    on:submit|preventDefault={handleSubmit}
+    method="post"
+    enctype="multipart/form-data"
   >
     <label for="file" class="w-full text-center mb-4">Select Your {competitionType === 'art' ? 'Image/Video' : 'MP3'} Files:</label>
     <input type="file" id="file" name="file" bind:files={files} accept={competitionType === 'art' ? 'image/*,video/*' : 'audio/mpeg'} class="mb-4" multiple required />

@@ -13,4 +13,9 @@ export const handle = SvelteKitAuth({
         }),
     ],
     adapter: dbAdapter(),
+    callbacks: {
+        async session( { session, token, user} ) {
+            return { ...session, user};
+        }
+    }
 })
