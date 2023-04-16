@@ -41,7 +41,7 @@
 <div class="py-16 sm:py-24 md:py-32">
   <div class="flex justify-center items-center dark:text-secondary-500">
     <div
-      class="cursor-pointer py-1 bg-primary-800 {hover === "syn" || selected === "syn" && hover !== "ingenious" ? "selected" : "unselected"}"
+      class="cursor-pointer py-1 bg-primary-800 {hover === "syn" || selected === "syn" && hover !== "ingenious`" ? "selected" : "unselected"}"
       on:mouseenter={() => onHover("syn")}
       on:keydown={() => onHover("syn")}
       on:mouseleave={onLeave}
