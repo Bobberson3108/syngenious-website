@@ -10,6 +10,8 @@
     profileMenuOpen = !profileMenuOpen;
   };
 
+  console.log($page.data);
+
   const closeProfileMenu = () => {
     profileMenuOpen = false;
   };

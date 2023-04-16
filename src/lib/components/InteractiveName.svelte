@@ -1,14 +1,26 @@
-<script>
-  let selected = null;
-  let hover = null;
+<script lang="ts">
+  let selected = "syn";
+  let hover:string|null = null;
 
-  function select(part) {
+  let syn_part = "Syn";
+  let ingenious_part = "genious";
+
+  function select(part:string) {
     selected = part;
   }
 
-  function onHover(part) {
+  function onHover(part:string) {
     hover = part;
   }
+
+  $: if (hover === "ingenious" || selected === "ingenious") {
+      syn_part = "S";
+      ingenious_part = "ingenious";
+    }else {
+      syn_part = "Syn";
+      ingenious_part = "genious";
+    }
+  
 
   function onLeave() {
     hover = null;
@@ -20,13 +32,16 @@
         @apply opacity-100;
     }
 
+    .unselected {
+        @apply opacity-30;
+    }
+
 </style>
 
 <div class="py-16 sm:py-24 md:py-32">
   <div class="flex justify-center items-center dark:text-secondary-500">
     <div
-      class="cursor-pointer py-1"
-      class:bg-primary-800={hover === "syn" || selected === "syn"}
+      class="cursor-pointer py-1 bg-primary-800 {hover === "syn" || selected === "syn" && hover !== "ingenious" ? "selected" : "unselected"}"
       on:mouseenter={() => onHover("syn")}
       on:keydown={() => onHover("syn")}
       on:mouseleave={onLeave}
@@ -35,15 +50,12 @@
     >
       <span
         class="font-syne font-bold text-3xl text-gray-800"
-        class:hidden={selected === "ingenious" && hover !== "syn"}
-        class:visible={selected === "syn" || hover === "syn"}
       >
-        Syn
+        {syn_part}
       </span>
     </div>
     <div
-      class="cursor-pointer py-1"
-      class:bg-primary-800={hover === "ingenious" || selected === "ingenious"}
+      class="cursor-pointer py-1 bg-primary-800 {hover === "ingenious" || selected === "ingenious" && hover !== "syn" ? "selected" : "unselected"}"
       on:mouseenter={() => onHover("ingenious")}
       on:keydown={() => onHover("ingenious")}
       on:mouseleave={onLeave}
@@ -52,10 +64,8 @@
     >
       <span
         class="font-syne font-bold text-3xl text-gray-800"
-        class:text-secondary-400={selected === "syn" && hover !== "ingenious"}
-        class:visible={selected === "ingenious" || hover === "ingenious"}
       >
-        genious
+        {ingenious_part}
       </span>
     </div>
   </div>
