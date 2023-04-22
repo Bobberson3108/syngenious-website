@@ -100,7 +100,7 @@
 <svelte:window bind:innerWidth={innerWidth} />
 
 <div class="flex items-center px-10">
-  <svg bind:this={svg} class="block my-5 mx-auto max-w-[1500px]" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <svg bind:this={svg} class="block my-5 mx-auto max-w-[1500px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}

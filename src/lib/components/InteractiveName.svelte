@@ -52,7 +52,7 @@
 </script>
 
 <div>
-  <div class="flex justify-center items-center text-secondary-500">
+  <div class="font-syne font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-800 flex justify-center items-center text-secondary-500">
     <div
       class="cursor-pointer py-1 bg-primary-800 pl-2 {hover === "syn" || selected === "syn" && hover !== "ingenious" ? "selected" : "unselected"}"
       on:mouseenter={() => onHover("syn")}
@@ -61,9 +61,7 @@
       on:keyup={() => onLeave()}
       on:click={() => select("syn")}
     >
-      <span
-        class="font-syne font-bold text-3xl text-gray-800"
-      >
+      <span>
         {syn_part}
       </span>
     </div>
@@ -75,9 +73,7 @@
       on:keyup={() => onLeave()}
       on:click={() => select("ingenious")}
     >
-      <span
-        class="font-syne font-bold text-3xl text-gray-800"
-      >
+      <span>
         {ingenious_part}
       </span>
     </div>
@@ -92,7 +88,7 @@
   {/if}
   {#if hover === "ingenious" || selected === "ingenious" && hover !== "syn"}
     <div class="px-4 py-8">
-      <p class="font-quattrocento text-grey-700 text-lg dark:text-white">
+      <p class="font-quattrocento text-grey-700 md:text-lg dark:text-white">
         Ingenious: This term, originating from both the Latin "ingeniosus" and the French "ingénieur," captures the essence of our community's creativity and resourcefulness. "Ingenious" refers to something that is clever, inventive, or original, while "ingénieur" is the French word for "engineer," a profession known for its problem-solving and innovative thinking. By merging these meanings, we celebrate the inventive spirit and the pursuit of excellence in all our members, regardless of their field of interest.
       </p>
     </div>
