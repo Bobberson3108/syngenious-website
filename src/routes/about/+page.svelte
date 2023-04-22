@@ -22,12 +22,12 @@
 <InteractiveName />
 
 <h2 class="centered-h2">Our Values</h2>
-<div class="min-h-[600px]">
+<div class="md:min-h-[700px] lg:min-h-[800px] xl:min-h-[1000px]">
     <Values/>
 </div>
 
 <h2 class="mt-12">What we offer</h2>
-<p>something</p>
+
 
 <style lang="postcss">
     h2 {

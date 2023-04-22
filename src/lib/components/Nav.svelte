@@ -66,8 +66,7 @@
         </li>
         {:else}
           <li>
-            <!-- <a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300">Sign in</a> -->
-            <button class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300" on:click={() => signIn("discord")}>Sign in</button>
+            <a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300">Sign in</a>
           </li>
         {/if}
     </ul>

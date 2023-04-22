@@ -1,10 +1,11 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { compute_rest_props } from 'svelte/internal';
 
     let svg: SVGSVGElement;
     let selectedValueIndex: number = 0;
-    let isMobile = false;
     let hexagons: { points: { x: number, y: number }[], textPosition: { x: number, y: number } }[] = [];
+    let innerWidth: number = 9000;
 
     const h = Math.sqrt(3);
 
@@ -27,9 +28,6 @@
       { x: 1.5, y: -h/2 },        // Hexagon 4: Top-right
       { x: 1.5, y: h/2 },         // Hexagon 5: Bottom-right
     ];
-
-
-
 
     function createHexagonPoints(xOffset: number, yOffset: number) {
       return [
@@ -58,9 +56,17 @@
       return { points, textPosition};
     });
 
-    function handleResize() {
-      hexagons = window.innerWidth <= 768 ? mobileHexagons : bigHexagons;;
+
+    $: {
+      if (innerWidth <= 768) {
+        hexagons = mobileHexagons;
+        svg && svg.setAttribute('viewBox', '-1 -0.966 5 3.664')
+      } else {
+        hexagons = bigHexagons;
+        svg && svg.setAttribute('viewBox', '-1.1 -0.1 8.2 3.664')
+      }
     }
+
 
     const values = [
       {
@@ -68,12 +74,12 @@
         description: "In a world increasingly focused on individual achievements, Syngenious embraces the idea that we can accomplish more together than we can alone. We are dedicated to nurturing a culture of cooperation and mutual support."
       },
       {
-        name: "Community",
-        description: "Syngenious provides a platform for young people to connect with like-minded individuals, forging relationships built on shared interests and values. We aim to harness the power of our community to create a meaningful, positive impact on the world through collaborative projects and initiatives."
-      },
-      {
         name: "Opportunity",
         description: "We recognize the potential in young people and strive to fill the gaps left by traditional education systems. By providing funding, guidance, and resources, we empower our members to take control of their future and make a difference in the world."
+      },
+      {
+        name: "Community",
+        description: "Syngenious provides a platform for young people to connect with like-minded individuals, forging relationships built on shared interests and values. We aim to harness the power of our community to create a meaningful, positive impact on the world through collaborative projects and initiatives."
       },
       {
         name:"Creativity",
@@ -88,18 +94,13 @@
     onMount(() => {
       const bbox = svg.getBBox();
       svg.setAttribute('viewBox', `${bbox.x} ${bbox.y - 0.1} ${bbox.width} ${bbox.height + 0.2}`);
-
-      window.addEventListener('resize', handleResize);
-      handleResize();
-
-      return () => { 
-        window.removeEventListener('resize', handleResize);
-      };
     });
 </script>
 
+<svelte:window bind:innerWidth={innerWidth} />
+
 <div class="flex items-center px-10">
-  <svg bind:this={svg} class="block my-5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <svg bind:this={svg} class="block my-5 mx-auto max-w-[1500px]" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
@@ -121,10 +122,6 @@
   <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 dark:text-white">{values[selectedValueIndex].name}</h3>
   <p class="font-quattrocento text-lg dark:text-white">{values[selectedValueIndex].description}</p>
 </div>
-
-{#if hexagons}
-  <p class="text-lg text-white">{hexagons[0]?.points[0].x}</p>
-{/if}
 
 <style lang="postcss">
 
