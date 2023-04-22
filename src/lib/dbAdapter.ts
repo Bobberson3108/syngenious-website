@@ -72,6 +72,7 @@ export default function MongoDBAdapter(){
     async createSession(session) {
       console.log("createSession")
       const sessionsCollection = await getCollection('sessions');
+      console.log(session)
       await sessionsCollection.insertOne(session);
       return session;
     },

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { theme, toggleTheme } from '$lib/themeStore';
   import { page } from '$app/stores';
-  import { signOut } from '@auth/sveltekit/client';
+  import { signIn, signOut } from '@auth/sveltekit/client';
 
   let menuOpen = false;
   let profileMenuOpen = false;
@@ -65,7 +65,10 @@
             <span class="sm:hidden block py-2 pr-4 pl-3">{$page.data.session.user.name}</span>
         </li>
         {:else}
-          <li><a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300">Sign in</a></li>
+          <li>
+            <!-- <a href="/login" class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300">Sign in</a> -->
+            <button class="block my-2 mr-2 ml-1 px-2 hover:text-grey-700 rounded-md sm:border bg-primary-800 bg-opacity-0 hover:bg-opacity-5 dark:sm:text-primary-200 dark:sm:hover:text-primary-300" on:click={() => signIn("discord")}>Sign in</button>
+          </li>
         {/if}
     </ul>
     <button class="px-3 py-2 mr-5" on:click=   {toggleTheme}>

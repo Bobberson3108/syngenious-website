@@ -37,17 +37,18 @@
         <div class="mb-4">
             <h1 class="text-3xl font-bold mb-4">Sign in</h1>
         </div>
+        <h3 class="italic text-grey-800 mb-3">Email sign in not enabled yet</h3>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="username">
                 Username or Email
             </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username or Email" />
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username or Email" disabled />
         </div>
         <div class="mb-6">
         <label class="block text-gray-700 font-bold mb-2" for="password">
             Password
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" />
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" disabled />
         </div>
         <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
@@ -71,11 +72,12 @@
       <div class="mb-4">
         <h1 class="text-3xl font-bold mb-4">Create an account</h1>
       </div>
+      <h3 class="italic text-grey-800 mb-3">Email sign in not enabled yet</h3>
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="username">
           Username
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" disabled/>
       </div>
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="email">
@@ -87,7 +89,7 @@
         <label class="block text-gray-700 font-bold mb-2" for="password">
           Password
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" />
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" disabled/>
       </div>
       <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">

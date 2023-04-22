@@ -38,12 +38,12 @@
 
 <div class="w-auto flex flex-col items-center my-4 space-y-4">
     <a href="/competitions/enter?competition=art"
-    class="w-full text-center text-primary-100 text-2xl font-syne p-3 dark:hover:bg-primary-800 h-full drop-shadow-sm">
+    class="w-full text-center text-primary-600 dark:text-primary-100 hover:text-primary-100 text-2xl font-syne p-3 hover:bg-primary-800 h-full drop-shadow-sm">
         Enter Art Competition
     </a>
 
     <a href="/competitions/enter?competition=music"
-        class="w-full text-center text-primary-100 text-2xl font-syne p-3 dark:hover:bg-primary-800 h-full drop-shadow-sm">
+        class="w-full text-center text-primary-600 dark:text-primary-100 hover:text-primary-100 text-2xl font-syne p-3 hover:bg-primary-800 h-full drop-shadow-sm">
         Enter Music Competition
     </a>
 </div>
