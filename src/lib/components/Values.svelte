@@ -70,11 +70,17 @@
     });
 </script>
 
-<div class="flex items-center mx-10">
+<div class="flex items-center px-10">
   <svg bind:this={svg} class="block my-5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition, index }}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
+        on:click={() => handleMouseEnter(index)}
+        on:keydown={(e) => {
+          if (e.key === 'Enter') {
+            handleMouseEnter(index);
+          }
+        }}
       >
         <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon" />
         <text class="fill-white font-syne" x="{textPosition.x}" y="{textPosition.y}" font-size="0.28" dy="0.1" text-anchor="middle">{values[index].name}</text>
@@ -83,7 +89,7 @@
   </svg>
 </div>
 
-<div class="p-6 bg-white dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center mt-8 max-w-[800px]">
+<div class="p-6 bg-white dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
   <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 dark:text-white">{values[selectedValueIndex].name}</h3>
   <p class="font-quattrocento text-lg dark:text-white">{values[selectedValueIndex].description}</p>
 </div>

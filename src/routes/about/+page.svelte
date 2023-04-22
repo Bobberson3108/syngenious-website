@@ -22,12 +22,16 @@
 <InteractiveName />
 
 <h2 class="centered-h2">Our Values</h2>
-<Values/>
+<div class="min-h-[600px]">
+    <Values/>
+</div>
 
+<h2 class="mt-12">What we offer</h2>
+<p>something</p>
 
 <style lang="postcss">
     h2 {
-        @apply font-syne font-bold text-2xl sm:text-3xl md:text-4xl mb-8 ml-4 dark:text-white;
+        @apply font-syne font-bold text-2xl sm:text-3xl md:text-4xl pb-8 pl-4 dark:text-white;
     }
 
     .centered-h2 {
@@ -35,6 +39,6 @@
     }
 
     p {
-        @apply font-quattrocento text-lg mb-8 ml-4 dark:text-white;
+        @apply font-quattrocento text-lg pb-8 pl-4 dark:text-white;
     }
 </style>
