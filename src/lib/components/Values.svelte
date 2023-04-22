@@ -2,44 +2,65 @@
     import { onMount } from 'svelte';
 
     let svg: SVGSVGElement;
-    let selectedValueIndex: number = 1;
+    let selectedValueIndex: number = 0;
+    let isMobile = false;
+    let hexagons: { points: { x: number, y: number }[], textPosition: { x: number, y: number } }[] = [];
+
+    const h = Math.sqrt(3);
 
     function handleMouseEnter(index: number) {
       selectedValueIndex = index;
     }
 
-    const s = 1;
     const hexagonOffsets = [
-      { x: 1.5 * s, y: 0 },
-      { x: 0 * s, y: 0.5 * Math.sqrt(3) * s },
-      { x: 3 * s, y: 0.5 * Math.sqrt(3) * s },
-      { x: -1.5 * s, y: Math.sqrt(3) * s },
-      { x: 4.5 * s, y: Math.sqrt(3) * s },
+      { x: 1.5, y: 0 },
+      { x: 0, y: 0.5 * Math.sqrt(3)},
+      { x: 3, y: 0.5 * Math.sqrt(3)},
+      { x: -1.5, y: Math.sqrt(3)},
+      { x: 4.5, y: Math.sqrt(3)},
+    ];
+
+    const mobileHexagonOffsets = [
+      { x: 0, y: 0 },           // Hexagon 1: Center
+      { x: -1.5, y: -h/2 },       // Hexagon 2: Top-left
+      { x: -1.5, y: h/2 },        // Hexagon 3: Bottom-left
+      { x: 1.5, y: -h/2 },        // Hexagon 4: Top-right
+      { x: 1.5, y: h/2 },         // Hexagon 5: Bottom-right
     ];
 
 
-    function createHexagonPoints(s: number, xOffset: number, yOffset: number) {
-      const h = Math.sqrt(3) * s;
+
+
+    function createHexagonPoints(xOffset: number, yOffset: number) {
       return [
-        { x: s + xOffset, y: 0 + yOffset },
-        { x: 2 * s + xOffset, y: 0 + yOffset },
-        { x: 2.5 * s + xOffset, y: 0.5 * h + yOffset },
-        { x: 2 * s + xOffset, y: h + yOffset },
-        { x: s + xOffset, y: h + yOffset },
-        { x: 0.5 * s + xOffset, y: 0.5 * h + yOffset },
+        { x: 1 + xOffset, y: 0 + yOffset },
+        { x: 2 + xOffset, y: 0 + yOffset },
+        { x: 2.5 + xOffset, y: 0.5 * h + yOffset },
+        { x: 2 + xOffset, y: h + yOffset },
+        { x: 1 + xOffset, y: h + yOffset },
+        { x: 0.5 + xOffset, y: 0.5 * h + yOffset },
       ];
     }
 
-    function createHexagonTextPosition(s: number, xOffset: number, yOffset: number) {
-      const h = Math.sqrt(3) * s;
-      return { x: 1.5 * s + xOffset, y: 0.5 * h + yOffset };
+    function createHexagonTextPosition(xOffset: number, yOffset: number) {
+      return { x: 1.5 + xOffset, y: 0.5 * h + yOffset };
     }
 
-    let hexagons = hexagonOffsets.map((offset, i) => {
-      const points = createHexagonPoints(s, offset.x, offset.y);
-      const textPosition = createHexagonTextPosition(s, offset.x, offset.y);
-      return { points, textPosition, index: i};
+    let bigHexagons = hexagonOffsets.map(offset => {
+      const points = createHexagonPoints(offset.x, offset.y);
+      const textPosition = createHexagonTextPosition(offset.x, offset.y);
+      return { points, textPosition};
     });
+
+    let mobileHexagons = mobileHexagonOffsets.map(offset => {
+      const points = createHexagonPoints(offset.x, offset.y);
+      const textPosition = createHexagonTextPosition(offset.x, offset.y);
+      return { points, textPosition};
+    });
+
+    function handleResize() {
+      hexagons = window.innerWidth <= 768 ? mobileHexagons : bigHexagons;;
+    }
 
     const values = [
       {
@@ -67,12 +88,19 @@
     onMount(() => {
       const bbox = svg.getBBox();
       svg.setAttribute('viewBox', `${bbox.x} ${bbox.y - 0.1} ${bbox.width} ${bbox.height + 0.2}`);
+
+      window.addEventListener('resize', handleResize);
+      handleResize();
+
+      return () => { 
+        window.removeEventListener('resize', handleResize);
+      };
     });
 </script>
 
 <div class="flex items-center px-10">
   <svg bind:this={svg} class="block my-5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-    {#each hexagons as { points, textPosition, index }}
+    {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
         on:click={() => handleMouseEnter(index)}
@@ -93,6 +121,10 @@
   <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 dark:text-white">{values[selectedValueIndex].name}</h3>
   <p class="font-quattrocento text-lg dark:text-white">{values[selectedValueIndex].description}</p>
 </div>
+
+{#if hexagons}
+  <p class="text-lg text-white">{hexagons[0]?.points[0].x}</p>
+{/if}
 
 <style lang="postcss">
 
