@@ -1,9 +1,12 @@
 <script lang="ts">
-    export let name:string;
-    export let description:string;
     import { onMount } from 'svelte';
 
     let svg: SVGSVGElement;
+    let selectedValueIndex: number = 1;
+
+    function handleMouseEnter(index: number) {
+      selectedValueIndex = index;
+    }
 
     const s = 1;
     const hexagonOffsets = [
@@ -35,16 +38,8 @@
     let hexagons = hexagonOffsets.map((offset, i) => {
       const points = createHexagonPoints(s, offset.x, offset.y);
       const textPosition = createHexagonTextPosition(s, offset.x, offset.y);
-      return { points, textPosition, index: i + 1 };
+      return { points, textPosition, index: i};
     });
-
-    const minX = Math.min(...hexagons.map(hex => Math.min(...hex.points.map(p => p.x))));
-    const maxX = Math.max(...hexagons.map(hex => Math.max(...hex.points.map(p => p.x))));
-    const minY = Math.min(...hexagons.map(hex => Math.min(...hex.points.map(p => p.y))));
-    const maxY = Math.max(...hexagons.map(hex => Math.max(...hex.points.map(p => p.y))));
-
-    const viewBoxWidth = maxX - minX + 2 * s;
-    const viewBoxHeight = maxY - minY + 2 * s;
 
     const values = [
       {
@@ -53,7 +48,7 @@
       },
       {
         name: "Community",
-        description: "Syngenious provides a platform for young people to connect with like-minded individuals, forging relationships built on shared interests and values."
+        description: "Syngenious provides a platform for young people to connect with like-minded individuals, forging relationships built on shared interests and values. We aim to harness the power of our community to create a meaningful, positive impact on the world through collaborative projects and initiatives."
       },
       {
         name: "Opportunity",
@@ -67,46 +62,41 @@
         name: "Openness",
         description: "Syngenious believes in promoting transparency, democracy, and decentralisation, ensuring that our community remains accessible, equitable, and driven by the collective input of its members."
       },
-      {
-        name: "Positive Impact",
-        description: "Our organisation is dedicated to making a meaningful, positive impact on the world through collaborative projects and initiatives. We encourage our members to pursue socially responsible goals and contribute to the greater good of society."
-      },
     ];
 
     onMount(() => {
-      svg.setAttribute('viewBox', `${minX - s} ${minY - s} ${viewBoxWidth} ${viewBoxHeight}`);
+      const bbox = svg.getBBox();
+      svg.setAttribute('viewBox', `${bbox.x} ${bbox.y - 0.1} ${bbox.width} ${bbox.height + 0.2}`);
     });
 </script>
 
-<svg bind:this={svg} class="hexagon-container w-full" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-  {#each hexagons as { points, textPosition, index }}
-    <g>
-      <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon" />
-      {#if index === 5}
-        <text class="fill-white font-syne" x="{textPosition.x}" font-size="0.3" text-anchor="middle">
-          <tspan x="{textPosition.x}" y="{textPosition.y - 0.15}" dy="0.1">{values[index].name.split(' ')[0]}</tspan>
-          <tspan x="{textPosition.x}" y="{textPosition.y + 0.15}" dy="0.1">{values[index].name.split(' ')[1]}</tspan>
-        </text>
-      {:else}
-        <text class="fill-white font-syne" x="{textPosition.x}" y="{textPosition.y}" font-size="0.3" dy="0.1" text-anchor="middle">{values[index].name}</text>
-      {/if}
-    </g>
-  {/each}
-</svg>
+<div class="flex items-center mx-10">
+  <svg bind:this={svg} class="block my-5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    {#each hexagons as { points, textPosition, index }}
+      <g
+        on:mouseenter={() => handleMouseEnter(index)}
+      >
+        <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon" />
+        <text class="fill-white font-syne" x="{textPosition.x}" y="{textPosition.y}" font-size="0.28" dy="0.1" text-anchor="middle">{values[index].name}</text>
+      </g>
+    {/each}
+  </svg>
+</div>
+
+<div class="p-6 bg-white dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center mt-8 max-w-[800px]">
+  <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 dark:text-white">{values[selectedValueIndex].name}</h3>
+  <p class="font-quattrocento text-lg dark:text-white">{values[selectedValueIndex].description}</p>
+</div>
 
 <style lang="postcss">
-  .hexagon-container {
-    display: block;
-    margin: 0 auto;
-  }
 
   .hexagon {
     @apply stroke-white fill-[#EBB90C];
     stroke-width: 0.08;
-    transition: fill 0.3s;
+    transition: fill 0.15s;
   }
 
   .hexagon:hover {
-    fill: #ccc;
+    fill: #e6c75b;
   }
 </style>

@@ -21,14 +21,17 @@
 <h2>The Name</h2>
 <InteractiveName />
 
-<h2>Our Values</h2>
-
-<Values name="Collaboration" description="In a world increasingly focused on individual achievements, Syngenious embraces the idea that we can accomplish more together than we can alone. We are dedicated to nurturing a culture of cooperation and mutual support." />
+<h2 class="centered-h2">Our Values</h2>
+<Values/>
 
 
 <style lang="postcss">
     h2 {
         @apply font-syne font-bold text-2xl sm:text-3xl md:text-4xl mb-8 ml-4 dark:text-white;
+    }
+
+    .centered-h2 {
+        @apply px-0 mx-0 text-center;
     }
 
     p {
