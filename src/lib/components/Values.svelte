@@ -75,7 +75,7 @@
       },
       {
         name: "Opportunity",
-        description: "We recognize the potential in young people and strive to fill the gaps left by traditional education systems. By providing funding, guidance, and resources, we empower our members to take control of their future and make a difference in the world."
+        description: "We recognize the potential in young people and strive to fill the gaps left by outdated education systems built on conformity and standardisation. By providing funding, guidance, and resources, we empower our members to take control of their future and make a difference in the world."
       },
       {
         name: "Community",
