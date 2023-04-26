@@ -44,14 +44,14 @@
   {#if selected === "syn"}
     <div class="px-4 py-8">
       <p class="font-quattrocento md:text-lg text-grey-700 dark:text-white">
-        Syn: This prefix, derived from the Greek word for "together," embodies the collaborative nature of our community. The term "syn" is found in words such as "synergy" and "synthesis," which represent the powerful interactions and unifications that occur when ideas and individuals come together. 
+        This prefix, derived from the Greek word for "together," embodies the collaborative nature of our community. The term "syn" is found in words such as "synergy" and "synthesis," which represent the powerful interactions and unifications that occur when ideas and individuals come together. 
       </p>
     </div>
   {/if}
   {#if selected === "ingenious"}
     <div class="px-4 py-8">
       <p class="font-quattrocento text-grey-700 md:text-lg dark:text-white">
-        Ingenious: This term, originating from both the Latin "ingeniosus" and the French "ingénieur," captures the essence of our community's creativity and resourcefulness. 
+        This term, originating from both the Latin "ingeniosus" and the French "ingénieur," captures the essence of our community's creativity and resourcefulness. 
       </p>
     </div>
   {/if}
