@@ -12,7 +12,7 @@
 <h1 class="font-syne font-bold w-full text-center text-3xl sm:text-4xl md:text-5xl mb-10 mt-3 text-primary-500 dark:text-white" data-aos="fade-up">Competitions</h1>
 
 <div class="px-10 py-5">
-    <h2 class="font-syne font-bold w-full text-2xl sm:text-3xl md:text-4xl mb-10 mt-3 text-primary-400 dark:text-white" data-aos="fade-up" data-aos-delay=50>Current Competitions</h2>
+    <h2 class="font-syne font-bold w-full text-2xl sm:text-3xl md:text-4xl mb-10 mt-3 text-primary-400 dark:text-white" data-aos="fade-up" data-aos-delay=50>Past Competitions</h2>
     <div class="flex flex-col sm:flex-row w-full dark:text-grey-300 rounded-sm p-3 border-[3px]" data-aos="fade-up" data-aos-delay=100>
         <div class="w-full sm:w-1/2 h-full mb-4 sm:mb-0 sm:flex sm:justify-center">
             <img src="img\external-magic-fairytale-wanicon-lineal-wanicon.png" class="w-2/3 sm:w-full mx-auto sm:mx-0 max-w-lg dark:invert"/>

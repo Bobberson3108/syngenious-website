@@ -31,7 +31,7 @@
             <div class="ml-0 sm:ml-10 text-center flex items-center justify-center">
                 <div>
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne text-secondary-400" data-aos="fade-up">Get your projects out there</h1>
-                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl underline  text-white hover:text-primary-100 dark:text-primary-100 dark:hover:text-primary-200 font-syne font-semibold" data-aos="fade-up" data-aos-delay=300>In our discord.</h2></a>
+                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl underline  text-white hover:text-primary-100 font-syne font-semibold" data-aos="fade-up" data-aos-delay=300>In our discord.</h2></a>
                 </div>
             </div>
             <div data-aos="fade-up">
@@ -40,11 +40,11 @@
         </div>
     </div>
     <div class="w-screen py-8 pl-4 sm:pl-6 md:pl-8 lg:pl-12">
-        <div class="mt-24 sm:mt-48 flex flex-col sm:flex-row justify-between">
-            <img class="w-48 sm:w-64 md:w-72 lg:w-auto max-w-full mb-8 sm:mb-0 dark:invert" src="img\external-trophy-award-and-success-wanicon-lineal-wanicon.png" data-aos="fade-up" data-aos-delay=150>
+        <div class="mt-24 sm:mt-48 flex flex-col sm:flex-row justify-between items-center">
+            <img class="w-48 sm:w-64 md:w-72 lg:w-auto mb-8 sm:mb-0 dark:invert" src="img\external-trophy-award-and-success-wanicon-lineal-wanicon.png" data-aos="fade-up" data-aos-delay=150>
             <div class="text-center justify-center w-full" data-aos="fade-up">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne dark:text-white">Make your<br>mark in our<br> competitions.</h1>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-syne underline font-semibold text-primary-700 hover:text-primary-500 dark:text-secondary-500 dark:hover:text-secondary-600" data-aos="fade-up" data-aos-delay=300>
+                <h2 class="text-3xl px-3 sm:px-0 sm:text-4xl md:text-5xl font-syne underline font-semibold text-primary-700 hover:text-primary-500 dark:text-secondary-500 dark:hover:text-secondary-600" data-aos="fade-up" data-aos-delay=300>
                     <a href="/competitions">See what's on right now</a>
                 </h2>
             </div>

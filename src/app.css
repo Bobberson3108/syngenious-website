@@ -39,5 +39,5 @@
 }
 
 html, body {
-    @apply bg-white dark:bg-night scroll-smooth;
+    @apply bg-white dark:bg-night scroll-smooth dark:text-white;
 }
