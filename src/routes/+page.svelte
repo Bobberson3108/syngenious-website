@@ -31,7 +31,7 @@
             <div class="ml-0 sm:ml-10 text-center flex items-center justify-center">
                 <div>
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne text-secondary-400" data-aos="fade-up">Get your projects out there</h1>
-                    <a href="https://discord.gg/Cz95wV44nA"><h2 class="text-3xl sm:text-4xl md:text-5xl underline  text-white hover:text-primary-100 font-syne font-semibold" data-aos="fade-up" data-aos-delay=300>In our discord.</h2></a>
+                    <a href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer"><h2 class="text-3xl sm:text-4xl md:text-5xl underline  text-white hover:text-primary-100 font-syne font-semibold" data-aos="fade-up" data-aos-delay=300>In our discord.</h2></a>
                 </div>
             </div>
             <div data-aos="fade-up">

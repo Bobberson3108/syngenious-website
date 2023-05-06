@@ -87,7 +87,7 @@
       },
       {
         name: "Openness",
-        description: "Syngenious believes in promoting transparency, democracy, and decentralisation, ensuring that our community remains accessible, equitable, and driven by the collective input of its members."
+        description: "Syngenious values transparency, democracy, and decentralisation, ensuring our organisation is driven by the collective input of its members, and our weekly meetings are open to everyone in the community."
       },
     ];
 
