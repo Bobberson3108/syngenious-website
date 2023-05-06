@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { compute_rest_props } from 'svelte/internal';
 
     let svg: SVGSVGElement;
     let selectedValueIndex: number = 0;
@@ -14,7 +13,7 @@
     }
 
     const hexagonOffsets = [
-      { x: 1.5, y: 0 },
+      { x: 1.5, y: Math.sqrt(3)},
       { x: 0, y: 0.5 * Math.sqrt(3)},
       { x: 3, y: 0.5 * Math.sqrt(3)},
       { x: -1.5, y: Math.sqrt(3)},
@@ -63,7 +62,8 @@
         svg && svg.setAttribute('viewBox', '-1 -0.966 5 3.664')
       } else {
         hexagons = bigHexagons;
-        svg && svg.setAttribute('viewBox', '-1.1 -0.1 8.2 3.664')
+        svg && console.log(svg.getBBox())
+        svg && svg.setAttribute('viewBox', '-1.1 0.6 8.2 3.664')
       }
     }
 
@@ -100,7 +100,7 @@
 <svelte:window bind:innerWidth={innerWidth} />
 
 <div class="flex items-center px-10">
-  <svg bind:this={svg} class="block my-5 mx-auto max-w-[1500px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <svg bind:this={svg} class="block mb-5 mx-auto max-w-[1500px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
