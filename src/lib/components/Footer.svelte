@@ -8,13 +8,14 @@
     <p class="text-sm">&copy; {currentYear} Syngenious. All rights reserved.</p>
     </div>
     <div class="flex justify-center space-x-4 mt-4">
-      <a href="https://www.instagram.com/your_account/" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
+      <a href="https://www.instagram.com/syngenious/" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
         Instagram
       </a>
-      <a href="https://twitter.com/your_account" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
+      <a href="https://twitter.com/syngenious" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
         Twitter
       </a>
-      <a href="https://discord.gg/your_invite_link" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
+      <a href="https://www.reddit.com/user/Syngenious" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">Reddit</a>
+      <a href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
         Discord
       </a>
     </div>
