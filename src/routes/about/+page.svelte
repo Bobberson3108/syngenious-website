@@ -17,7 +17,7 @@
 <h2 id="what-is-syngenious" data-aos="fade-up">What is Syngenious?</h2>
 
 <div class="flex justify-center">
-  <p data-aos="fade-up" class="max-w-4xl mt-5 text-center">Syngenious is a not-for-profit, democratic, digital platform designed for young individuals to explore their passions, collaborate on groundbreaking projects, and connect with like-minded peers. By cultivating a unique and passionate community, and offering abundant opportunities and resources, Syngenious aims to empower young people to take control of their futures, in contrast to outdated education systems that often stifle creativity and innovation.</p>
+  <p data-aos="fade-up" class="max-w-6xl mt-5 text-center">Syngenious is a not-for-profit, democratic, digital platform designed for young individuals to explore their passions, collaborate on groundbreaking projects, and connect with like-minded peers. By cultivating a unique and passionate community, and offering abundant opportunities and resources, Syngenious aims to empower young people to take control of their futures, in contrast to outdated education systems that often stifle creativity and innovation.</p>
 </div>
 
 <h2 id="our-values" class="centered-h2">Our Values</h2>
@@ -69,7 +69,7 @@
 
 <h2 data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">Get involved</h2>
 <div class="p-4">
-  <p data-aos="fade-up">
+  <p data-aos="fade-up" class="md:mr-6">
     Syngenious is run democratically and entirely by its members. If you would like to be a part of our organisation, we could really use your help. We hold meetings every Wednesday at 19:30 GMT on our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>. We'd be thrilled if you could join us to see how you can get involved, share your thoughts and ideas, and help us shape the future of our community. Our meetings are open to everyone, so don't be afraid to drop by and say hello!
   </p>
 
