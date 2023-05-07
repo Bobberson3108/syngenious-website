@@ -5,14 +5,12 @@ export default function MongoDBAdapter(){
   return {
 
     async createUser(user) {
-      console.log("createUser")
       const usersCollection = await getCollection('users');
       const { insertedId } = await usersCollection.insertOne(user);
       return { ...user, id: insertedId };
     },
 
     async getUser(id) {
-      console.log("getUser")
       const usersCollection = await getCollection('users');
       const user = await usersCollection.findOne({ _id: new ObjectId(id) });
       return user ? { ...user, id: user._id } : null;
@@ -50,7 +48,6 @@ export default function MongoDBAdapter(){
     },
 
     async linkAccount(data) {
-      console.log("linkAccount")
       const accountsCollection = await getCollection('accounts');
       const account = { ...data, userId: new ObjectId(data.userId) };
       await accountsCollection.insertOne(account);
@@ -63,14 +60,12 @@ export default function MongoDBAdapter(){
     },
 
     async createSession(session) {
-      console.log("createSession")
       const sessionsCollection = await getCollection('sessions');
       const { insertedId } = await sessionsCollection.insertOne(session);
       return { ...session, id: insertedId };
     },
 
     async getSessionAndUser(sessionToken) {
-      console.log("getSessionAndUser")
       const sessionsCollection = await getCollection('sessions');
       const session = await sessionsCollection.findOne({ sessionToken });
       if (!session) return null;
@@ -97,7 +92,6 @@ export default function MongoDBAdapter(){
     },
 
     async createVerificationToken(verificationToken) {
-      console.log("createVerificationToken")
       const verificationTokensCollection = await getCollection('verification_tokens');
       const { insertedId } = await verificationTokensCollection.insertOne(verificationToken);
       return { ...verificationToken, id: insertedId };
