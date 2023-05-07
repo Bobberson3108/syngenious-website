@@ -1,6 +1,7 @@
 <script lang="ts">
     import "../app.css";
     import Nav from "$lib/components/Nav.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 
     import { theme } from "$lib/themeStore";
     import { onMount } from "svelte";
@@ -20,4 +21,5 @@
 <div class="min-h-screen min-w-screen">
     <Nav/>
     <slot />
+    <Footer/>
 </div>
