@@ -54,8 +54,8 @@
                     </button>
                     {#if profileMenuOpen}
                         <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 text-grey-500 dark:text-grey-400">
-                            <li><a href="/profile" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</a></li>
-                            <li><a href="/settings" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</a></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</span></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</span></li>
                             <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
                             <li><button on:click={signOut} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
                         </ul>
