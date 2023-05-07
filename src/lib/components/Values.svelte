@@ -118,7 +118,7 @@
   </svg>
 </div>
 
-<div class="p-6 bg-primary-700 dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
+<div class="p-6 bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
   <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 text-white">{values[selectedValueIndex].name}</h3>
   <p class="font-quattrocento text-lg text-white">{values[selectedValueIndex].description}</p>
 </div>

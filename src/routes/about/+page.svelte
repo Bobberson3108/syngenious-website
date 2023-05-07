@@ -67,10 +67,10 @@
   </div>
 </div>
 
-<h2 data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">Get involved</h2>
+<h2 id="get-involved" data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">Get involved</h2>
 <div class="p-4">
   <p data-aos="fade-up" class="md:mr-6">
-    Syngenious is run democratically and entirely by its members. If you would like to be a part of our organisation, we could really use your help. We hold meetings every Wednesday at 19:30 GMT on our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>. We'd be thrilled if you could join us to see how you can get involved, share your thoughts and ideas, and help us shape the future of our community. Our meetings are open to everyone, so don't be afraid to drop by and say hello!
+    Syngenious is run democratically and entirely by its members. If you would like to be a part of our organisation, we could really use your help. We hold meetings every Wednesday at 19:30 GMT on our <a class="text-primary-700 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-400 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>. We'd be thrilled if you could join us to see how you can get involved, share your thoughts and ideas, and help us shape the future of our community. Our meetings are open to everyone, so don't be afraid to drop by and say hello!
   </p>
 
   <p data-aos="fade-up">At Syngenious, we believe that every individual has unique talents and perspectives to contribute. Whether you can only spare half an hour to drop by in our weekly meetings, or are looking for a more active role, there's a place for you here. Our teams cover various aspects of our organization, and you can join one or more based on your interests. Each team meets once every two weeks, allowing you to contribute as much or as little as you like.</p>
@@ -110,7 +110,7 @@
       </div>
     </li>
 
-  <p data-aos="fade-up" data-aos-offset="0">If you have any questions or would like to learn more, feel free to contact us at <a class="text-primary-700 dark:text-primary-300 underline" href="mailto:syngenious1@gmail.com">syngenious1@gmail.com</a> or through our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>.</p>
+  <p data-aos="fade-up" data-aos-offset="0">If you have any questions or would like to learn more, feel free to contact us at <a class="text-primary-700 dark:text-primary-300 underline hover:text-primary-900 dark:hover:text-primary-400" href="mailto:syngenious1@gmail.com">syngenious1@gmail.com</a> or through our <a class="text-primary-700 dark:text-primary-300 underline hover:text-primary-900 dark:hover:text-primary-400" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>.</p>
 </div>
 
 <style lang="postcss">

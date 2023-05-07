@@ -21,7 +21,7 @@
                         <span class="block">and innovative</span>
                         <span class="block">digital space.</span>
                     </h1>
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl lg:text-7xl mt-3 font-syne font-semibold text-primary-700 dark:text-secondary-500" data-aos="fade-up" data-aos-delay=300>Come build one with us.</h2>
+                    <a href="/about#get-involved"><h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl lg:text-7xl mt-3 font-syne font-semibold text-primary-700 dark:text-secondary-500 underline hover:text-primary-500 dark:hover:text-secondary-600" data-aos="fade-up" data-aos-delay=300>Come build one with us.</h2></a>
                 </div>
             </div>
         </div>
