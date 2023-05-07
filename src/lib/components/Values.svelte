@@ -59,7 +59,7 @@
     $: {
       if (innerWidth <= 768) {
         hexagons = mobileHexagons;
-        svg && svg.setAttribute('viewBox', '-1 -0.966 5 3.664')
+        svg && svg.setAttribute('viewBox', '-1.1 -0.966 5.2 3.664')
       } else {
         hexagons = bigHexagons;
         svg && console.log(svg.getBBox())
@@ -100,7 +100,7 @@
 <svelte:window bind:innerWidth={innerWidth} />
 
 <div class="flex items-center px-10">
-  <svg bind:this={svg} class="block mb-5 mx-auto max-w-[1500px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <svg bind:this={svg} class="block mb-5 mx-auto max-w-[1350px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
@@ -118,16 +118,16 @@
   </svg>
 </div>
 
-<div class="p-6 bg-white dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
-  <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 dark:text-white">{values[selectedValueIndex].name}</h3>
-  <p class="font-quattrocento text-lg dark:text-white">{values[selectedValueIndex].description}</p>
+<div class="p-6 bg-primary-700 dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
+  <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 text-white">{values[selectedValueIndex].name}</h3>
+  <p class="font-quattrocento text-lg text-white">{values[selectedValueIndex].description}</p>
 </div>
 
 <style lang="postcss">
 
   .hexagon {
     @apply stroke-white fill-[#EBB90C];
-    stroke-width: 0.08;
+    stroke-width: 0.07;
     transition: fill 0.15s;
   }
 

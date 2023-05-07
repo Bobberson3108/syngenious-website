@@ -16,7 +16,9 @@
 
 <h2 id="what-is-syngenious" data-aos="fade-up">What is Syngenious?</h2>
 
-<p data-aos="fade-up">Syngenious is a <span>not-for-profit</span> and <span>democratic</span> digital platform created by <span>young people</span>, for <span>young people</span>, to <span>collaborate</span>, explore their interests, and work on <span>innovative projects</span>.</p>
+<div class="flex justify-center">
+  <p data-aos="fade-up" class="max-w-4xl mt-5 text-center">Syngenious is a not-for-profit, democratic, digital platform designed for young individuals to explore their passions, collaborate on groundbreaking projects, and connect with like-minded peers. By cultivating a unique and passionate community, and offering abundant opportunities and resources, Syngenious aims to empower young people to take control of their futures, in contrast to outdated education systems that often stifle creativity and innovation.</p>
+</div>
 
 <h2 id="our-values" class="centered-h2">Our Values</h2>
 <div class="md:min-h-[700px] lg:min-h-[800px] xl:min-h-[1000px]">
@@ -45,8 +47,8 @@
 </div>
 
 <!-- What we're working on -->
-<h2 data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl pb-8 pl-4 dark:text-white mt-12">What we're working on</h2>
-<div class="grid md:grid-cols-2 gap-8 mx-4" data-aos="fade-up">
+<h2 data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">What we're working on</h2>
+<div class="grid md:grid-cols-2 gap-8 mx-4 p-4" data-aos="fade-up">
   <div>
     <h3 class="font-semibold text-xl font-syne">Portfolios</h3>
     <p>Developing personal portfolio pages for our members to showcase their unique skills, interests and accomplishments.</p>
@@ -65,51 +67,66 @@
   </div>
 </div>
 
-<h2 data-aos="fade-up">Get involved</h2>
-<p data-aos="fade-up">
-    Syngenious is run democratically by its members. If you would like to be a part of our organisation, we could really use your help. We hold meetings every Wednesday at 19:30 GMT on our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>. We'd be thrilled if you could join us to share your thoughts and ideas, and help us shape the future of our community. Our meetings are open to everyone, so don't be afraid to drop by and say hello!
-</p>
+<h2 data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">Get involved</h2>
+<div class="p-4">
+  <p data-aos="fade-up">
+    Syngenious is run democratically and entirely by its members. If you would like to be a part of our organisation, we could really use your help. We hold meetings every Wednesday at 19:30 GMT on our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>. We'd be thrilled if you could join us to see how you can get involved, share your thoughts and ideas, and help us shape the future of our community. Our meetings are open to everyone, so don't be afraid to drop by and say hello!
+  </p>
 
-<p data-aos="fade-up">At Syngenious, we believe that every individual has unique talents and perspectives to contribute. Whether you can only spare half an hour to drop by in our weekly meetings, or are looking for a more active role, there's a place for you here. Our teams cover various aspects of our organization, and you can join one or more based on your interests. Each team meets once every two weeks, allowing you to contribute as much or as little as you like.</p>
-<p data-aos="fade-up">As a member of Syngenious, you will:</p>
-<ul class="ml-5 list-disc" data-aos="fade-up">
-  <li>Have an equal vote in decision-making processes</li>
-  <li>Attend meetings to contribute ideas and offer opinions</li>
-  <li>Take on a variety of roles based on your skills and interests, such as project coordination, event planning, or content creation</li>
-</ul>
-<p data-aos="fade-up">Additionally, you can join one or more of the following teams:</p>
-<ul data-aos="fade-up">
-  <li><strong>Marketing/Design Team:</strong>
-      <ul class="list-disc mx-2">
-          <li>Help with social media management and promotion</li>
-          <li>Contribute to website design and user experience improvements</li>
-          <li>Develop eye-catching graphics and visuals to enhance our brand</li>
-      </ul>
-  </li>
-  <li><strong>Programming Team:</strong>
-      <ul class="list-disc mx-2">
-          <li>Assist with website development, including frontend, backend, and database tasks</li>
-          <li>Contribute to the development and maintenance of our Discord bot</li>
-          <li>Provide support for any other programming projects as needed</li>
-      </ul>
-  </li>
-</ul>
-<p data-aos="fade-up">If you have any questions or would like to learn more, feel free to contact us at <a class="text-primary-700 dark:text-primary-300 underline" href="mailto:syngenious1@gmail.com">syngenious1@gmail.com</a> or in our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>.</p>
+  <p data-aos="fade-up">At Syngenious, we believe that every individual has unique talents and perspectives to contribute. Whether you can only spare half an hour to drop by in our weekly meetings, or are looking for a more active role, there's a place for you here. Our teams cover various aspects of our organization, and you can join one or more based on your interests. Each team meets once every two weeks, allowing you to contribute as much or as little as you like.</p>
+
+  <p data-aos="fade-up" class="list-p">You can also apply to become a governing member. As a member of Syngenious, you will:</p>
+  <div class="flex items-center flex-col md:flex-row">
+    <ul class="ml-5 list-disc flex-1" data-aos="fade-up">
+      <li>Have an equal vote in decision-making processes</li>
+      <li>Attend meetings to contribute ideas and offer opinions</li>
+      <li>Take on a variety of roles based on your skills and interests, such as project coordination, event planning, or content creation</li>
+    </ul>
+    <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="https://forms.gle/q49ge9bwCTpmXUgV7" target="_blank">Apply here to become a member</a></div>
+  </div>
+ 
+  <p data-aos="fade-up" class="list-p mt-10 md:mt-4">Additionally, you can join one or more of the following teams:</p>
+  <ul class="space-y-2">
+    <li data-aos="fade-up" class="list-p"><span class="font-bold text-xl font-syne">Marketing/Design Team:</span>
+      <div class="flex items-center mb-4 flex-col md:flex-row">
+          <ul class="ml-5 list-disc flex-1 h-full w-full" data-aos="fade-up">
+            <li>Help with social media management and promotion</li>
+            <li>Contribute to website design and user experience improvements</li>
+            <li>Develop eye-catching graphics and visuals to enhance our brand</li>
+          </ul>
+        <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="<marketing_google_forms_link>" target="_blank">Apply here to join the Marketing/Design Team</a></div>
+      </div>
+    </li>
+
+    <li data-aos="fade-up" class="list-p"><span class="font-syne font-bold text-xl">Programming Team</span>
+      <div class="flex items-center mb-4 flex-col md:flex-row">
+          <ul class="ml-5 list-disc flex-1" data-aos="fade-up">
+            <li>Assist with website development, including frontend, backend, and database tasks</li>
+            <li>Contribute to the development and maintenance of our Discord bot</li>
+            <li>Lead or provide support for any other programming projects as needed</li>
+          </ul>
+
+        <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="<programming_forms_link>" target="_blank">Apply here to join the Programming Team</a></div>
+      </div>
+    </li>
+
+  <p data-aos="fade-up" data-aos-offset="0">If you have any questions or would like to learn more, feel free to contact us at <a class="text-primary-700 dark:text-primary-300 underline" href="mailto:syngenious1@gmail.com">syngenious1@gmail.com</a> or through our <a class="text-primary-700 dark:text-primary-300 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>.</p>
+</div>
 
 <style lang="postcss">
-    h2 {
-        @apply font-syne font-bold text-2xl sm:text-3xl md:text-4xl pb-8 pl-4 dark:text-white;
-    }
+  h2 {
+      @apply px-0 mx-0 text-center font-syne font-bold text-2xl sm:text-3xl md:text-4xl dark:text-white;
+  }
 
-    .centered-h2 {
-        @apply px-0 mx-0 text-center;
-    }
+  p, ul {
+      @apply font-quattrocento text-lg pl-4 dark:text-white;
+  }
 
-    p, ul {
-        @apply font-quattrocento text-lg pl-4 dark:text-white;
-    }
+  p:not(.list-p), ul {
+    @apply pb-8;
+  }
 
-    p {
-      @apply pb-8;
-    }
+  p.list-p {
+    @apply pb-1;
+  }
 </style>
