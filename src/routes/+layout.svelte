@@ -59,7 +59,7 @@
 
 <div id="cursor" class="red-dot" bind:this={cursor}></div>
 <div class="min-h-screen min-w-screen">
-    <Nav/>
+    <Nav />
     <slot />
-    <Footer/>
+    <Footer />
 </div>

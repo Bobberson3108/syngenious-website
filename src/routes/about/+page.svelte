@@ -70,8 +70,8 @@
     <p>Creating a dynamic digital space allowing members to showcase their work, seek feedback, request help, and "fork" other people's work.</p>
   </div>
 </div>
-
-<h2 id="get-involved" data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">Get involved</h2>
+<div id="get-involved" class=""></div>
+<h2 data-aos="fade-up" class="font-bold text-2xl sm:text-3xl md:text-4xl text-center py-8 dark:text-white mt-12">Get involved</h2>
 <div class="p-4">
   <p data-aos="fade-up" class="md:mr-6">
     Syngenious is run democratically and entirely by its members. If you would like to be a part of our organisation, we could really use your help. We hold meetings every Wednesday at 19:30 GMT on our <a class="text-primary-700 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-400 underline" href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer">Discord server</a>. We'd be thrilled if you could join us to see how you can get involved, share your thoughts and ideas, and help us shape the future of our community. Our meetings are open to everyone, so don't be afraid to drop by and say hello!
