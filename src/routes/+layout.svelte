@@ -17,9 +17,37 @@
 
         document.documentElement.classList.add($theme);
         
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
+        if (!("ontouchstart" in window)) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + 'px';
+            });
+
+            document.body.addEventListener("mouseover", (e) => {
+                if (e.target.classList.contains("clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
+                    cursor.classList.add("halo");
+                }
+            });
+
+            document.body.addEventListener("mouseout", (e) => {
+                if (e.target.classList.contains("clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
+                    cursor.classList.remove("halo");
+                }
+            });
+        }
+
+
+        document.addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            ripple.style.left = e.pageX + 'px';
+            ripple.style.top = e.pageY + 'px';
+
+            document.body.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 1000);
         });
     });
 </script>

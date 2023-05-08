@@ -32,11 +32,11 @@ module.exports = {
       night: '#0C0935',
       complementary: {
         100: '#E6DFFF',
-        200: '#CDBEFF',
-        300: '#B59FFF',
-        400: '#ff5955ff', // Original complementary color
+        200: '#f87772',
+        300: '#f75a55',
+        400: '#f54842', // Original complementary color
         500: '#8540FF',
-        600: '#6C00E9',
+        600: '#c23934',
         700: '#5300B2',
         800: '#39007B',
         900: '#1F0044',

@@ -51,3 +51,33 @@ html, body {
   pointer-events: none;
   z-index: 9999;
 }
+
+.ripple {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.4);
+  transform: scale(0);
+  animation: ripple 1s linear infinite;
+  z-index: 9998;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+a, button {
+  @apply cursor-none;
+}
+
+.halo {
+  box-shadow: 0 0 20px red;
+  @apply bg-complementary-300;
+}
