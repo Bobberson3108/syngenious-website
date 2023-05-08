@@ -14,7 +14,6 @@
       <a href="https://twitter.com/syngenious" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
         Twitter
       </a>
-      <a href="https://www.reddit.com/user/Syngenious" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">Reddit</a>
       <a href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer" class="text-grey-500 dark:text-grey-400 hover:text-grey-700 dark:hover:text-grey-500">
         Discord
       </a>
