@@ -34,7 +34,7 @@ module.exports = {
         100: '#E6DFFF',
         200: '#CDBEFF',
         300: '#B59FFF',
-        400: '#9D80FF', // #ff5955ff
+        400: '#ff5955ff', // Original complementary color
         500: '#8540FF',
         600: '#6C00E9',
         700: '#5300B2',

@@ -39,5 +39,15 @@
 }
 
 html, body {
-    @apply bg-white dark:bg-night scroll-smooth dark:text-white;
+  @apply bg-white dark:bg-night scroll-smooth dark:text-white cursor-none;
+}
+
+.red-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  @apply bg-complementary-400;
+  pointer-events: none;
+  z-index: 9999;
 }
