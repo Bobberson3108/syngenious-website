@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Competitions | Syngenious</title>
+</svelte:head>
+
 <script lang="ts">
     import { onMount } from 'svelte';
     import AOS from 'aos';
@@ -36,21 +40,17 @@
 
                 <p class="font-bold text-primary-600 dark:text-primary-400">Entries to be submitted by Friday 14th April. <br>Winners announched on Friday 21st April.</p>
 
-<div class="w-auto flex flex-col items-center my-4 space-y-4">
-    <a href="/competitions/enter?competition=art"
-    class="w-full text-center text-primary-600 dark:text-primary-100 hover:text-primary-100 text-2xl font-syne p-3 hover:bg-primary-800 h-full drop-shadow-sm">
-        Enter Art Competition
-    </a>
+                <div class="w-auto flex flex-col items-center my-4 space-y-4">
+                    <a href="/competitions/enter?competition=art"
+                    class="w-full text-center text-primary-600 dark:text-primary-100 hover:text-primary-100 text-2xl font-syne p-3 hover:bg-primary-800 h-full drop-shadow-sm">
+                        Enter Art Competition
+                    </a>
 
-    <a href="/competitions/enter?competition=music"
-        class="w-full text-center text-primary-600 dark:text-primary-100 hover:text-primary-100 text-2xl font-syne p-3 hover:bg-primary-800 h-full drop-shadow-sm">
-        Enter Music Competition
-    </a>
-</div>
-
-
-
-
+                    <a href="/competitions/enter?competition=music"
+                        class="w-full text-center text-primary-600 dark:text-primary-100 hover:text-primary-100 text-2xl font-syne p-3 hover:bg-primary-800 h-full drop-shadow-sm">
+                        Enter Music Competition
+                    </a>
+                </div>
             </div>
         </div>
     </div>

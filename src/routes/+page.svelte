@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Home | Syngenious</title>
+</svelte:head>
+
 <script lang="ts">
     import { onMount } from 'svelte';
     import AOS from 'aos';
