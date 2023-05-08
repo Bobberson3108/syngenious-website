@@ -94,7 +94,7 @@
             <li>Contribute to website design and user experience improvements</li>
             <li>Develop eye-catching graphics and visuals to enhance our brand</li>
           </ul>
-        <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="<marketing_google_forms_link>" target="_blank">Apply here to join the Marketing/Design Team</a></div>
+        <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="https://docs.google.com/forms/d/e/1FAIpQLSeu6rqnwNGirHSFsNDZL5jLumaZm_TYsueU4imveZhVibiOvA/viewform?usp=sf_link" target="_blank">Apply here to join the Marketing/Design Team</a></div>
       </div>
     </li>
 
@@ -106,7 +106,7 @@
             <li>Lead or provide support for any other programming projects as needed</li>
           </ul>
 
-        <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="<programming_forms_link>" target="_blank">Apply here to join the Programming Team</a></div>
+        <div class="flex justify-center flex-1"><a class="font-syne py-2 text-xl md:text-2xl font-bold bg-primary-700 hover:bg-primary-800 text-white px-4 rounded max-w-xs" href="https://docs.google.com/forms/d/e/1FAIpQLSe_ikEBU93ykT5jLLTFZk0YpY4J_ySeE8R90osW3Dn1iDpucA/viewform?usp=sharing" target="_blank">Apply here to join the Programming Team</a></div>
       </div>
     </li>
 
