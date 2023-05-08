@@ -43,7 +43,7 @@
         <li class="flex items-center sm:flex-none">
             {#if $page.data.session.user.image}
                 <div class="relative" on:blur={closeProfileMenu} >
-                    <button on:click={toggleProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500">
+                    <button on:click={toggleProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500 clickable">
                         <img src="{$page.data.session.user.image}" alt="Profile picture" class="rounded-full w-8 h-8 drop-shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden sm:block w-4 h-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -51,8 +51,8 @@
                     </button>
                     {#if profileMenuOpen}
                         <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 text-grey-500 dark:text-grey-400">
-                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</span></li>
-                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</span></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800 clickable">Profile</span></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800 clickable">Settings</span></li>
                             <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
                             <li><button on:click={signOut} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
                         </ul>
