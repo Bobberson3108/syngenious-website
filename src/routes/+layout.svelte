@@ -17,7 +17,8 @@
 
         document.documentElement.classList.add($theme);
         
-        if (!("ontouchstart" in window)) {
+        console.log('ontouchstart' in window)
+        if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
             document.addEventListener('mousemove', (e) => {
                 cursor.style.left = e.pageX + 'px';
                 cursor.style.top = e.pageY + 'px';
@@ -34,6 +35,8 @@
                     cursor.classList.remove("halo");
                 }
             });
+        } else {
+            cursor.style.display = "none";
         }
 
 
