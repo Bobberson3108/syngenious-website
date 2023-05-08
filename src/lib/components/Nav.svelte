@@ -20,12 +20,9 @@
 
 
 <nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 pb-2 sm:pb-0">
-    <a href="/" class="flex ml-7">
-        {#if $theme === 'dark'}
-            <img src="/img/logo/Syngenious_dark.png" class="h-12 w-12 text-primary-" alt="logo"/>
-        {:else}
-            <img src="/img/logo/Syngenious.png" class="h-12 w-12" alt="logo"/>
-        {/if}
+    <a href="/" class="flex ml-7 items-center">
+        <img src="/img/logo/logo-mark.svg" class="h-12 w-12 text-primary-" alt="logo"/>
+        <span class="font-syne font-bold text-4xl text-primary-800 dark:text-primary-300 ml-3">Syngenious</span>
     </a>
     <!-- Hamburger menu button -->
     <button class="ml-auto mr-4 sm:hidden focus:outline-none" on:click={() => menuOpen = !menuOpen}>
