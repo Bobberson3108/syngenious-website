@@ -22,7 +22,7 @@
 <nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 pb-2 sm:pb-0">
     <a href="/" class="flex ml-7 items-center clickable">
         <img src="/img/logo/logo-mark.svg" class="h-12 w-12 text-primary-" alt="logo"/>
-        <span class="font-syne font-bold text-4xl text-primary-800 dark:text-white ml-3">Syngenious</span>
+        <span class="font-syne font-bold text-4xl dark:text-3xl text-primary-800 dark:text-white ml-3">Syngenious</span>
     </a>
     <!-- Hamburger menu button -->
     <button class="ml-auto mr-4 sm:hidden focus:outline-none" on:click={() => menuOpen = !menuOpen}>
