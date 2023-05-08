@@ -25,7 +25,7 @@
                         <span class="block">and innovative</span>
                         <span class="block">digital space.</span>
                     </h1>
-                    <a href="/about#get-involved"><h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl lg:text-7xl mt-3 font-syne font-semibold text-primary-700 dark:text-secondary-500 underline hover:text-primary-500 dark:hover:text-secondary-600" data-aos="fade-up" data-aos-delay=300>Come build one with us.</h2></a>
+                    <a href="/about#get-involved"><h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl lg:text-7xl mt-3 font-syne font-semibold text-primary-700 dark:text-secondary-500 underline hover:text-primary-500 dark:hover:text-secondary-600 clickable" data-aos="fade-up" data-aos-delay=300>Come build one with us.</h2></a>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
             <div class="ml-0 sm:ml-10 text-center flex items-center justify-center">
                 <div>
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne text-secondary-400" data-aos="fade-up">Get your projects out there</h1>
-                    <a href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer"><h2 class="text-3xl sm:text-4xl md:text-5xl underline  text-white hover:text-primary-100 font-syne font-semibold" data-aos="fade-up" data-aos-delay=300>In our discord.</h2></a>
+                    <a href="https://discord.gg/Cz95wV44nA" target="_blank" rel="noopener noreferrer"><h2 class="text-3xl sm:text-4xl md:text-5xl underline text-white hover:text-primary-100 font-syne font-semibold clickable" data-aos="fade-up" data-aos-delay=300>In our discord.</h2></a>
                 </div>
             </div>
             <div data-aos="fade-up">
@@ -48,7 +48,7 @@
             <img class="w-56 sm:w-64 md:w-72 lg:w-auto mb-8 sm:mb-0 dark:invert" src="img\external-trophy-award-and-success-wanicon-lineal-wanicon.png" data-aos="fade-up" data-aos-delay=150 data-aos-offset="0">
             <div class="text-center justify-center w-full mr-4" data-aos="fade-up">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-syne dark:text-white">Make your<br>mark in our<br> competitions.</h1>
-                <h2 class="text-3xl px-3 sm:px-0 sm:text-4xl md:text-5xl font-syne underline font-semibold text-primary-700 hover:text-primary-500 dark:text-secondary-500 dark:hover:text-secondary-600" data-aos="fade-up" data-aos-delay=200 data-aos-offset="0">
+                <h2 class="text-3xl px-3 sm:px-0 sm:text-4xl md:text-5xl font-syne underline font-semibold text-primary-700 hover:text-primary-500 dark:text-secondary-500 dark:hover:text-secondary-600 clickable" data-aos="fade-up" data-aos-delay=200 data-aos-offset="0">
                     <a href="/competitions">See what's on right now</a>
                 </h2>
             </div>

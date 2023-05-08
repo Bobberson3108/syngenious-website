@@ -25,7 +25,8 @@
             });
 
             document.body.addEventListener("mouseover", (e) => {
-                if (e.target.classList.contains("clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
+                if (e.target.closest(".clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
+                    cursor.style.transform='scale(1.3)'
                     cursor.classList.add("halo");
                 }
             });
@@ -33,6 +34,7 @@
             document.body.addEventListener("mouseout", (e) => {
                 if (e.target.classList.contains("clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
                     cursor.classList.remove("halo");
+                    cursor.style.transform='scale(1)'
                 }
             });
         } else {
