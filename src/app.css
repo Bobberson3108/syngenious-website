@@ -58,6 +58,7 @@ html, body {
   height: 50px;
   border-radius: 50%;
   background-color: rgba(255, 0, 0, 0.5);
+  pointer-events: none;
   transform: scale(0);
   animation: ripple 1s linear infinite;
   z-index: 9998;

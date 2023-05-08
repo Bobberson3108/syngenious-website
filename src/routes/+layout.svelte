@@ -43,8 +43,8 @@
         document.addEventListener('click', (e) => {
             const ripple = document.createElement('div');
             ripple.classList.add('ripple');
-            ripple.style.left = e.pageX + 'px';
-            ripple.style.top = e.pageY + 'px';
+            ripple.style.left = e.pageX - 25 + 'px';
+            ripple.style.top = e.pageY - 25 + 'px';
 
             document.body.appendChild(ripple);
 
