@@ -26,7 +26,7 @@
 
             document.body.addEventListener("mouseover", (e) => {
                 if (e.target.closest(".clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
-                    cursor.style.transform='scale(1.3)'
+                    cursor.style.transform='scale(1.4)'
                     cursor.classList.add("halo");
                 }
             });

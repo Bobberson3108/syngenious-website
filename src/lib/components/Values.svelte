@@ -100,7 +100,7 @@
 <svelte:window bind:innerWidth={innerWidth} />
 
 <div class="flex items-center px-10">
-  <svg bind:this={svg} class="block mb-5 mx-auto max-w-[1350px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <svg bind:this={svg} class="block mb-5 mx-auto max-w-[1350px]" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
@@ -111,7 +111,7 @@
           }
         }}
       >
-        <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon" />
+        <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon clickable" />
         <text class="fill-white font-syne" x="{textPosition.x}" y="{textPosition.y}" font-size="0.28" dy="0.1" text-anchor="middle">{values[index].name}</text>
       </g>
     {/each}
