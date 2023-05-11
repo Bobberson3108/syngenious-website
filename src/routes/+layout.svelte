@@ -9,7 +9,7 @@
     import AOS from "aos";
     import "aos/dist/aos.css";
 
-    let cursor;
+    let cursor: HTMLDivElement;
 
     onMount(() => {
         AOS.init();
@@ -36,6 +36,14 @@
                     cursor.classList.remove("halo");
                     cursor.style.transform='scale(1)'
                 }
+            });
+
+            document.addEventListener("mouseleave", () => {
+                cursor.classList.add("hidden");
+            });
+
+            document.addEventListener("mouseenter", () => {
+                cursor.classList.remove("hidden");
             });
         } else {
             cursor.style.display = "none";
