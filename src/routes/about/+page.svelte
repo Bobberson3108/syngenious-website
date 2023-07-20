@@ -24,6 +24,8 @@
   <p data-aos="fade-up" class="max-w-6xl mt-5 text-center">Syngenious is a not-for-profit, democratic, digital platform designed for young individuals to explore their passions, collaborate on groundbreaking projects, and connect with like-minded peers. By cultivating a unique and passionate community, and offering abundant opportunities and resources, Syngenious aims to empower young people to take control of their futures, in contrast to outdated education systems that often stifle creativity and innovation.</p>
 </div>
 
+<InteractiveName/>
+
 <h2 id="our-values" class="centered-h2">Our Values</h2>
 <div class="md:min-h-[700px] lg:min-h-[800px] xl:min-h-[1000px]">
     <Values/>
