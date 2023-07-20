@@ -16,7 +16,7 @@
             <div class="col-span-2 p-5 w-full z-0">
                 <div class="z-0">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold font-syne dark:text-white" data-aos="fade-up">
-                        <span class="block">Creators need a</span>
+                        <span class="block">test need a</span>
                         <span class="block">collaborative, social</span>
                         <span class="block">and innovative</span>
                         <span class="block">digital space.</span>
