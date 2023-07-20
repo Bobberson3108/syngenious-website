@@ -20,12 +20,9 @@
 
 
 <nav class="pt-2 flex flex-row sticky top-0 z-50 drop-shadow-sm bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 pb-2 sm:pb-0">
-    <a href="/" class="flex ml-7">
-        {#if $theme === 'dark'}
-            <img src="/img/logo/Syngenious_dark.png" class="h-12 w-12 text-primary-" alt="logo"/>
-        {:else}
-            <img src="/img/logo/Syngenious.png" class="h-12 w-12" alt="logo"/>
-        {/if}
+    <a href="/" class="flex ml-7 items-center">
+        <img src="/img/logo/logo-mark.svg" class="h-12 w-12 dark:h-11 dark:w-11 dark:sm:h-12 dark:sm:w-12 clickable" alt="logo"/>
+        <span class="hidden md:block font-syne font-bold text-4xl dark:text-3xl text-primary-800 dark:text-white ml-3 clickable">Syngenious</span>
     </a>
     <!-- Hamburger menu button -->
     <button class="ml-auto mr-4 sm:hidden focus:outline-none" on:click={() => menuOpen = !menuOpen}>
@@ -46,7 +43,7 @@
         <li class="flex items-center sm:flex-none">
             {#if $page.data.session.user.image}
                 <div class="relative" on:blur={closeProfileMenu} >
-                    <button on:click={toggleProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500">
+                    <button on:click={toggleProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-grey-600 dark:stroke-grey-600 hover:stroke-grey-700 dark:hover:text-stroke-500 clickable">
                         <img src="{$page.data.session.user.image}" alt="Profile picture" class="rounded-full w-8 h-8 drop-shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden sm:block w-4 h-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -54,8 +51,8 @@
                     </button>
                     {#if profileMenuOpen}
                         <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-white dark:bg-night bg-opacity-95 dark:bg-opacity-90 text-grey-500 dark:text-grey-400">
-                            <li><a href="/profile" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</a></li>
-                            <li><a href="/settings" class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</a></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800 clickable">Profile</span></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800 clickable">Settings</span></li>
                             <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
                             <li><button on:click={signOut} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
                         </ul>
@@ -70,8 +67,8 @@
           </li>
         {/if}
     </ul>
-    <button class="px-3 py-2 mr-5" on:click=   {toggleTheme}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-grey-600 dark:stroke-grey-400 hover:stroke-grey-700 dark:hover:stroke-grey-500">
+    <button class="px-3 my-2 mr-5" on:click=   {toggleTheme}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-grey-600 dark:stroke-secondary-600 hover:stroke-grey-700 dark:hover:stroke-secondary-500 clickable">
             {#if $theme === 'light'}
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
             {:else}

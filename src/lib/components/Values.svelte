@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { compute_rest_props } from 'svelte/internal';
 
     let svg: SVGSVGElement;
     let selectedValueIndex: number = 0;
@@ -14,7 +13,7 @@
     }
 
     const hexagonOffsets = [
-      { x: 1.5, y: 0 },
+      { x: 1.5, y: Math.sqrt(3)},
       { x: 0, y: 0.5 * Math.sqrt(3)},
       { x: 3, y: 0.5 * Math.sqrt(3)},
       { x: -1.5, y: Math.sqrt(3)},
@@ -60,10 +59,11 @@
     $: {
       if (innerWidth <= 768) {
         hexagons = mobileHexagons;
-        svg && svg.setAttribute('viewBox', '-1 -0.966 5 3.664')
+        svg && svg.setAttribute('viewBox', '-1.1 -0.966 5.2 3.664')
       } else {
         hexagons = bigHexagons;
-        svg && svg.setAttribute('viewBox', '-1.1 -0.1 8.2 3.664')
+        svg && console.log(svg.getBBox())
+        svg && svg.setAttribute('viewBox', '-1.1 0.6 8.2 3.664')
       }
     }
 
@@ -87,7 +87,7 @@
       },
       {
         name: "Openness",
-        description: "Syngenious believes in promoting transparency, democracy, and decentralisation, ensuring that our community remains accessible, equitable, and driven by the collective input of its members."
+        description: "Syngenious values transparency, democracy, and decentralisation, ensuring our organisation is driven by the collective input of its members, and our weekly meetings are open to everyone in the community."
       },
     ];
 
@@ -100,7 +100,7 @@
 <svelte:window bind:innerWidth={innerWidth} />
 
 <div class="flex items-center px-10">
-  <svg bind:this={svg} class="block my-5 mx-auto max-w-[1500px] cursor-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <svg bind:this={svg} class="block mb-5 mx-auto max-w-[1350px]" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     {#each hexagons as { points, textPosition }, index}
       <g
         on:mouseenter={() => handleMouseEnter(index)}
@@ -111,23 +111,23 @@
           }
         }}
       >
-        <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon" />
+        <polygon points="{points.map(p => `${p.x},${p.y}`).join(' ')}" class="hexagon clickable" />
         <text class="fill-white font-syne" x="{textPosition.x}" y="{textPosition.y}" font-size="0.28" dy="0.1" text-anchor="middle">{values[index].name}</text>
       </g>
     {/each}
   </svg>
 </div>
 
-<div class="p-6 bg-white dark:bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
-  <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 dark:text-white">{values[selectedValueIndex].name}</h3>
-  <p class="font-quattrocento text-lg dark:text-white">{values[selectedValueIndex].description}</p>
+<div class="p-6 bg-primary-800 shadow-md rounded-lg mx-auto text-center max-w-[80%] md:max-w-[800px]">
+  <h3 class=" font-syne font-bold text-2xl sm:text-3xl mb-4 text-white">{values[selectedValueIndex].name}</h3>
+  <p class="font-quattrocento text-lg text-white">{values[selectedValueIndex].description}</p>
 </div>
 
 <style lang="postcss">
 
   .hexagon {
     @apply stroke-white fill-[#EBB90C];
-    stroke-width: 0.08;
+    stroke-width: 0.07;
     transition: fill 0.15s;
   }
 

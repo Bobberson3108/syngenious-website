@@ -39,5 +39,47 @@
 }
 
 html, body {
-    @apply bg-white dark:bg-night scroll-smooth;
+  @apply bg-white dark:bg-night scroll-smooth dark:text-white cursor-none overflow-x-clip;
+}
+
+.red-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  @apply bg-complementary-400;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
+
+.ripple {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple 1s linear infinite;
+  z-index: 9998;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+a, button {
+  @apply cursor-none;
+}
+
+.halo {
+  box-shadow: 0 0 20px red;
+  @apply bg-complementary-300;
 }
