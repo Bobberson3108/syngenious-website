@@ -8,13 +8,17 @@
 
     import AOS from "aos";
     import "aos/dist/aos.css";
+    import slickScroll from '$lib/slickscroll.es.min.js';
 
+    
     let cursor: HTMLDivElement;
 
     onMount(() => {
         AOS.init();
         AOS.refresh();
-
+        const slick = new slickScroll({
+            root: "body"
+        });
         document.documentElement.classList.add($theme);
         
         console.log('ontouchstart' in window)
@@ -26,7 +30,7 @@
 
             document.body.addEventListener("mouseover", (e) => {
                 if (e.target.closest(".clickable") || (e.target.tagName.toLowerCase() === "a") || (e.target.tagName.toLowerCase() === "button")) {
-                    cursor.style.transform='scale(1.4)'
+                    cursor.style.transform='scale(1.75)'
                     cursor.classList.add("halo");
                 }
             });
@@ -64,6 +68,8 @@
         });
     });
 </script>
+
+
 
 <div id="cursor" class="red-dot" bind:this={cursor}></div>
 <div class="min-h-screen min-w-screen">
