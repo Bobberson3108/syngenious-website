@@ -30,12 +30,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .logoNav{
         background-image: url('/logoDarkMode.png');
-        height: 50px;
-        width: 100px;
+        height: 60px;
+        width: 185px;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
