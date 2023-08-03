@@ -1,18 +1,21 @@
 <script lang="ts">
+    export let SignedIn = false;
 
 </script>
 
-<body>
-    <nav class="navbar">
-        <div class="logoNav"></div>
+<nav class="navbar">
+    <div class="logoNav"></div>
+    {#if SignedIn}
+        <!-- Links for when user is signed in   -->
+    {:else}
         <div class="navButtonsContainer">
             <button class="joinUsNav">Join us</button>
             <button class="signInNav">Sign In</button>
         </div>
-    </nav>
-</body>
+    {/if}
+</nav>
 
-<style>
+<style lang="postcss">
     body{
         min-height: 300vh;
         background-color: #01131D;
@@ -34,8 +37,8 @@
 
     .logoNav{
         background-image: url('/logoDarkMode.png');
-        height: 60px;
-        width: 185px;
+        height: 50px;
+        width: 100px;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
