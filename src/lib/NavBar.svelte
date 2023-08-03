@@ -3,44 +3,30 @@
 
 </script>
 
-<nav class="navbar">
-    <div class="logoNav"></div>
-    {#if SignedIn}
-        <!-- Links for when user is signed in   -->
-    {:else}
-        <div class="navButtonsContainer">
-            <button class="joinUsNav">Join us</button>
-            <button class="signInNav">Sign In</button>
-        </div>
-    {/if}
+<nav id="navbar" class="fixed top-0 bg-dark bg-opacity-90 w-full px-6 flex justify-between items-center">
+    <div id="logo" class="logo cursor-pointer bg-logo bg-contain bg-center bg-no-repeat"></div>
+    <div class="flex justify-center items-center">
+        {#if SignedIn}
+        <button id="dashboardLink" class="menuButton h-9 w-auto bg-light hover:bg-dark px-4 font-display font-medium text-dark hover:text-light ease-out duration-200 uppercase rounded-xl border-2 border-light">Go To Dashboard</button>
+        {:else}
+            <button id="joinUsNav" class="menuButton h-9 w-auto bg-light hover:bg-dark px-4 font-display font-medium text-dark hover:text-light ease-out duration-200 uppercase rounded-xl border-2 border-light">Join us</button>
+            <button id="signInNav" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-light ml-4">Sign In</button>
+        {/if}
+    </div>
 </nav>
 
 <style lang="postcss">
-    body{
-        min-height: 300vh;
-        background-color: #01131D;
-        padding: 0;
-        margin: 0;
+    #navbar{
+        height: 10vh;
     }
 
-    .navbar{
-        position: fixed;
-        top: 0%;
-        width: 100%;
-        height: 75px;
-        border: 1px solid #fff;
-        background: rgba(1, 19, 29, 0.89);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .menuButton{
+        font-size: 20px;
+        min-width: 100px;
     }
 
-    .logoNav{
-        background-image: url('/logoDarkMode.png');
+    .logo{
         height: 50px;
-        width: 100px;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        width: 200px;
     }
 </style>
