@@ -7,7 +7,12 @@ const getInitialTheme = () => {
   if (typeof window !== 'undefined') {
     const storedTheme = localStorage.getItem(themeKey);
     if (storedTheme) {
+      console.log("storedTheme", storedTheme)
       return storedTheme;
+    }
+    if (window.matchMedia && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      console.log("system preference is light")
+      return 'light';
     }
   }
   return 'dark';
@@ -25,7 +30,6 @@ export function toggleTheme() {
             document.documentElement.classList.remove('dark');
         }
         console.log('document.documentElement.classList', document.documentElement.classList)
-        location.reload();
     }
     localStorage.setItem(themeKey, newTheme);
     return newTheme;
