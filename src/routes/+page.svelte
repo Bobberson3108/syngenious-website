@@ -112,13 +112,13 @@
     }
 
     .globe{
-        flex: 0 0 auto; // this stops the globes from shrinking when there are too many in the parent div
+        flex: 0 0 auto; /* this stops the globes from shrinking when there are too many in the parent div */
         position: relative;
         animation: globeMove 1s linear infinite;
     }
 
     .diamond{
-        flex: 0 0 auto; // this stops the diamonds from shrinking when there are too many in the parent div
+        flex: 0 0 auto; /* this stops the diamonds from shrinking when there are too many in the parent div */
         position: relative;
         animation: diamondMove 1s linear infinite;
     }
