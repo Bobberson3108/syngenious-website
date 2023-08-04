@@ -5,7 +5,10 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'logo': 'url(/logoDarkMode.png)'
+        'logo': 'url(/logoDarkMode.png)',
+        'globe': 'url(/globe.png)',
+        'diamond': 'url(/diamond.png)',
+        'star': 'url(/star.png)'
       }
     },
     colors: {
@@ -13,7 +16,8 @@ export default {
       'dark': '#01131D'
     },
     fontFamily: {
-      display: ['Syne', 'sans-serif']
+      display: ['Syne', 'sans-serif'],
+      mono: ['Space Mono', 'monospace']
     },
     fontWeight: {
       regular: 400,
