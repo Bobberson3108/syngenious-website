@@ -28,8 +28,10 @@
 
     // declare all the required numerical values so they can be changed later with ease
     let desiredAngleRange:number = 2.5;
-    let angleHeader:number;
     let desiredMoveRange:number = 10;
+    
+    // variables to store the angle and translation values
+    let angleHeader:number;
     let headerLineMove:number;
 
     // run the header animation function
