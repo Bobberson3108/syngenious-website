@@ -8,7 +8,8 @@ export default {
         'logo': 'url(/logoDarkMode.png)',
         'globe': 'url(/globe.png)',
         'diamond': 'url(/diamond.png)',
-        'star': 'url(/star.png)'
+        'star': 'url(/star.png)',
+        'scrollArrow': 'url(/scrollArrow.png)'
       }
     },
     colors: {
@@ -27,7 +28,7 @@ export default {
       extrabold: 800
     },
     fontSize: {
-      'header': '6.563rem'
+      'header': '7.8756rem'
     }
   },
   plugins: []

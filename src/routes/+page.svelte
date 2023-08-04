@@ -61,8 +61,8 @@
 
 <header class="header relative flex justify-center items-center w-full">
     <div bind:this={headerContentWrapperElement} class="headerContentWrapper uppercase relative block items-center">
-        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-60px]">
-            <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 30; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px]">✹</div>
+        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-80px]">
+            <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px]">✹</div>
             <div  bind:this={headerLineTop} class="headerText select-none text-light">Innovators</div>
             <div class="globeWrapper h-[80px] w-[200px] border-[2px] border-light rounded-full flex justify-start items-center overflow-hidden">
                 <div class="globe relative bg-globe h-[65px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
@@ -72,7 +72,7 @@
                 <div class="globe relative bg-globe h-[65px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
             </div>
         </div>
-        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-60px]">
+        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-80px]">
             <div class="diamondWrapper h-[80px] w-[167px] border-[2px] mr-[10px] border-light rounded-full flex justify-end items-center overflow-hidden">
                 <div class="diamond relative bg-diamond h-[65px] w-[65px] bg-contain bg-center bg-no-repeat ml-[5.5px] mr-[3.5px]"></div>
                 <div class="diamond relative bg-diamond h-[65px] w-[65px] bg-contain bg-center bg-no-repeat ml-[5.5px] mr-[3.5px]"></div>
@@ -83,17 +83,18 @@
             <div class="headerText select-none text-light">need a social</div>
             <div role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px] ml-[10px]">&</div>
         </div>
-        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-60px]">
-            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 30; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
+        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-80px]">
+            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
             <div bind:this={headerLineThird} class="headerText select-none text-light">collaborative</div>
-            <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 30; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] mr-[-10px]">✲</div>
+            <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 180; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] mr-[0px]">✲</div>
         </div>
-        <div class="headerLine relative w-full flex justify-center items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-60px]">
+        <div class="headerLine relative w-full flex justify-center items-center font-display font-medium text-light text-header max-w-[100%] min-w-[450px] mt-[-80px]">
             <div role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[20px] w-[80px] h-[80px] bg-star bg-center bg-contain bg-no-repeat"></div>
             <div class="headerText select-none text-light">space</div>
             <div class="smallHeaderText font-mono text-[15px] ml-[10px]">Come Build One<br>With Us</div>
         </div>
     </div>
+    <div class="headerScrollPrompt w-[80px] h-[120px] absolute bottom-[25px] bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>
 </header>
 
 <style lang="postcss">
@@ -105,6 +106,11 @@
     .headerContentWrapper{
         min-width: 65em;
         min-height: 100px;
+        transition: 0.25s ease-out;
+    }
+
+    .headerText{
+        transition: 0.25s ease-out;
     }
     
     .headerAsterix{

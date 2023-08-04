@@ -5,6 +5,7 @@
 body{
     @apply bg-dark;
     min-height: 300vh;
+    cursor: none;
 }
 
 ::-webkit-scrollbar {

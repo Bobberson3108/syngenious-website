@@ -91,7 +91,7 @@
 	}
 </script>
 
-<div bind:this={trackElement} class="track fixed top-[25px] right-[0px] w-[15px] bg-dark mr-[3.75px] z-[10] flex justify-center">
+<div bind:this={trackElement} class="track fixed top-[25px] right-[0px] w-[15px] mr-[0px] z-[10] flex justify-center">
 	<div bind:this={thumbElement} class="thumb absolute top-0 w-[7.5px] h-[75px] bg-light rounded-[100px]" />
 </div>
 
@@ -103,9 +103,8 @@
 	.thumb {
 		position: absolute;
 		top: 0;
-		width: 7.5px;
-		height: 75px;
 		border: 2px solid transparent;
+		transition: 0.1s ease-out;
 	}
 
 	@keyframes thumbHoverIn {

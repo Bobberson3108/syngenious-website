@@ -3,7 +3,7 @@
     import { theme, toggleTheme } from '$lib/stores/themeStore';
 </script>
 
-<nav class="z-[9] fixed h-[10vh] top-0 bg-dark dark:bg-light bg-opacity-90 w-full px-6 flex justify-between items-center">
+<nav class="z-[8] fixed h-[10vh] top-0 bg-dark dark:bg-light bg-opacity-90 w-full px-6 flex justify-between items-center">
     <div id="logo" class="logo cursor-pointer bg-logo bg-contain bg-center bg-no-repeat"></div>
     <div class="flex justify-center items-center">
         {#if SignedIn}
