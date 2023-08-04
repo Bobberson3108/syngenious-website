@@ -88,7 +88,7 @@
 <header bind:this={headerElement} class="header relative flex justify-center items-center w-full bg-light dark:bg-dark">
     <div bind:this={headerContentWrapperElement} class="headerContentWrapper uppercase relative block items-center">
         <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondBreak:text-[6rem] max-w-[100%] min-w-[450px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondBreak:mt-[-70px]">
-            <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px]">✹</div>
+            <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-1000 pt-[7.5px]">✹</div>
             <div  bind:this={headerLineTop} class="headerText select-none text-dark dark:text-light">Innovators</div>
             <div class="globeWrapper h-[80px] regularDesk:h-[80px] firstDeskBreakpoint:h-[65px] secondBreak:h-[65px] w-[250px] border-2 border-dark dark:border-light rounded-full flex justify-start items-center overflow-hidden">
                 <div class="globe relative bg-globeLight dark:bg-globe h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondBreak:h-[55px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondBreak:w-[55px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
@@ -110,9 +110,9 @@
             <div role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px] ml-[10px]">&</div>
         </div>
         <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondBreak:text-[6rem] max-w-[100%] min-w-[450px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondBreak:mt-[-70px]">
-            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
+            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-1000 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
             <div bind:this={headerLineThird} class="headerText select-none text-dark dark:text-light">collaborative</div>
-            <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 180; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-500 pt-[7.5px] mr-[0px]">✲</div>
+            <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 180; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-1000 pt-[7.5px] mr-[0px]">✲</div>
         </div>
         <div class="headerLine relative w-full flex justify-center items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondBreak:text-[6rem]  max-w-[100%] min-w-[450px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondBreak:mt-[-70px]">
             <div role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[20px] w-[80px] h-[80px] bg-starLight dark:bg-star bg-center bg-contain bg-no-repeat"></div>
@@ -152,12 +152,12 @@
     .globe{
         flex: 0 0 auto; /* this stops the globes from shrinking when there are too many in the parent div */
         position: relative;
-        animation: globeMove 1s linear infinite;
+        animation: globeMove 3.5s linear infinite;
     }
     .diamond{
         flex: 0 0 auto; /* this stops the diamonds from shrinking when there are too many in the parent div */
         position: relative;
-        animation: diamondMove 1s linear infinite;
+        animation: diamondMove 3.5s linear infinite;
     }
     @keyframes globeMove{
         0%{
