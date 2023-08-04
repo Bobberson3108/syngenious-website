@@ -8,9 +8,15 @@ export default {
         'logoDarkMode': 'url(/logoDarkMode.png)',
         'logoLightMode': 'url(/logoLightMode.png)',
         'globe': 'url(/globe.png)',
+        'globeLight': 'url(/globeLight.png)',
         'diamond': 'url(/diamond.png)',
+        'diamondLight': 'url(/diamondLight.png)',
         'star': 'url(/star.png)',
-        'scrollArrow': 'url(/scrollArrow.png)'
+        'starLight': 'url(/starLight.png)',
+        'scrollArrow': 'url(/scrollArrow.png)',
+        'scrollArrowLight': 'url(/scrollArrowLight.png)',
+        'bigStarLight': 'url(/bigStarLight.png)',
+        'bigStar': 'url(/bigStar.png)'
       }
     },
     colors: {

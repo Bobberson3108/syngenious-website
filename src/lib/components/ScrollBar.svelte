@@ -92,7 +92,7 @@
 </script>
 
 <div bind:this={trackElement} class="track fixed top-[25px] right-[0px] w-[15px] mr-[0px] z-[10] flex justify-center">
-	<div bind:this={thumbElement} class="thumb absolute ease-out duration-100 top-0 w-[7.5px] hover:w-[15px] h-[75px] bg-light hover:bg-[transparent] dark:bg-dark dark:hover:bg-[transparent] rounded-[100px] border-2 border-light dark:border-dark" />
+	<div bind:this={thumbElement} class="thumb absolute ease-out duration-100 top-0 w-[7.5px] hover:w-[15px] h-[75px] bg-dark hover:bg-[transparent] dark:bg-light dark:hover:bg-[transparent] rounded-[100px] border-2 border-dark dark:border-light" />
 </div>
 
 <style lang="postcss">
