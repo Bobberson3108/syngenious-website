@@ -29,7 +29,7 @@
 </script>
 
 <div class="divCursorWrapper pointer-events-none w-full h-[100vh] flex justify-center items-center fixed z-[9]">
-    <div bind:this={cursorElement} class="divCursor absolute w-[10px] h-[10px] rounded-full bg-light"></div>
+    <div bind:this={cursorElement} class="divCursor absolute w-[10px] h-[10px] rounded-full bg-light dark:bg-dark"></div>
 </div>
 
 <style lang="postcss">

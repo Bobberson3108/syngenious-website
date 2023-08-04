@@ -92,65 +92,11 @@
 </script>
 
 <div bind:this={trackElement} class="track fixed top-[25px] right-[0px] w-[15px] mr-[0px] z-[10] flex justify-center">
-	<div bind:this={thumbElement} class="thumb absolute top-0 w-[7.5px] h-[75px] bg-light rounded-[100px]" />
+	<div bind:this={thumbElement} class="thumb absolute ease-out duration-100 top-0 w-[7.5px] hover:w-[15px] h-[75px] bg-light hover:bg-[transparent] dark:bg-dark dark:hover:bg-[transparent] rounded-[100px] border-2 border-light dark:border-dark" />
 </div>
 
 <style lang="postcss">
 	.track {
 		height: calc(100vh - 50px);
-	}
-
-	.thumb {
-		position: absolute;
-		top: 0;
-		border: 2px solid transparent;
-		transition: 0.1s ease-out;
-	}
-
-	@keyframes thumbHoverIn {
-		0% {
-			width: 7.5px;
-			background-color: #D9DCC9;
-
-			border: 2px solid transparent;
-		}
-
-		100% {
-			width: 15px;
-			background-color: transparent;
-
-			border: 2px solid #D9DCC9;
-		}
-	}
-
-	@keyframes thumbHoverOut {
-		0% {
-			width: 15px;
-			background-color: transparent;
-
-			border: 2px solid #D9DCC9;
-		}
-
-		100% {
-			width: 7.5px;
-			background-color: #D9DCC9;
-
-			border: 2px solid transparent;
-		}
-	}
-
-	.thumb:hover {
-		animation: thumbHoverIn 0.2s ease-out;
-		width: 15px;
-		background-color: transparent;
-
-		border: 2px solid #D9DCC9;
-	}
-
-	.thumb:not(:hover) {
-		animation: thumbHoverOut 0.2s ease-out;
-		width: 7.5px;
-		background-color: #D9DCC9;
-		border: 2px solid transparent;
 	}
 </style>

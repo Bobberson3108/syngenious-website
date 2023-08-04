@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'logo': 'url(/logoDarkMode.png)',
+        'logoDarkMode': 'url(/logoDarkMode.png)',
+        'logoLightMode': 'url(/logoLightMode.png)',
         'globe': 'url(/globe.png)',
         'diamond': 'url(/diamond.png)',
         'star': 'url(/star.png)',
@@ -29,6 +30,11 @@ export default {
     },
     fontSize: {
       'header': '7.8756rem'
+    },
+    screens: {
+      'regularDesk': '1500px',
+      'firstDeskBreakpoint': '1450px',
+      'secondBreak': '500px'
     }
   },
   plugins: []
