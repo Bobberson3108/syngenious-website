@@ -23,15 +23,18 @@ export const theme = writable(getInitialTheme());
 export function toggleTheme() {
   theme.update((currentTheme) => {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    if (typeof document !== 'undefined') {
-        if (newTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        console.log('document.documentElement.classList', document.documentElement.classList)
-    }
     localStorage.setItem(themeKey, newTheme);
     return newTheme;
   });
 }
+
+theme.subscribe((value) => {
+  if (typeof document !== 'undefined') {
+      console.log(value);
+      if (value === 'dark') {
+          document.documentElement.classList.add('dark');
+      } else {
+          document.documentElement.classList.remove('dark');
+      }
+  }
+});
