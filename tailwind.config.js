@@ -21,7 +21,8 @@ export default {
     },
     colors: {
       'light': '#D9DCC9',
-      'dark': '#01131D'
+      'dark': '#01131D',
+      'cursor': '#D8C9AC'
     },
     fontFamily: {
       display: ['Syne', 'sans-serif'],
@@ -40,7 +41,8 @@ export default {
     screens: {
       'regularDesk': '1500px',
       'firstDeskBreakpoint': '1450px',
-      'secondBreak': '500px'
+      'secondDeskBreakpoint': '1100px',
+      'deskBreak': '500px'
     }
   },
   plugins: []
