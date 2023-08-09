@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import DropDown from "$lib/components/DropDown.svelte";
+	import SlidingButton from "$lib/components/SlidingButton.svelte";
 
     // paragraphs for dropdown. Change these as you want
     const communityParagraph:string = "At Syngenious, an exceptional community of like-minded creators thrives – bound by passion and purpose. Engage with diverse talents, share insights, and amplify creativity together. In this inspiring space, passion and hard work thrives.";
@@ -134,10 +135,7 @@
 <section role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
-        <div class="introCtaButton overflow-hidden relative uppercase text-[25px] w-[200px] h-[60px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[20px] mt-[35px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
-            <h3 class="z-2">Join Us Now</h3>
-            <div class="introButtonHover z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-        </div>
+        <SlidingButton buttonText={"Join Us Today"} textSize={25}/>
         <div class="bigStarIntro bg-bigStarLight dark:bg-bigStar bg-center bg-contain bg-no-repeat absolute regularDesk:h-[500px] firstDeskBreakpoint:h-[400px] secondDeskBreakpoint:h-[350px] deskBreak:h-[350px] h-[350px] regularDesk:w-[500px] firstDeskBreakpoint:w-[400px] secondDeskBreakpoint:w-[350px] deskBreak:w-[350px] w-[350px] right-[-175px] mt-[-50px]"></div>
     </div>
 </section>

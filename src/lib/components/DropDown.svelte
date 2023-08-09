@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SlidingButton from "./SlidingButton.svelte";
+
     export let title:string;
     export let paragraph:string;
     export let buttonText:string;
@@ -14,10 +16,7 @@
         </div>
     </div>
     <p class="font-mono text-dark dark:text-light tracking-[-0.5px] text-[19px] leading-[1.1] mt-[25px]">{paragraph}</p>
-    <div class="introCtaButton overflow-hidden relative uppercase font-display font-medium text-[20px] w-[auto] px-[15px] h-[60px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] mt-[25px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
-        <h3 class="z-2">{buttonText}</h3>
-        <div class="introButtonHover z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-    </div>
+    <SlidingButton buttonText={buttonText} textSize={20}/>
 </div>
 
 <style lang="postcss">
