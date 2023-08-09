@@ -1,5 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import DropDown from "$lib/components/DropDown.svelte";
+
+    // paragraphs for dropdown. Change these as you want
+    const communityParagraph:string = "At Syngenious, an exceptional community of like-minded creators thrives – bound by passion and purpose. Engage with diverse talents, share insights, and amplify creativity together. In this inspiring space, passion and hard work thrives.";
+    const projectsParagraph:string = "Syngenious is home to ground-breaking projects, where collaboration fuels innovation. Engage with ambitious creators, join forces to tackle exciting challenges, and bring amazing ideas to life. Our platform ignites the spark of collective creativity.";
+    const competitionsParagraph:string = "Syngenious thrives on spirited competitions, fueling the soul of our community. Unleash your talent, embrace friendly rivalry, and seize the chance to win enticing prizes. Join our community today and take part in our competitions.";
+    const eventsParagraph:string = "Syngenious hosts a dynamic array of events, both virtual and real-life, spanning programming, mathematics, and science. Engage in insightful discussions, network with experts, be at the forefront of innovation, and gain more knowledge.";
 
     // declare variables for the percentage of mouse position and the viewport width
     let mouseXPercentage:number;
@@ -122,6 +129,8 @@
     </div>
     <div class="headerScrollPrompt ease-out duration-300 w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] h-[120px] absolute bottom-[25px] bg-scrollArrowLight dark:bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>
 </header>
+
+
 <section role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
@@ -132,74 +141,28 @@
         <div class="bigStarIntro bg-bigStarLight dark:bg-bigStar bg-center bg-contain bg-no-repeat absolute regularDesk:h-[500px] firstDeskBreakpoint:h-[400px] secondDeskBreakpoint:h-[350px] deskBreak:h-[350px] h-[350px] regularDesk:w-[500px] firstDeskBreakpoint:w-[400px] secondDeskBreakpoint:w-[350px] deskBreak:w-[350px] w-[350px] right-[-175px] mt-[-50px]"></div>
     </div>
 </section>
-<div class="valueOffer w-full min-h-[100vh] relative">
+
+
+<section class="valueOffer w-full min-h-[100vh] relative">
     <div class="ourValuesWrapper relative flex flex-col justify-start items-center">
         <h1 class="text-header uppercase font-display font-normal select-none text-dark dark:text-light">What we offer</h1>
+        <!--||||||||||||||||||||||||||||||||||||||||||||||| DropDowns |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
         <div class="valueTabsWrapper max-w-[80em] flex flex-col justify-center items-center">
+            <!--|||||||||||||||||||||||||||||||||||||||||||||||  DropDown Rows  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
             <div class="valueDropDownWrapperContainer mb-[20px] flex justify-between items-start w-[auto] h-[auto]">
-                <div class="valuesDropdown w-[600px] h-[110px] mx-[10px] hover:h-[335px] ease-out duration-300 overflow-hidden rounded-[20px] relative border-2 border-dark dark:border-light px-[30px] py-[22.5px] flex flex-col justify-start items-start">
-                    <div class="dropDownTop w-full flex items-center justify-between">
-                        <h3 class="text-[40px] uppercase font-display font-bold text-dark dark:text-light">Community</h3>
-                        <div class="dropDownPlusWrapper relative w-[50px] h-[50px] bg-dark dark:bg-light flex items-center justify-center rounded-[10px]">
-                            <div class="dropDownCrossLine absolute w-[3px] h-[30px] bg-light dark:bg-dark rounded-full"></div>
-                            <div class="dropDownCrossLine absolute w-[30px] h-[3px] bg-light dark:bg-dark rounded-full"></div>
-                        </div>
-                    </div>
-                    <p class="font-mono text-dark dark:text-light tracking-[-0.5px] text-[19px] leading-[1.1] mt-[25px]">At Syngenious, an exceptional community of like-minded creators thrives – bound by passion and purpose. Engage with diverse talents, share insights, and amplify creativity together. In this inspiring space, passion and hard work thrives.</p>
-                    <div class="introCtaButton overflow-hidden relative uppercase font-display font-medium text-[20px] w-[auto] px-[15px] h-[60px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] mt-[25px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
-                        <h3 class="z-2">Join the community</h3>
-                        <div class="introButtonHover z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-                    </div>
-                </div>
-                <div class="valuesDropdown w-[600px] h-[110px] mx-[10px] hover:h-[335px] ease-out duration-300 overflow-hidden rounded-[20px] relative border-2 border-dark dark:border-light px-[30px] py-[22.5px] flex flex-col justify-start items-start">
-                    <div class="dropDownTop w-full flex items-center justify-between">
-                        <h3 class="text-[40px] uppercase font-display font-bold text-dark dark:text-light">Projects</h3>
-                        <div class="dropDownPlusWrapper relative w-[50px] h-[50px] bg-dark dark:bg-light flex items-center justify-center rounded-[10px]">
-                            <div class="dropDownCrossLine absolute w-[3px] h-[30px] bg-light dark:bg-dark rounded-full"></div>
-                            <div class="dropDownCrossLine absolute w-[30px] h-[3px] bg-light dark:bg-dark rounded-full"></div>
-                        </div>
-                    </div>
-                    <p class="font-mono text-dark dark:text-light tracking-[-0.5px] text-[19px] leading-[1.1] mt-[25px]">Syngenious is home to ground-breaking projects, where collaboration fuels innovation. Engage with ambitious creators, join forces to tackle exciting challenges, and bring amazing ideas to life. Our platform ignites the spark of collective creativity.</p>
-                    <div class="introCtaButton overflow-hidden relative uppercase font-display font-medium text-[20px] w-[auto] px-[15px] h-[60px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] mt-[25px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
-                        <h3 class="z-2">Create a project</h3>
-                        <div class="introButtonHover z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-                    </div>
-                </div>
+                <!--DropDowns------------------------------------------------------------------------------------------------->
+                <DropDown title={"Community"} buttonText={"Join the community"} paragraph={communityParagraph}/>
+                <DropDown title={"Projects"} buttonText={"Create A Project"} paragraph={projectsParagraph} />
             </div>
             <div class="valueDropDownWrapperContainer flex justify-between items-start w-[auto] h-[auto]">
-                <div class="valuesDropdown w-[600px] h-[110px] mx-[10px] hover:h-[335px] ease-out duration-300 overflow-hidden rounded-[20px] relative border-2 border-dark dark:border-light px-[30px] py-[22.5px] flex flex-col justify-start items-start">
-                    <div class="dropDownTop w-full flex items-center justify-between">
-                        <h3 class="text-[40px] uppercase font-display font-bold text-dark dark:text-light">competitions</h3>
-                        <div class="dropDownPlusWrapper relative w-[50px] h-[50px] bg-dark dark:bg-light flex items-center justify-center rounded-[10px]">
-                            <div class="dropDownCrossLine absolute w-[3px] h-[30px] bg-light dark:bg-dark rounded-full"></div>
-                            <div class="dropDownCrossLine absolute w-[30px] h-[3px] bg-light dark:bg-dark rounded-full"></div>
-                        </div>
-                    </div>
-                    <p class="font-mono text-dark dark:text-light tracking-[-0.5px] text-[19px] leading-[1.1] mt-[25px]">Syngenious thrives on spirited competitions, fueling the soul of our community. Unleash your talent, embrace friendly rivalry, and seize the chance to win enticing prizes. Join our community today and take part in our competitions.</p>
-                    <div class="introCtaButton overflow-hidden relative uppercase font-display font-medium text-[20px] w-[auto] px-[15px] h-[60px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] mt-[25px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
-                        <h3 class="z-2">See competitions</h3>
-                        <div class="introButtonHover z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-                    </div>
-                </div>
-                <div class="valuesDropdown w-[600px] h-[110px] mx-[10px] hover:h-[335px] ease-out duration-300 overflow-hidden rounded-[20px] relative border-2 border-dark dark:border-light px-[30px] py-[22.5px] flex flex-col justify-start items-start">
-                    <div class="dropDownTop w-full flex items-center justify-between">
-                        <h3 class="text-[40px] uppercase font-display font-bold text-dark dark:text-light">Events</h3>
-                        <div class="dropDownPlusWrapper relative w-[50px] h-[50px] bg-dark dark:bg-light flex items-center justify-center rounded-[10px]">
-                            <div class="dropDownCrossLine absolute w-[3px] h-[30px] bg-light dark:bg-dark rounded-full"></div>
-                            <div class="dropDownCrossLine absolute w-[30px] h-[3px] bg-light dark:bg-dark rounded-full"></div>
-                        </div>
-                    </div>
-                    <p class="font-mono text-dark dark:text-light tracking-[-0.5px] text-[19px] leading-[1.1] mt-[25px]">Syngenious hosts a dynamic array of events, both virtual and real-life, spanning programming, mathematics, and science. Engage in insightful discussions, network with experts, be at the forefront of innovation, and gain more knowledge.</p>
-                    <div class="introCtaButton overflow-hidden relative uppercase font-display font-medium text-[20px] w-[auto] px-[15px] h-[60px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] mt-[25px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
-                        <h3 class="z-2">See Latest Events</h3>
-                        <div class="introButtonHover z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-                    </div>
-                </div>
+                <!--DropDowns------------------------------------------------------------------------------------------------->
+                <DropDown title={"competitions"} buttonText={"see competitions"} paragraph={competitionsParagraph}/>
+                <DropDown title={"events"} buttonText={"see latest events"} paragraph={eventsParagraph}/>
             </div>
         </div>
         
     </div>
-</div>
+</section>
 <style lang="postcss">
     /* styling for the header */
     .header{
