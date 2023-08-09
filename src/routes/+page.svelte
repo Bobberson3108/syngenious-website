@@ -22,9 +22,10 @@
         // Attach the event listener to the 'mousemove' event to run the headerRotateAnimation
         window.addEventListener('mousemove', headerRotateAnimation);
         // call the header fading function on load, in case the scroll position of the user is lower than the top, so the effect is still in place
-        handleScroll();
+        handleScroll(headerElement, 2);
         // run the header fading function on scroll
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', () => handleScroll(headerElement, 0.7));
+        window.addEventListener('scroll', () => handleScroll(introParagraphSection, 1));
     })
 
     // function to handle viewport change, so you always get the updated viewport width in px
@@ -74,23 +75,23 @@
     let angleBottomLeft:number = 0;
     let angleBottomRight:number = 0;
 
-    // declare variable for the headElement we need to fade out
+    // declare variableS for the elements we need to fade out
     let headerElement:HTMLHeadElement;
+    let introParagraphSection:HTMLElement;
     // store a desired offset in a variable. A higher offset means
-    let animationOffsetScroll:number = 2;
 
-    // -------------------------------------------------------- HEADER 'FADE WHEN SCROLLING OUT OF VIEW' FUNCTION -------------------------------------------------------- //
+    // -------------------------------------------------------- HEADER (OR ANY OTHER ELEMENT) 'FADE WHEN SCROLLING OUT OF VIEW' FUNCTION -------------------------------------------------------- //
 
-    // Add a new function to handle scroll event for fading out the header
-    function handleScroll() {
-        // Get the distance of the header from the top of the viewport
-        const headerOffsetTop = headerElement.getBoundingClientRect().top;
-        // Calculate the percentage of the header's position relative to the viewport height and add offset to make animation quicker/slower
-        const headerPositionPercentage = 1 - (Math.abs(headerOffsetTop * animationOffsetScroll) / window.innerHeight);
-        // Set the opacity of the header based on the calculated percentage
-        headerElement.style.opacity = headerPositionPercentage.toString();
-    }
+    // Add a new function to handle scroll event for fading out of any element
+    function handleScroll(targetElement: HTMLElement, fadingStartPercentage:number) {
+    const elementOffsetTop = targetElement.getBoundingClientRect().top;
 
+    // Calculate the fading percentage based on the element's position and fadingStartPercentage
+    const fadingPercentage = Math.max(0, Math.min(1, 1 - (elementOffsetTop) / (window.innerHeight * fadingStartPercentage)));
+
+    // Set the opacity of the targetElement based on the calculated fading percentage
+    targetElement.style.opacity = fadingPercentage.toString();
+}
 </script>
 
 <header bind:this={headerElement} class="header relative flex justify-center items-center w-full bg-light dark:bg-dark">
@@ -132,7 +133,7 @@
 </header>
 
 
-<section role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
+<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
         <SlidingButton buttonText={"Join Us Today"} textSize={27.5} />

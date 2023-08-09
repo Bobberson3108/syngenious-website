@@ -15,7 +15,7 @@
             <div class="dropDownCrossLine absolute w-[30px] h-[3px] bg-light dark:bg-dark rounded-full"></div>
         </div>
     </div>
-    <p class="font-mono text-dark dark:text-light tracking-[-0.5px] text-[19px] leading-[1.1] mt-[25px]">{paragraph}</p>
+    <p class="font-mono text-dark dark:text-light tracking-[1px] uppercase text-[19px] leading-[1.1] mt-[25px]">{paragraph}</p>
     <SlidingButton buttonText={buttonText} textSize={20}/>
 </div>
 
