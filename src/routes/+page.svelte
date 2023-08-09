@@ -2,12 +2,9 @@
     import { onMount } from "svelte";
     import DropDown from "$lib/components/DropDown.svelte";
 	import SlidingButton from "$lib/components/SlidingButton.svelte";
+	import WhatWeOffer from "$lib/components/WhatWeOffer.svelte";
 
-    // paragraphs for dropdown. Change these as you want
-    const communityParagraph:string = "At Syngenious, an exceptional community of like-minded creators thrives – bound by passion and purpose. Engage with diverse talents, share insights, and amplify creativity together. In this inspiring space, passion and hard work thrives.";
-    const projectsParagraph:string = "Syngenious is home to ground-breaking projects, where collaboration fuels innovation. Engage with ambitious creators, join forces to tackle exciting challenges, and bring amazing ideas to life. Our platform ignites the spark of collective creativity.";
-    const competitionsParagraph:string = "Syngenious thrives on spirited competitions, fueling the soul of our community. Unleash your talent, embrace friendly rivalry, and seize the chance to win enticing prizes. Join our community today and take part in our competitions.";
-    const eventsParagraph:string = "Syngenious hosts a dynamic array of events, both virtual and real-life, spanning programming, mathematics, and science. Engage in insightful discussions, network with experts, be at the forefront of innovation, and gain more knowledge.";
+   
 
     // declare variables for the percentage of mouse position and the viewport width
     let mouseXPercentage:number;
@@ -24,8 +21,8 @@
         // call the header fading function on load, in case the scroll position of the user is lower than the top, so the effect is still in place
         handleScroll(headerElement, 2);
         // run the header fading function on scroll
-        window.addEventListener('scroll', () => handleScroll(headerElement, 0.7));
-        window.addEventListener('scroll', () => handleScroll(introParagraphSection, 1));
+        window.addEventListener('scroll', () => handleScroll(headerElement, 1));
+        window.addEventListener('scroll', () => handleScroll(introParagraphSection, 0.5));
     })
 
     // function to handle viewport change, so you always get the updated viewport width in px
@@ -83,15 +80,17 @@
     // -------------------------------------------------------- HEADER (OR ANY OTHER ELEMENT) 'FADE WHEN SCROLLING OUT OF VIEW' FUNCTION -------------------------------------------------------- //
 
     // Add a new function to handle scroll event for fading out of any element
-    function handleScroll(targetElement: HTMLElement, fadingStartPercentage:number) {
-    const elementOffsetTop = targetElement.getBoundingClientRect().top;
+    function handleScroll(targetElement: HTMLElement, fadingStartPercentage: number) {
+        const elementOffsetTop = targetElement.getBoundingClientRect().top;
 
-    // Calculate the fading percentage based on the element's position and fadingStartPercentage
-    const fadingPercentage = Math.max(0, Math.min(1, 1 - (elementOffsetTop) / (window.innerHeight * fadingStartPercentage)));
+        // Calculate the fading percentage based on the element's position and fadingStartPercentage
+        const fadingPercentage = Math.max(0, Math.min(1, (elementOffsetTop + targetElement.offsetHeight) / (window.innerHeight * fadingStartPercentage)));
 
-    // Set the opacity of the targetElement based on the calculated fading percentage
-    targetElement.style.opacity = fadingPercentage.toString();
-}
+        // Set the opacity of the targetElement based on the calculated fading percentage
+        targetElement.style.opacity = fadingPercentage.toString();
+    }
+
+
 </script>
 
 <header bind:this={headerElement} class="header relative flex justify-center items-center w-full bg-light dark:bg-dark">
@@ -136,32 +135,14 @@
 <section bind:this={introParagraphSection} role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
-        <SlidingButton buttonText={"Join Us Today"} textSize={27.5} />
+        <SlidingButton buttonText={"Join Us Today"} textSize={27.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15}/>
         <div class="bigStarIntro bg-bigStarLight dark:bg-bigStar bg-center bg-contain bg-no-repeat absolute regularDesk:h-[500px] firstDeskBreakpoint:h-[400px] secondDeskBreakpoint:h-[350px] deskBreak:h-[350px] h-[350px] regularDesk:w-[500px] firstDeskBreakpoint:w-[400px] secondDeskBreakpoint:w-[350px] deskBreak:w-[350px] w-[350px] right-[-175px] mt-[-50px]"></div>
     </div>
 </section>
 
+<WhatWeOffer sectionTitle="What we offer" marginTop={100} buttonsArePresent/>
+<WhatWeOffer sectionTitle="Our values" marginTop={200}/>
 
-<section class="valueOffer w-full min-h-[100vh] relative">
-    <div class="ourValuesWrapper relative flex flex-col justify-start items-center">
-        <h1 class="text-header uppercase font-display font-normal select-none text-dark dark:text-light">What we offer</h1>
-        <!--||||||||||||||||||||||||||||||||||||||||||||||| DropDowns |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-        <div class="valueTabsWrapper max-w-[80em] flex flex-col justify-center items-center">
-            <!--|||||||||||||||||||||||||||||||||||||||||||||||  DropDown Rows  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-            <div class="valueDropDownWrapperContainer mb-[20px] flex justify-between items-start w-[auto] h-[auto]">
-                <!--DropDowns------------------------------------------------------------------------------------------------->
-                <DropDown title={"Community"} buttonText={"Join the community"} paragraph={communityParagraph}/>
-                <DropDown title={"Projects"} buttonText={"Create A Project"} paragraph={projectsParagraph} />
-            </div>
-            <div class="valueDropDownWrapperContainer flex justify-between items-start w-[auto] h-[auto]">
-                <!--DropDowns------------------------------------------------------------------------------------------------->
-                <DropDown title={"competitions"} buttonText={"see competitions"} paragraph={competitionsParagraph}/>
-                <DropDown title={"events"} buttonText={"see latest events"} paragraph={eventsParagraph}/>
-            </div>
-        </div>
-        
-    </div>
-</section>
 <style lang="postcss">
     /* styling for the header */
     .header{

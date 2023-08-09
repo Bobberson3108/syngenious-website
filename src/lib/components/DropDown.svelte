@@ -4,6 +4,8 @@
     export let title:string;
     export let paragraph:string;
     export let buttonText:string;
+    // let svelte know if there is a button on this dropdown
+    export let buttonsPresent:boolean = false;
     
 </script>
 
@@ -15,8 +17,11 @@
             <div class="dropDownCrossLine absolute w-[30px] h-[3px] bg-light dark:bg-dark rounded-full"></div>
         </div>
     </div>
-    <p class="font-mono text-dark dark:text-light tracking-[1px] uppercase text-[19px] leading-[1.1] mt-[25px]">{paragraph}</p>
-    <SlidingButton buttonText={buttonText} textSize={20}/>
+    <p class="font-mono text-dark dark:text-light tracking-[0px] text-[19px] leading-[1.1] mt-[25px]">{paragraph}</p>
+    <!-- Basic logic statement that says that if buttonsPresent = true, the display SlidingButton -->
+    {#if buttonsPresent}
+        <SlidingButton buttonText={buttonText} textSize={20} marginTop={20} paddingX={10} paddingY={5}/>
+    {/if}
 </div>
 
 <style lang="postcss">
