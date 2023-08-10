@@ -9,7 +9,7 @@
     
 </script>
 
-<div class="valuesDropdown w-[600px] h-[110px] mx-[10px] hover:h-[335px] ease-out duration-300 overflow-hidden rounded-[20px] relative border-2 border-dark dark:border-light px-[30px] py-[22.5px] flex flex-col justify-start items-start">
+<div class="valuesDropdown w-[600px] h-[110px] mx-[10px] hover:h-[335px] transition-all ease-out duration-300 overflow-hidden rounded-[20px] relative border-2 border-dark dark:border-light px-[30px] py-[22.5px] flex flex-col justify-start items-start">
     <div class="dropDownTop w-full flex items-center justify-between">
         <h3 class="text-[40px] uppercase font-display font-bold text-dark dark:text-light">{title}</h3>
         <div class="dropDownPlusWrapper relative w-[50px] h-[50px] bg-dark dark:bg-light flex items-center justify-center rounded-[10px]">
@@ -24,8 +24,3 @@
     {/if}
 </div>
 
-<style lang="postcss">
-    .introCtaButton:hover > .introButtonHover {
-        top: 0%;
-    }
-</style>

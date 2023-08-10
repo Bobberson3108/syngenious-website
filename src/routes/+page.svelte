@@ -19,7 +19,7 @@
         // Attach the event listener to the 'mousemove' event to run the headerRotateAnimation
         window.addEventListener('mousemove', headerRotateAnimation);
         // call the header fading function on load, in case the scroll position of the user is lower than the top, so the effect is still in place
-        handleScroll(headerElement, 2);
+        handleScroll(headerElement, 1);
         // run the header fading function on scroll
         window.addEventListener('scroll', () => handleScroll(headerElement, 1));
         window.addEventListener('scroll', () => handleScroll(introParagraphSection, 0.5));
@@ -90,7 +90,15 @@
         targetElement.style.opacity = fadingPercentage.toString();
     }
 
-
+    // paragraphs for dropdown. Change these as you want
+    const communityParagraph:string = "At Syngenious, an exceptional community of like-minded creators thrives – bound by passion and purpose. Engage with diverse talents, share insights, and amplify creativity together. In this inspiring space, passion and hard work thrives.";
+    const projectsParagraph:string = "Syngenious is home to ground-breaking projects, where collaboration fuels innovation. Engage with ambitious creators, join forces to tackle exciting challenges, and bring amazing ideas to life. Our platform ignites the spark of collective creativity.";
+    const competitionsParagraph:string = "Syngenious thrives on spirited competitions, fueling the soul of our community. Unleash your talent, embrace friendly rivalry, and seize the chance to win enticing prizes. Join our community today and take part in our competitions.";
+    const eventsParagraph:string = "Syngenious hosts a dynamic array of events, both virtual and real-life, spanning programming, mathematics, and science. Engage in insightful discussions, network with experts, be at the forefront of innovation, and gain more knowledge.";
+    const opportunityParagraph:string = "Rooted in our core, the pursuit of growth is an unending journey. With a commitment to continuous learning and adaptability, we carve intricate pathways for personal and collective advancement. Challenges are not mere obstacles but rather crucial catalysts that propel individuals toward leadership roles within the evolving landscape of tomorrow's triumphs.";
+    const collaborationParagraph:string = "The heartbeat of our accomplishments lies in the symphony of collaboration. We have woven unity into the very fabric of our culture. Embracing the rich tapestry of diverse viewpoints ignites the sparks of innovation, propelling us beyond the boundaries of convention to achieve shared victories that resonate in the corridors of time.";
+    const opennessParagraph:string = "Transparency forms the bedrock of trust upon which we build. In the spirit of openness, we lay bare our insights, embracing differences with a foundation of mutual respect. This ecosystem of honest exchange and genuine discourse fosters an environment where authenticity and communication flourish, lighting an illuminating path to the summit of shared achievements.";
+    const creativityParagraph:string = "The essence of our identity is intricately woven with threads of boundless creativity. We hold aloft the torch of ingenuity, recognizing it as the very essence that fuels transformation. Emerging from the crucible of bold minds, novel ideas breathe life into the tapestry of innovation, and our relentless pursuit of originality becomes the chisel that shapes the world with exceptional, paradigm-shifting solutions.";
 </script>
 
 <header bind:this={headerElement} class="header relative flex justify-center items-center w-full bg-light dark:bg-dark">
@@ -140,8 +148,8 @@
     </div>
 </section>
 
-<WhatWeOffer sectionTitle="What we offer" marginTop={100} buttonsArePresent/>
-<WhatWeOffer sectionTitle="Our values" marginTop={200}/>
+<WhatWeOffer sectionTitle="What we offer" marginTop={100} titleOne={"Community"} paragraphOne={communityParagraph} titleTwo={"Projects"} paragraphTwo={projectsParagraph} titleThree={"Competitions"} paragraphThree={competitionsParagraph} titleFour={"Events"} paragraphFour={eventsParagraph} buttonsArePresent/>
+<WhatWeOffer sectionTitle="Our values" marginTop={200} titleOne={"opportunity"} paragraphOne={opportunityParagraph} titleTwo={"collaboration"} paragraphTwo={collaborationParagraph} titleThree={"openness"} paragraphThree={opennessParagraph} titleFour={"creativity"} paragraphFour={creativityParagraph}/>
 
 <style lang="postcss">
     /* styling for the header */
