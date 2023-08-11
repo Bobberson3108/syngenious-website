@@ -22,6 +22,9 @@
 
         // run the header fading function on scroll
         window.addEventListener('scroll', () => handleScroll(headerContentWrapperElement, 0.5));
+        asteriskTop.addEventListener('mouseenter', () => hoverTester(asteriskTop));
+        asteriskBottomRight.addEventListener('mouseenter', () => hoverTester(asteriskBottomRight));
+        asteriskBottomLeft.addEventListener('mouseenter', () => hoverTester(asteriskBottomLeft));
     })
 
     // function to handle viewport change, so you always get the updated viewport width in px
@@ -75,6 +78,30 @@
     let headerElement:HTMLHeadElement;
     let introParagraphSection:HTMLElement;
     // store a desired offset in a variable. A higher offset means
+    let hoverCount:number = 0;
+    const hoverThreshold:number = 10;
+    const hoverTimeFrame:number = 1000; // 1 second in milliseconds
+    let hoverTimeout: NodeJS.Timeout;
+    function hoverTester(hoverElement: HTMLElement) {
+        clearTimeout(hoverTimeout);
+
+        hoverCount++;
+        if (hoverCount === hoverThreshold) {
+            hoverElement.style.rotate = `${Math.random() * 360}deg`;
+            hoverElement.style.transform = `translateX(${randomValue(-200,-100)}px)`;
+            alert("Slow down you're gonna break the website!!");
+            hoverElement.style.opacity = `0`;
+            hoverCount = 0; // Reset the counter
+        }
+
+        hoverTimeout = setTimeout(() => {
+            hoverCount = 0; // Reset the counter if the time frame elapses
+        }, hoverTimeFrame);
+    }
+
+    function randomValue(min:number, max:number) {
+      return Math.random() * (max - min) + min;
+    }
 
     // -------------------------------------------------------- HEADER (OR ANY OTHER ELEMENT) 'FADE WHEN SCROLLING OUT OF VIEW' FUNCTION -------------------------------------------------------- //
 
