@@ -11,21 +11,29 @@
     </div>
     <div class="footerLinksWrapper relative flex mr-[80px]">
         <div class="footerLinksContainer mr-[50px] min-h-[10vh]">
-            <div class="title text-light dark:text-dark uppercase font-display font-extrabold mb-[10px]">Platform</div>
+            <div class="title text-light dark:text-dark uppercase font-display font-extrabold mb-[10px]">Navigation</div>
             <FooterButton text={"Home"}/>
             <FooterButton text={"projetcs"}/>
-            <FooterButton text={"articles"}/>
+            <FooterButton text={"Events"}/>
             <FooterButton text={"competitions"}/>
         </div>
-        <div class="footerLinksContainer min-h-[10vh]">
+        <div class="footerLinksContainer mr-[50px] min-h-[10vh]">
             <div class="title text-light dark:text-dark uppercase font-display font-extrabold mb-[10px]">Account</div>
             {#if SignedIn}
                 <FooterButton text={"dashboard"}/>
                 <FooterButton text={"Posts"}/>
+                <FooterButton text={"profile"}/>
                 <FooterButton text={"settings"}/>
             {:else}
                 <FooterButton text={"Sign Up/ Log In"}/>
             {/if}
+        </div>
+        <div class="footerLinksContainer mr-[50px] min-h-[10vh]">
+            <div class="title text-light dark:text-dark uppercase font-display font-extrabold mb-[10px]">Platform</div>
+            <FooterButton text={"Terms and Conditions"}/>
+            <FooterButton text={"Privacy Policy"}/>
+            <FooterButton text={"Account Information"}/>
+            <FooterButton text={"Platform rules"}/>
         </div>
     </div>
     <CopyRightBar />
