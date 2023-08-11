@@ -19,10 +19,9 @@
         // Attach the event listener to the 'mousemove' event to run the headerRotateAnimation
         window.addEventListener('mousemove', headerRotateAnimation);
         // call the header fading function on load, in case the scroll position of the user is lower than the top, so the effect is still in place
-        handleScroll(headerElement, 1);
+
         // run the header fading function on scroll
-        window.addEventListener('scroll', () => handleScroll(headerElement, 1));
-        window.addEventListener('scroll', () => handleScroll(introParagraphSection, 0.5));
+        window.addEventListener('scroll', () => handleScroll(headerContentWrapperElement, 0.5));
     })
 
     // function to handle viewport change, so you always get the updated viewport width in px
@@ -101,7 +100,7 @@
     const creativityParagraph:string = "The essence of our identity is intricately woven with threads of boundless creativity. We hold aloft the torch of ingenuity, recognizing it as the very essence that fuels transformation. Emerging from the crucible of bold minds, novel ideas breathe life into the tapestry of innovation, and our relentless pursuit of originality becomes the chisel that shapes the world with exceptional, paradigm-shifting solutions.";
 </script>
 
-<header bind:this={headerElement} class="header relative flex justify-center items-center w-full bg-light dark:bg-dark">
+<header bind:this={headerElement} class="header z-[5] relative flex justify-center items-center w-full bg-light dark:bg-dark">
     <div bind:this={headerContentWrapperElement} class="headerContentWrapper uppercase relative block items-center min-w-0">
         <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
             <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-1000 pt-[7.5px]">✹</div>
@@ -140,7 +139,7 @@
 </header>
 
 
-<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
+<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection z-[5] py-[150px] bg-light dark:bg-dark relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
         <SlidingButton buttonText={"Join Us Today"} textSize={27.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15}/>
@@ -149,7 +148,7 @@
 </section>
 
 <WhatWeOffer sectionTitle="What we offer" marginTop={100} titleOne={"Community"} paragraphOne={communityParagraph} titleTwo={"Projects"} paragraphTwo={projectsParagraph} titleThree={"Competitions"} paragraphThree={competitionsParagraph} titleFour={"Events"} paragraphFour={eventsParagraph} buttonsArePresent/>
-<WhatWeOffer sectionTitle="Our values" marginTop={200} titleOne={"opportunity"} paragraphOne={opportunityParagraph} titleTwo={"collaboration"} paragraphTwo={collaborationParagraph} titleThree={"openness"} paragraphThree={opennessParagraph} titleFour={"creativity"} paragraphFour={creativityParagraph}/>
+<WhatWeOffer sectionTitle="Our values" marginTop={200} marginBottom={200} titleOne={"opportunity"} paragraphOne={opportunityParagraph} titleTwo={"collaboration"} paragraphTwo={collaborationParagraph} titleThree={"openness"} paragraphThree={opennessParagraph} titleFour={"creativity"} paragraphFour={creativityParagraph}/>
 
 <style lang="postcss">
     /* styling for the header */

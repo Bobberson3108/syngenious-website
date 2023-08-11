@@ -18,9 +18,11 @@
     export let paragraphFour: string = "Write your paragraph here";
     // variables for styling
     export let marginTop:number = 20;
+    export let marginBottom:number = 20;
     let sectionElement:HTMLElement;
     const sectionStyles = {
-        marginTop: `${marginTop}px`
+        paddingTop: `${marginTop}px`,
+        paddingBottom: `${marginBottom}px`
     }
 
     import { onMount } from "svelte";
@@ -30,7 +32,7 @@
     })
 </script>
 
-<section bind:this={sectionElement} class="valueOffer w-full relative">
+<section bind:this={sectionElement} class="valueOffer bg-light dark:bg-dark z-[5] w-full relative">
     <div class="ourValuesWrapper relative flex flex-col justify-start items-center">
         <h1 class="text-header uppercase font-display font-normal select-none text-dark dark:text-light">{sectionTitle}</h1>
         <!--||||||||||||||||||||||||||||||||||||||||||||||| DropDowns |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->

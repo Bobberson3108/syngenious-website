@@ -16,7 +16,8 @@ export default {
         'scrollArrow': 'url(/scrollArrow.png)',
         'scrollArrowLight': 'url(/scrollArrowLight.png)',
         'bigStarLight': 'url(/bigStarLight.png)',
-        'bigStar': 'url(/bigStar.png)'
+        'bigStar': 'url(/bigStar.png)',
+        'footerLogoLightMode': 'url(/footerLogoLightMode.png)'
       }
     },
     colors: {
