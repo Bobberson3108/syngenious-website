@@ -22,7 +22,9 @@ export default {
     },
     colors: {
       'light': '#D9DCC9',
+      'footerlight': '#b3b5a7',
       'dark': '#01131D',
+      'footerDark': '#011019',
       'cursor': '#D8C9AC'
     },
     fontFamily: {
