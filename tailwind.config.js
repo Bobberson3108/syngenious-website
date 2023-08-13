@@ -18,6 +18,9 @@ export default {
         'bigStarLight': 'url(/bigStarLight.png)',
         'bigStar': 'url(/bigStar.png)',
         'footerLogoLightMode': 'url(/footerLogoLightMode.png)'
+      },
+      boxShadow: {
+        'footerLight': 'inset 0 0 0 48px #01131D, inset 0 0 0 50px #D9DCC9'
       }
     },
     colors: {
