@@ -20,7 +20,7 @@
     <p class="font-mono text-dark dark:text-light tracking-[0px] text-[19px] leading-[1.1] mt-[25px]">{paragraph}</p>
     <!-- Basic logic statement that says that if buttonsPresent = true, the display SlidingButton -->
     {#if buttonsPresent}
-        <SlidingButton buttonText={buttonText} textSize={20} marginTop={20} paddingX={10} paddingY={5}/>
+        <SlidingButton hasFill buttonText={buttonText} textSize={20} marginTop={20} paddingX={10} paddingY={5}/>
     {/if}
 </div>
 
