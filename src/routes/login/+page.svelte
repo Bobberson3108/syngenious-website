@@ -30,33 +30,32 @@
   }
 </script>
 
-<div class="grid h-[80vh] place-items-center">
+<div class="grid h-[80vh] place-items-center text-dark dark:text-light">
   {#if isLoginForm}
     <!-- Login Form -->
     <form on:submit={handleLoginSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
             <h1 class="text-3xl font-bold mb-4">Sign in</h1>
         </div>
-        <h3 class="italic text-grey-800 mb-3">Email sign in not enabled yet</h3>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="username">
                 Username or Email
             </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username or Email" disabled />
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username or Email"/>
         </div>
         <div class="mb-6">
         <label class="block text-gray-700 font-bold mb-2" for="password">
             Password
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" disabled />
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********"/>
         </div>
         <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
             Sign In
         </button>
-        <span class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 cursor-pointer" on:click={toggleLoginForm} on:keydown={toggleLoginForm}>
+        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 cursor-pointer" on:click={toggleLoginForm}>
             Create an account
-        </span>
+        </button>
         </div>
         <div class="mt-4">
           <hr class="border-gray-400">
@@ -67,17 +66,16 @@
         </div>
     </form>
   {:else}
-        <!-- Sign-up Form -->
+    <!-- Sign-up Form -->
     <form on:submit={handleSignupSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
         <h1 class="text-3xl font-bold mb-4">Create an account</h1>
       </div>
-      <h3 class="italic text-grey-800 mb-3">Email sign in not enabled yet</h3>
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="username">
           Username
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" disabled/>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"/>
       </div>
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="email">
@@ -89,15 +87,15 @@
         <label class="block text-gray-700 font-bold mb-2" for="password">
           Password
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" disabled/>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********"/>
       </div>
       <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
           Sign Up
         </button>
-        <span class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 cursor-pointer" on:click={toggleLoginForm}>
+        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 cursor-pointer" on:click={toggleLoginForm}>
           Sign In
-        </span>
+        </button>
       </div>
       <div class="mt-4">
         <hr class="border-gray-400">

@@ -1,13 +1,43 @@
 <script lang="ts">
-    export let SignedIn = false;
+    import { page } from '$app/stores';
     import { toggleTheme } from '$lib/stores/themeStore';
+    import { signOut } from '@auth/sveltekit/client';
+
+    console.log($page.data.session);
+
+    let profileMenuOpen = false;
+
+    const toggleProfileMenu = () => {
+        profileMenuOpen = !profileMenuOpen;
+    };
+    const closeProfileMenu = () => {
+        profileMenuOpen = false;
+    };
 </script>
 
 <nav class="z-[8] fixed h-[10vh] top-0 bg-light dark:bg-dark bg-opacity-90 w-full px-6 flex justify-between items-center">
     <div id="logo" class="logo cursor-pointer bg-logoLightMode dark:bg-logoDarkMode bg-contain bg-center bg-no-repeat"></div>
     <div class="flex justify-center items-center">
-        {#if SignedIn}
+        {#if Object.keys($page.data.session || {}).length > 0}
             <a id="dashboardLink" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark">Go To Dashboard</a>
+             {#if $page.data?.session?.user?.image}
+                <div class="relative" on:blur={closeProfileMenu} >
+                    <button on:click={toggleProfileMenu} class="focus:outline-none flex items-center space-x-1 stroke-dark dark:stroke-light hover:stroke-footerlight dark:hover:text-stroke-500">
+                        <img src="{$page.data.session.user.image}" alt="Profile pic" class="rounded-full w-8 h-8 drop-shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden sm:block w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    {#if profileMenuOpen}
+                        <ul class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10 bg-footerlight dark:bg-footerDark bg-opacity-95 dark:bg-opacity-90 text-dark dark:text-light">
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Profile</span></li>
+                            <li><span class="block px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Settings</span></li>
+                            <li><hr class="mx-2 my-1 border-grey-200 dark:border-grey-600"></li>
+                            <li><button on:click={signOut} class="w-full text-left px-4 py-2 hover:bg-grey-200 dark:hover:bg-primary-800">Sign out</button></li>
+                        </ul>
+                    {/if}
+                </div>
+            {/if}
         {:else}
             <a id="joinUsNav" class="menuButton h-9 w-auto bg-dark dark:bg-light hover:bg-light dark:hover:bg-dark px-4 font-display font-medium text-light dark:text-dark hover:text-dark dark:hover:text-light ease-out duration-200 uppercase rounded-xl border-2 border-dark dark:border-light">Join us</a>
             <a id="signInNav" href="/login" class="menuButton h-9 w-auto bg-light dark:bg-dark hover:bg-dark dark:hover:bg-light px-4 font-display font-medium text-dark dark:text-light hover:text-light dark:hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark dark:border-light ml-4">Sign In</a>
