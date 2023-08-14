@@ -16,12 +16,18 @@ export default {
         'scrollArrow': 'url(/scrollArrow.png)',
         'scrollArrowLight': 'url(/scrollArrowLight.png)',
         'bigStarLight': 'url(/bigStarLight.png)',
-        'bigStar': 'url(/bigStar.png)'
+        'bigStar': 'url(/bigStar.png)',
+        'footerLogoLightMode': 'url(/footerLogoLightMode.png)'
+      },
+      boxShadow: {
+        'footerLight': 'inset 0 0 0 48px #01131D, inset 0 0 0 50px #D9DCC9'
       }
     },
     colors: {
       'light': '#D9DCC9',
+      'footerlight': '#b3b5a7',
       'dark': '#01131D',
+      'footerDark': '#011019',
       'cursor': '#D8C9AC'
     },
     fontFamily: {

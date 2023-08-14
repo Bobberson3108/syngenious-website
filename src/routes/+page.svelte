@@ -19,10 +19,12 @@
         // Attach the event listener to the 'mousemove' event to run the headerRotateAnimation
         window.addEventListener('mousemove', headerRotateAnimation);
         // call the header fading function on load, in case the scroll position of the user is lower than the top, so the effect is still in place
-        handleScroll(headerElement, 2);
+
         // run the header fading function on scroll
-        window.addEventListener('scroll', () => handleScroll(headerElement, 1));
-        window.addEventListener('scroll', () => handleScroll(introParagraphSection, 0.5));
+        window.addEventListener('scroll', () => handleScroll(headerContentWrapperElement, 0.5));
+        asteriskTop.addEventListener('mouseenter', () => hoverTester(asteriskTop));
+        asteriskBottomRight.addEventListener('mouseenter', () => hoverTester(asteriskBottomRight));
+        asteriskBottomLeft.addEventListener('mouseenter', () => hoverTester(asteriskBottomLeft));
     })
 
     // function to handle viewport change, so you always get the updated viewport width in px
@@ -76,6 +78,31 @@
     let headerElement:HTMLHeadElement;
     let introParagraphSection:HTMLElement;
     // store a desired offset in a variable. A higher offset means
+    let hoverCount:number = 0;
+    const hoverThreshold:number = 10;
+    const hoverTimeFrame:number = 1000; // 1 second in milliseconds
+    let hoverTimeout: NodeJS.Timeout;
+    function hoverTester(hoverElement: HTMLElement) {
+        clearTimeout(hoverTimeout);
+
+        hoverCount++;
+        if (hoverCount === hoverThreshold) {
+            hoverElement.style.rotate = `${Math.random() * 360}deg`;
+            hoverElement.style.transform = `translateX(${randomValue(-200,-100)}px)`;
+            alert("Slow down you're gonna break the website!!");
+            hoverElement.style.opacity = `0`;
+            hoverCount = 0; // Reset the counter
+        }
+
+        hoverTimeout = setTimeout(() => {
+            hoverCount = 0; // Reset the counter if the time frame elapses
+        }, hoverTimeFrame);
+    }
+
+
+    function randomValue(min:number, max:number) {
+      return Math.random() * (max - min) + min;
+    }
 
     // -------------------------------------------------------- HEADER (OR ANY OTHER ELEMENT) 'FADE WHEN SCROLLING OUT OF VIEW' FUNCTION -------------------------------------------------------- //
 
@@ -90,10 +117,18 @@
         targetElement.style.opacity = fadingPercentage.toString();
     }
 
-
+    // paragraphs for dropdown. Change these as you want
+    const communityParagraph:string = "At Syngenious, an exceptional community of like-minded creators thrives – bound by passion and purpose. Engage with diverse talents, share insights, and amplify creativity together. In this inspiring space, passion and hard work thrives.";
+    const projectsParagraph:string = "Syngenious is home to ground-breaking projects, where collaboration fuels innovation. Engage with ambitious creators, join forces to tackle exciting challenges, and bring amazing ideas to life. Our platform ignites the spark of collective creativity.";
+    const competitionsParagraph:string = "Syngenious thrives on spirited competitions, fueling the soul of our community. Unleash your talent, embrace friendly rivalry, and seize the chance to win enticing prizes. Join our community today and take part in our competitions.";
+    const eventsParagraph:string = "Syngenious hosts a dynamic array of events, both virtual and real-life, spanning programming, mathematics, and science. Engage in insightful discussions, network with experts, be at the forefront of innovation, and gain more knowledge.";
+    const opportunityParagraph:string = "Rooted in our core, the pursuit of growth is an unending journey. With a commitment to continuous learning and adaptability, we carve intricate pathways for personal and collective advancement. Challenges are not mere obstacles but rather crucial catalysts that propel individuals toward leadership roles within the evolving landscape of tomorrow's triumphs.";
+    const collaborationParagraph:string = "The heartbeat of our accomplishments lies in the symphony of collaboration. We have woven unity into the very fabric of our culture. Embracing the rich tapestry of diverse viewpoints ignites the sparks of innovation, propelling us beyond the boundaries of convention to achieve shared victories that resonate in the corridors of time.";
+    const opennessParagraph:string = "Transparency forms the bedrock of trust upon which we build. In the spirit of openness, we lay bare our insights, embracing differences with a foundation of mutual respect. This ecosystem of honest exchange and genuine discourse fosters an environment where authenticity and communication flourish, lighting an illuminating path to the summit of shared achievements.";
+    const creativityParagraph:string = "The essence of our identity is intricately woven with threads of boundless creativity. We hold aloft the torch of ingenuity, recognizing it as the very essence that fuels transformation. Emerging from the crucible of bold minds, novel ideas breathe life into the tapestry of innovation, and our relentless pursuit of originality becomes the chisel that shapes the world with exceptional, paradigm-shifting solutions.";
 </script>
 
-<header bind:this={headerElement} class="header relative flex justify-center items-center w-full bg-light dark:bg-dark">
+<header bind:this={headerElement} class="header z-[5] relative flex justify-center items-center w-full bg-light dark:bg-dark">
     <div bind:this={headerContentWrapperElement} class="headerContentWrapper uppercase relative block items-center min-w-0">
         <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
             <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-1000 pt-[7.5px]">✹</div>
@@ -118,7 +153,7 @@
             <div role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px] ml-[10px]">&</div>
         </div>
         <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
-            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-1000 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
+            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-dark dark:text-light transition-all ease-out duration-1000 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
             <div bind:this={headerLineThird} class="headerText select-none text-dark dark:text-light">collaborative</div>
             <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 180; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-1000 pt-[7.5px] mr-[0px]">✲</div>
         </div>
@@ -128,11 +163,11 @@
             <div class="smallHeaderText duration-300 ease-out font-mono text-[20px] ml-[10px] regularDesk:text-[20px] firstDeskBreakpoint:text-[15px] secondDeskBreakpoint:text-[15px] deskBreak:text-[10px]">Come Build One<br>With Us</div>
         </div>
     </div>
-    <div class="headerScrollPrompt ease-out duration-300 w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] h-[120px] absolute bottom-[25px] bg-scrollArrowLight dark:bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>
+    <div on:click={() => window.scrollTo({top: window.scrollY + 0.8 * window.innerHeight, behavior: 'smooth'})} role="presentation" class="headerScrollPrompt ease-out duration-300 w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] h-[120px] absolute bottom-[25px] bg-scrollArrowLight dark:bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>
 </header>
 
 
-<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection py-[150px] relative flex justify-start items-center w-[100%] min-h-[50vh]">
+<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection z-[5] py-[150px] bg-light dark:bg-dark relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
         <SlidingButton buttonText={"Join Us Today"} textSize={27.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15}/>
@@ -140,8 +175,8 @@
     </div>
 </section>
 
-<WhatWeOffer sectionTitle="What we offer" marginTop={100} buttonsArePresent/>
-<WhatWeOffer sectionTitle="Our values" marginTop={200}/>
+<WhatWeOffer sectionTitle="What we offer" marginTop={100} titleOne={"Community"} paragraphOne={communityParagraph} titleTwo={"Projects"} paragraphTwo={projectsParagraph} titleThree={"Competitions"} paragraphThree={competitionsParagraph} titleFour={"Events"} paragraphFour={eventsParagraph} buttonsArePresent/>
+<WhatWeOffer sectionTitle="Our values" marginTop={200} marginBottom={200} titleOne={"opportunity"} paragraphOne={opportunityParagraph} titleTwo={"collaboration"} paragraphTwo={collaborationParagraph} titleThree={"openness"} paragraphThree={opennessParagraph} titleFour={"creativity"} paragraphFour={creativityParagraph}/>
 
 <style lang="postcss">
     /* styling for the header */

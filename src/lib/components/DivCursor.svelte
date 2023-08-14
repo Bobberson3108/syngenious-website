@@ -17,7 +17,7 @@
     let cursorElement:HTMLDivElement;
     let mouseDownCursorScaler:number = 0.75;
     
-    function moveCursor() {
+    function moveCursor(event:MouseEvent) {
         const cursorElementWidth = cursorElement.offsetWidth;
         const cursorElementHeight = cursorElement.offsetHeight;
         cursorX = event.clientX - (cursorElementWidth/2);
