@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'logoDarkMode': 'url(/logoDarkMode.png)',
-        'logoLightMode': 'url(/logoLightMode.png)',
+        'logoDarkMode': 'url(/logoDark.svg)',
+        'logoLightMode': 'url(/logoLight.svg)',
         'globe': 'url(/globe.png)',
         'globeLight': 'url(/globeLight.png)',
         'diamond': 'url(/diamond.png)',
@@ -18,17 +18,15 @@ export default {
         'bigStarLight': 'url(/bigStarLight.png)',
         'bigStar': 'url(/bigStar.png)',
         'footerLogoLightMode': 'url(/footerLogoLightMode.png)'
-      },
-      boxShadow: {
-        'footerLight': 'inset 0 0 0 48px #01131D, inset 0 0 0 50px #D9DCC9'
       }
     },
     colors: {
       'light': '#D9DCC9',
-      'footerlight': '#b3b5a7',
+      'footerlight': '#d3d7c1',
       'dark': '#01131D',
       'footerDark': '#011019',
-      'cursor': '#D8C9AC'
+      'cursor': '#D8C9AC',
+      'footerDarkLine': '#03314a'
     },
     fontFamily: {
       display: ['Syne', 'sans-serif'],
