@@ -22,9 +22,9 @@
 
         // run the header fading function on scroll
         window.addEventListener('scroll', () => handleScroll(headerContentWrapperElement, 0.5));
-        asteriskTop.addEventListener('mouseenter', () => hoverTester(asteriskTop));
-        asteriskBottomRight.addEventListener('mouseenter', () => hoverTester(asteriskBottomRight));
-        asteriskBottomLeft.addEventListener('mouseenter', () => hoverTester(asteriskBottomLeft));
+        asteriskTop.addEventListener('mouseenter', () => hoverTester(asteriskTop, false));
+        asteriskBottomRight.addEventListener('mouseenter', () => hoverTester(asteriskBottomRight,true));
+        asteriskBottomLeft.addEventListener('mouseenter', () => hoverTester(asteriskBottomLeft, false));
     })
 
     // function to handle viewport change, so you always get the updated viewport width in px
@@ -82,13 +82,19 @@
     const hoverThreshold:number = 10;
     const hoverTimeFrame:number = 1000; // 1 second in milliseconds
     let hoverTimeout: NodeJS.Timeout;
-    function hoverTester(hoverElement: HTMLElement) {
+    function hoverTester(hoverElement: HTMLElement, direction: boolean) {
         clearTimeout(hoverTimeout);
 
         hoverCount++;
-        if (hoverCount === hoverThreshold) {
+        if (hoverCount === hoverThreshold && direction === true) {
             hoverElement.style.rotate = `${Math.random() * 360}deg`;
-            hoverElement.style.transform = `translateX(${randomValue(-200,-100)}px)`;
+            hoverElement.style.translate = `${randomValue(200,100)}px`
+            alert("Slow down you're gonna break the website!!");
+            hoverElement.style.opacity = `0`;
+            hoverCount = 0; // Reset the counter
+        } else if (hoverCount === hoverThreshold && direction === false){
+            hoverElement.style.rotate = `${Math.random() * 360}deg`;
+            hoverElement.style.translate = `${randomValue(-200,-100)}px`
             alert("Slow down you're gonna break the website!!");
             hoverElement.style.opacity = `0`;
             hoverCount = 0; // Reset the counter
