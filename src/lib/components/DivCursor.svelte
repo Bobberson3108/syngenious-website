@@ -1,5 +1,29 @@
 <script lang="ts">
+	import { cursorState } from "$lib/stores/cursorStore";
     import { onMount } from "svelte";
+
+    const normalStyle = {
+        height: `10px`,
+        width: `10px`
+    }
+
+    const inputTextStyle = {
+        height: `30px`,
+        width: `3px`
+    }
+
+    const unsubscribe = cursorState.subscribe((state) => {
+        switch(state){
+            case "normal":
+                Object.assign(cursorElement.style, normalStyle)
+                break;
+            case "inputText":
+                Object.assign(cursorElement.style, inputTextStyle)
+        }
+    })
+
+    let textInputElements = [];
+
 
     onMount(() => {
         window.addEventListener('mousemove', moveCursor);
@@ -10,6 +34,12 @@
         window.addEventListener('mouseup', () => {
             cursorElement.style.transform = `scale(1)`;
         })
+
+
+
+        
+        
+         
     })
     
     let cursorX:number;
