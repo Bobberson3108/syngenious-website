@@ -2,6 +2,11 @@
 	import { cursorState } from "$lib/stores/cursorStore";
     import { onMount } from "svelte";
 
+    let cursorX:number;
+    let cursorY:number;
+    let cursorElement:HTMLDivElement;
+    let mouseDownCursorScaler:number = 0.75;
+
     const normalStyle = {
         height: `10px`,
         width: `10px`
@@ -13,6 +18,7 @@
     }
 
     const unsubscribe = cursorState.subscribe((state) => {
+        if (cursorElement == undefined) return;
         switch(state){
             case "normal":
                 Object.assign(cursorElement.style, normalStyle)
@@ -42,11 +48,6 @@
          
     })
     
-    let cursorX:number;
-    let cursorY:number;
-    let cursorElement:HTMLDivElement;
-    let mouseDownCursorScaler:number = 0.75;
-    
     function moveCursor(event:MouseEvent) {
         const cursorElementWidth = cursorElement.offsetWidth;
         const cursorElementHeight = cursorElement.offsetHeight;
@@ -61,7 +62,3 @@
 <div class="divCursorWrapper pointer-events-none w-full h-[100vh] flex justify-center items-center fixed z-[9]">
     <div bind:this={cursorElement} class="divCursor absolute w-[10px] h-[10px] rounded-full  backdrop-invert"></div>
 </div>
-
-<style lang="postcss">
-
-</style>
