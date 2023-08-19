@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@next/font": "^13.4.12"
+		"@next/font": "^13.4.12",
+		"mongodb": "^5.7.0"
 	}
 }
