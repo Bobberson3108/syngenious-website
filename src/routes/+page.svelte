@@ -3,8 +3,6 @@
 	import SlidingButton from "$lib/components/reusable/buttons/SlidingButton.svelte";
 	import WhatWeOffer from "$lib/components/reusable/WhatWeOffer.svelte";
 
-   
-
     // declare variables for the percentage of mouse position and the viewport width
     let mouseXPercentage:number;
     let viewportWidth:number;
