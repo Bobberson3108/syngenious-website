@@ -21,6 +21,7 @@ export const POST = async ({ request, params }) => {
     /* parameters:
     - author
     - content
+    - title
     - subject */
     const id = params.post_id;
     const comments = await getCollection("comments");
@@ -34,6 +35,7 @@ export const POST = async ({ request, params }) => {
     const response = {
         "id" : result.insertedId,
         "post_id" : id,
+        "title": data.title,
         "content" : data.content,
         "time" : timestamp
     }

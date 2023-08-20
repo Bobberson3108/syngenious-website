@@ -36,3 +36,26 @@ export const GET = async ({ url }) => {
 
     return new Response(JSON.stringify(postsArr));
 }
+
+export const POST = async ({ request, locals }) => {
+    console.log(request, locals)
+    /* parameters:
+    - author
+    - content
+    - subject */
+    const posts = await getCollection("posts");
+
+    const data = await request.json();
+
+    const timestamp = new Date();
+
+    const result = await posts.insertOne(Object.assign(data, {"time" : timestamp}))
+
+    const response = {
+        "id" : result.insertedId,
+        "content" : data.content,
+        "time" : timestamp
+    }
+
+    return new Response(JSON.stringify(response));
+};
