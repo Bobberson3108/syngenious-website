@@ -1,4 +1,4 @@
-import { dbConnect } from "$lib/db";
+import { getCollection } from "$lib/db";
 
 export const GET = async ({ url }) => {
     /* get posts according to specified filters:
@@ -8,7 +8,7 @@ export const GET = async ({ url }) => {
     - subject
     - max_posts */
 
-    const posts = dbConnect("posts")
+    const posts = await getCollection("posts")
 
     const author = url.searchParams.get("author");
     const subject = url.searchParams.get("subject");
