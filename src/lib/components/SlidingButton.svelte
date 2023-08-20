@@ -1,4 +1,6 @@
 <script lang="ts">
+    export let onClickFunction: MouseEventHandler<HTMLButtonElement>;
+
     // store the requred values of the button in variables
     export let buttonText: string;
     export let hasFill:Boolean = false;
@@ -10,7 +12,7 @@
     export let borderRadius: number = 10;
     export let marginRight: number = 15;
     // declare varaible storing the button element
-    let buttonTextElement: HTMLDivElement;
+    let buttonTextElement: HTMLButtonElement;
     // define the styles using the variables
     const buttonStyles = {
         fontSize: `${textSize}px`,
@@ -38,13 +40,13 @@
 
 
 {#if hasFill}
-    <div bind:this={buttonTextElement} class="group overflow-hidden relative uppercase w-[auto] px-[15px] h-[auto] bg-dark dark:bg-light py-[10px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] text-light dark:text-dark hover:text-dark dark:hover:text-light">
+    <button on:click={onClickFunction} bind:this={buttonTextElement} class="group overflow-hidden relative uppercase w-[auto] px-[15px] h-[auto] bg-dark dark:bg-light py-[10px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] text-light dark:text-dark hover:text-dark dark:hover:text-light">
         <div id="buttonText" class="buttonText z-[2] font-display font-medium">{buttonText}</div>
         <div class="introButtonHover group-hover:top-0 z-[0] ease-out duration-[200ms] absolute w-full h-full bg-light dark:bg-dark top-[100%]"></div>
-    </div>
+    </button>
 {:else}
-    <div bind:this={buttonTextElement} class="group overflow-hidden relative uppercase w-[auto] px-[15px] h-[auto] py-[10px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
+    <button bind:this={buttonTextElement} class="group overflow-hidden relative uppercase w-[auto] px-[15px] h-[auto] py-[10px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] text-dark dark:text-light hover:text-light dark:hover:text-dark">
         <div id="buttonText" class="buttonText z-2 font-display font-medium">{buttonText}</div>
         <div class="introButtonHover group-hover:top-0 z-[-1] ease-out duration-[200ms] absolute w-full h-full bg-dark dark:bg-light top-[100%]"></div>
-    </div>
+    </button>
 {/if}
