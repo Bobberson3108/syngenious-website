@@ -1,6 +1,5 @@
 <script>
-	import CopyRightBar from "./CopyRightBar.svelte";
-    import FooterButton from "./FooterButton.svelte";
+    import FooterButton from "../reusable/buttons/FooterButton.svelte";
     let SignedIn = true;
 </script>
 <div class="footerDummy relative w-[full] dark:border-footerDarkLine border-t-[0.5px] h-[50vh] z-[2] pointer-events-none">

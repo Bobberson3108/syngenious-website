@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SlidingButton from "./SlidingButton.svelte";
+	import SlidingButton from "./buttons/SlidingButton.svelte";
 
     export let title:string;
     export let paragraph:string;

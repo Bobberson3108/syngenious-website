@@ -2,7 +2,7 @@
     import { page } from '$app/stores';
     import { toggleTheme } from '$lib/stores/themeStore';
     import { signOut } from '@auth/sveltekit/client';
-    import SlidingButton from './SlidingButton.svelte';
+    import SlidingButton from '../reusable/buttons/SlidingButton.svelte';
     import { signIn } from "@auth/sveltekit/client";
 
     console.log($page.data.session);
@@ -42,8 +42,8 @@
                 </div>
             {/if}
         {:else}
-            <a id="joinUsNav" class="menuButton h-9 w-auto bg-dark dark:bg-light hover:bg-light dark:hover:bg-dark px-4 font-display font-medium text-light dark:text-dark hover:text-dark dark:hover:text-light ease-out duration-200 uppercase rounded-xl border-2 border-dark dark:border-light">Join us</a>
-            <button id="signInNav" class="menuButton h-9 w-auto bg-light dark:bg-dark hover:bg-dark dark:hover:bg-light px-4 font-display font-medium text-dark dark:text-light hover:text-light dark:hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark dark:border-light ml-4" on:click={signIn}>Sign In</button>
+            <SlidingButton buttonText={"Join Us"} buttonType={"button"} onClickFunction={signIn} hasFill textSize={20} paddingX={15} paddingY={2.5} marginTop={0}/>
+            <SlidingButton buttonText={"Log In"} buttonType={"button"} onClickFunction={signIn} textSize={20} paddingX={15} paddingY={2.5} marginTop={0} marginRight={0}/>
         {/if}
         <button id="darkModeButton" class="menuButton text-[20px] flex justify-center items-center h-9 w-9 bg-dark px-0 font-display font-medium text-light  ease-out duration-200 uppercase rounded-xl border-2 border-light ml-4 cursor-none" on:click={toggleTheme}>
             <svg class="fill-light h-[25px]" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">

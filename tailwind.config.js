@@ -46,7 +46,8 @@ export default {
       'regularDesk': '1500px',
       'firstDeskBreakpoint': '1450px',
       'secondDeskBreakpoint': '1100px',
-      'deskBreak': '500px'
+      'deskBreak': '650px',
+      'mobile': '300px'
     }
   },
   plugins: []

@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import DropDown from "$lib/components/DropDown.svelte";
-	import SlidingButton from "$lib/components/SlidingButton.svelte";
-	import WhatWeOffer from "$lib/components/WhatWeOffer.svelte";
+    import DropDown from "$lib/components/reusable/DropDown.svelte";
+	import SlidingButton from "$lib/components/reusable/buttons/SlidingButton.svelte";
+	import WhatWeOffer from "$lib/components/reusable/WhatWeOffer.svelte";
 
    
 
@@ -136,10 +136,10 @@
 
 <header bind:this={headerElement} class="header z-[5] relative flex justify-center items-center w-full bg-light dark:bg-dark">
     <div bind:this={headerContentWrapperElement} class="headerContentWrapper uppercase relative block items-center min-w-0">
-        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
-            <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix select-none text-dark ease-out duration-1000 pt-[7.5px]">✹</div>
+        <div class="headerLine relative w-full flex regularDesk:justify-between deskBreak:justify-between mobile:justify-start items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] mobile:text-[10vw] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px] mobile:mt-[-4vw]">
+            <div bind:this={asteriskTop} on:mouseenter={() => {angleTop += 180; asteriskTop.style.transform = `rotateZ(${angleTop}deg)`;}} role="presentation" class="headerAsterix regularDesk:flex deskBreak:flex mobile:hidden select-none text-dark ease-out duration-1000 pt-[7.5px]">✹</div>
             <div  bind:this={headerLineTop} class="headerText select-none text-dark dark:text-light">Innovators</div>
-            <div class="globeWrapper h-[80px] regularDesk:h-[80px] firstDeskBreakpoint:h-[65px] secondDeskBreakpoint:h-[65px] deskBreak:h-[45px] regularDesk:w-[250px] secondDeskBreakpoint:w-[250px] deskBreak:w-[130px] w-[250px] border-2 border-dark dark:border-light rounded-full flex justify-start items-center overflow-hidden">
+            <div class="globeWrapper h-[80px] regularDesk:h-[80px] firstDeskBreakpoint:h-[65px] secondDeskBreakpoint:h-[65px] deskBreak:h-[45px] regularDesk:w-[250px] secondDeskBreakpoint:w-[250px] deskBreak:w-[130px] w-[250px] border-2 border-dark dark:border-light rounded-full regularDesk:flex deskBreak:flex mobile:hidden justify-start items-center overflow-hidden">
                 <div class="globe relative bg-globeLight dark:bg-globe h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
                 <div class="globe relative bg-globeLight dark:bg-globe h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
                 <div class="globe relative bg-globeLight dark:bg-globe h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
@@ -147,8 +147,8 @@
                 <div class="globe relative bg-globeLight dark:bg-globe h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] w-[65px] bg-contain bg-center bg-no-repeat rounded-full ml-[5.5px] mr-[3.5px]"></div>
             </div>
         </div>
-        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] max-w-[100%] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
-            <div class="diamondWrapper regularDesk:h-[80px] firstDeskBreakpoint:h-[65px] secondDeskBreakpoint:h-[65px] deskBreak:h-[45px] regularDesk:w-[200px] secondDeskBreakpoint:w-[170px] deskBreak:w-[100px] h-[80px]  w-[167px] border-[2px] mr-[10px] border-dark dark:border-light rounded-full flex justify-end items-center overflow-hidden">
+        <div class="headerLine relative w-full flex regularDesk:justify-between deskBreak:justify-between mobile:justify-center items-center font-display font-medium text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] mobile:text-[10vw] max-w-[100%] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px] mobile:mt-[-4vw]">
+            <div class="diamondWrapper regularDesk:h-[80px] firstDeskBreakpoint:h-[65px] secondDeskBreakpoint:h-[65px] deskBreak:h-[45px] regularDesk:w-[200px] secondDeskBreakpoint:w-[170px] deskBreak:w-[100px] h-[80px]  w-[167px] border-[2px] mr-[10px] border-dark dark:border-light rounded-full regularDesk:flex deskBreak:flex mobile:hidden justify-end items-center overflow-hidden">
                 <div class="diamond relative bg-diamondLight dark:bg-diamond h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] w-[65px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] bg-contain bg-center bg-no-repeat ml-[5.5px] mr-[3.5px]"></div>
                 <div class="diamond relative bg-diamondLight dark:bg-diamond h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] w-[65px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] bg-contain bg-center bg-no-repeat ml-[5.5px] mr-[3.5px]"></div>
                 <div class="diamond relative bg-diamondLight dark:bg-diamond h-[65px] regularDesk:h-[65px] firstDeskBreakpoint:h-[55px] secondDeskBreakpoint:h-[55px] deskBreak:h-[35px] w-[65px] regularDesk:w-[65px] firstDeskBreakpoint:w-[55px] secondDeskBreakpoint:w-[55px] deskBreak:w-[35px] bg-contain bg-center bg-no-repeat ml-[5.5px] mr-[3.5px]"></div>
@@ -158,25 +158,25 @@
             <div class="headerText select-none text-dark dark:text-light">need a social</div>
             <div role="presentation" class="headerAsterix select-none text-dark ease-out duration-500 pt-[7.5px] ml-[10px]">&</div>
         </div>
-        <div class="headerLine relative w-full flex justify-between items-center font-display font-medium text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
-            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-dark dark:text-light transition-all ease-out duration-1000 pt-[7.5px] ml-[-10px] mr-[5px]">✺</div>
+        <div class="headerLine relative w-full flex regularDesk:justify-between deskBreak:justify-between mobile:justify-center items-center font-display font-medium text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] mobile:text-[10vw] max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px] mobile:mt-[-4vw]">
+            <div bind:this={asteriskBottomLeft} on:mouseenter={() => {angleBottomLeft += 180; asteriskBottomLeft.style.transform = `rotateZ(${angleBottomLeft}deg)`;}} role="presentation" class="select-none text-dark dark:text-light transition-all ease-out duration-1000 pt-[7.5px] ml-[-10px] mr-[5px] regularDesk:flex deskBreak:flex mobile:hidden">✺</div>
             <div bind:this={headerLineThird} class="headerText select-none text-dark dark:text-light">collaborative</div>
-            <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 180; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-1000 pt-[7.5px] mr-[0px]">✲</div>
+            <div bind:this={asteriskBottomRight} on:mouseenter={() => {angleBottomRight += 180; asteriskBottomRight.style.transform = `rotateZ(${angleBottomRight}deg)`;}} role="presentation" class="select-none text-dark dark:text-light ease-out duration-1000 pt-[7.5px] mr-[0px] regularDesk:flex deskBreak:flex mobile:hidden">✲</div>
         </div>
-        <div class="headerLine relative w-full flex justify-center items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem]  max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px]">
-            <div role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[20px] regularDesk:mr-[20px] firstDeskBreakpoint:mr-[15px] secondDeskBreakpoint:mr-[15px] deskBreak:mr-[7.5px] w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] h-[80px] regularDesk:h-[80px] secondDeskBreakpoint:h-[80px] deskBreak:h-[50px] bg-starLight dark:bg-star bg-center bg-contain bg-no-repeat"></div>
-            <div class="headerText select-none text-dark dark:text-light">space</div>
-            <div class="smallHeaderText duration-300 ease-out font-mono text-[20px] ml-[10px] regularDesk:text-[20px] firstDeskBreakpoint:text-[15px] secondDeskBreakpoint:text-[15px] deskBreak:text-[10px]">Come Build One<br>With Us</div>
+        <div class="headerLine relative w-full flex regularDesk:justify-center deskBreak:justify-center mobile:justify-end items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] mobile:text-[10vw]  max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px] mobile:mt-[-4vw]">
+            <div role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] ml-[-10px] mr-[20px] regularDesk:mr-[20px] firstDeskBreakpoint:mr-[15px] secondDeskBreakpoint:mr-[15px] deskBreak:mr-[7.5px] mobile:mr-[3vw] w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] mobile:w-[7.5vw] h-[80px] regularDesk:h-[80px] secondDeskBreakpoint:h-[80px] deskBreak:h-[50px] mobile:h-[7.5vw] bg-starLight dark:bg-star bg-center bg-contain bg-no-repeat"></div>
+            <div class="headerText select-none text-dark dark:text-light regularDesk:mr-[0] deskBreak:mr-[0] mobile:mr-[2vw]">space</div>
+            <div class="smallHeaderText duration-300 ease-out font-mono text-[20px] ml-[0px] mr-[0px] regularDesk:ml-[10px] deskBreak:ml-[10px] mobile:ml-[0px] regularDesk:text-[20px] firstDeskBreakpoint:text-[15px] secondDeskBreakpoint:text-[15px] deskBreak:text-[10px] mobile:text-[2vw]">Come Build One<br>With Us</div>
         </div>
     </div>
-    <div on:click={() => window.scrollTo({top: window.scrollY + 0.8 * window.innerHeight, behavior: 'smooth'})} role="presentation" class="headerScrollPrompt ease-out duration-300 w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] h-[120px] absolute bottom-[25px] bg-scrollArrowLight dark:bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>
+    <div on:click={() => window.scrollTo({top: window.scrollY + 0.8 * window.innerHeight, behavior: 'smooth'})} role="presentation" class="headerScrollPrompt ease-out duration-300 w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] mobile:w-[10vw] h-[120px] absolute regularDesk:bottom-[25px] deskBreak:botom-[25px] mobile:bottom-[-1vh] bg-scrollArrowLight dark:bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>
 </header>
 
 
 <section bind:this={introParagraphSection} role="presentation" class="introParagraphSection z-[5] py-[150px] bg-light dark:bg-dark relative flex justify-start items-center w-[100%] min-h-[50vh]">
     <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
-        <SlidingButton buttonText={"Join Us Today"} textSize={27.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15}/>
+        <SlidingButton buttonText={"Join Us Today"} textSize={27.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15} hasFill/>
         <div class="bigStarIntro bg-bigStarLight dark:bg-bigStar bg-center bg-contain bg-no-repeat absolute regularDesk:h-[500px] firstDeskBreakpoint:h-[400px] secondDeskBreakpoint:h-[350px] deskBreak:h-[350px] h-[350px] regularDesk:w-[500px] firstDeskBreakpoint:w-[400px] secondDeskBreakpoint:w-[350px] deskBreak:w-[350px] w-[350px] right-[-175px] mt-[-50px]"></div>
     </div>
 </section>
@@ -199,7 +199,7 @@
         transition: 0.25s ease-out;
     }
     .headerAsterix{
-        text-shadow: 2px 0px 0px #D9DCC9, -2px 0px 0px #D9DCC9, 0px -2px 0px #D9DCC9, 0px 2px 0px #D9DCC9, 1px 1px 0px #D9DCC9, -1px 1px 0px #D9DCC9, 1px -1px 0px #D9DCC9, -1px -1px 0px #D9DCC9;
+        text-shadow: 1px 0px 0px #D9DCC9, -1px 0px 0px #D9DCC9, 0px -1px 0px #D9DCC9, 0px 1px 0px #D9DCC9, 1px 1px 0px #D9DCC9, -1px 1px 0px #D9DCC9, 1px -1px 0px #D9DCC9, -1px -1px 0px #D9DCC9;
     }
     .globe{
         flex: 0 0 auto; /* this stops the globes from shrinking when there are too many in the parent div */
