@@ -4,7 +4,7 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import Discord from '@auth/core/providers/discord';
 import EmailProvider from '@auth/core/providers/email';
 
-import { DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET, GITHUB_ID, GITHUB_SECRET, SPOTIFY_ID, SPOTIFY_SECRET, EMAIL_SERVER, EMAIL_FROM} from '$env/static/private';
+import { DISCORD_ID, DISCORD_SECRET, EMAIL_SERVER, EMAIL_FROM} from '$env/static/private';
 
 export const handle = SvelteKitAuth({
     providers: [
@@ -13,8 +13,8 @@ export const handle = SvelteKitAuth({
             from: EMAIL_FROM,
         }),
         Discord({
-            clientId: DISCORD_CLIENT_ID,
-            clientSecret: DISCORD_CLIENT_SECRET,
+            clientId: DISCORD_ID,
+            clientSecret: DISCORD_SECRET,
         }),
     ],
     adapter: MongoDBAdapter(clientPromise, {
