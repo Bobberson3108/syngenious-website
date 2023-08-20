@@ -1,4 +1,8 @@
 <script lang="ts">
+    // Use onMount to access and modify the element's style after it's bound
+    import { onMount } from 'svelte';
+	import type { MouseEventHandler } from 'svelte/elements';
+
     export let onClickFunction: MouseEventHandler<HTMLButtonElement>;
 
     // store the requred values of the button in variables
@@ -24,9 +28,6 @@
         borderRadius: `${borderRadius}px`,
         marginRight: `${marginRight}px`
     }
-
-    // Use onMount to access and modify the element's style after it's bound
-    import { onMount } from 'svelte';
 
     onMount(() => {
         // Make sure buttonTextElement is defined before accessing its style property
