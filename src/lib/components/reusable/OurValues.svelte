@@ -42,10 +42,15 @@
                 <DropDown title={titleOne} buttonText={"Join the community"} paragraph={paragraphOne} buttonsPresent={buttonsArePresent}/>
                 <DropDown title={titleTwo} buttonText={"Create A Project"} paragraph={paragraphTwo} buttonsPresent={buttonsArePresent}/>
             </div>
-            <div class="valueDropDownWrapperContainer flex regularDesk:flex-row secondDeskBreakpoint:flex-row deskBreak:flex-col mobile:flex-col justify-between items-start w-[auto] h-[auto]">
+            <div class="valueDropDownWrapperContainer regularDesk:mb-[20px] secondDeskBreakpoint:mb-[20px] deskBreak:mb-[0px] mobile:mb-[0] flex regularDesk:flex-row secondDeskBreakpoint:flex-row deskBreak:flex-col mobile:flex-col justify-between items-start w-[auto] h-[auto]">
                 <!--DropDowns------------------------------------------------------------------------------------------------->
                 <DropDown title={titleThree} buttonText={"see competitions"} paragraph={paragraphThree} buttonsPresent={buttonsArePresent}/>
                 <DropDown title={titleFour} buttonText={"see latest events"} paragraph={paragraphFour} buttonsPresent={buttonsArePresent}/>
+                
+            </div>
+            <div class="valueDropDownWrapperContainer flex regularDesk:flex-row secondDeskBreakpoint:flex-row deskBreak:flex-col mobile:flex-col justify-between items-start w-[auto] h-[auto]">
+                <!--DropDowns------------------------------------------------------------------------------------------------->
+                <DropDown title={"Title here"} buttonText={"see latest events"} paragraph={"paragraph"} buttonsPresent={buttonsArePresent}/>
             </div>
         </div>
         

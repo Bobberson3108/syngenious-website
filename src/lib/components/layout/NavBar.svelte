@@ -4,8 +4,17 @@
     import { signOut } from '@auth/sveltekit/client';
     import SlidingButton from '../reusable/buttons/SlidingButton.svelte';
     import { signIn } from "@auth/sveltekit/client";
+	import { onMount } from 'svelte';
+	import type { NumericType } from 'mongodb';
 
     console.log($page.data.session);
+    let windowWidth:number;
+    onMount(() => {
+        windowWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            windowWidth = window.innerWidth;
+        })
+    })
 
     let profileMenuOpen = false;
 
@@ -19,7 +28,7 @@
 </script>
 
 <nav class="z-[8] fixed h-[10vh] top-0 bg-light dark:bg-dark bg-opacity-90 w-full px-6 flex justify-between items-center">
-    <div id="logo" class="logo cursor-pointer h-[50px] w-[200px] bg-logoLightMode dark:bg-logoDarkMode bg-contain bg-center bg-no-repeat"></div>
+    <div id="logo" class="logo cursor-pointer h-[50px] deskBreak:w-[200px] mobile:w-[150px] bg-logoLightMode dark:bg-logoDarkMode bg-contain bg-center bg-no-repeat"></div>
     <div class="flex justify-center items-center">
         {#if Object.keys($page.data.session || {}).length > 0}
             <a id="dashboardLink" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark">Forum</a>
@@ -43,8 +52,12 @@
                 </div>
             {/if}
         {:else}
-            <SlidingButton buttonText={"Join Us"} buttonType={"button"} onClickFunction={signIn} hasFill textSize={20} paddingX={15} paddingY={2.5} marginTop={0}/>
-            <SlidingButton buttonText={"Log In"} buttonType={"button"} onClickFunction={signIn} textSize={20} paddingX={15} paddingY={2.5} marginTop={0} marginRight={0}/>
+            {#if windowWidth >= 650}
+                <SlidingButton buttonText={"Join Us"} buttonType={"button"} onClickFunction={signIn} hasFill textSize={20} paddingX={15} paddingY={2.5} marginTop={0}/>
+                <SlidingButton buttonText={"Log In"} buttonType={"button"} onClickFunction={signIn} textSize={20} paddingX={15} paddingY={2.5} marginTop={0} marginRight={0}/>
+            {:else}
+                <SlidingButton buttonText={"Sign In"} buttonType={"button"} onClickFunction={signIn} textSize={12.5} paddingX={10} paddingY={5} marginTop={0} marginRight={0}/>
+            {/if}
         {/if}
         <button id="darkModeButton" class="menuButton text-[20px] flex justify-center items-center h-9 w-9 bg-dark px-0 font-display font-medium text-light  ease-out duration-200 uppercase rounded-xl border-2 border-light ml-4 cursor-none" on:click={toggleTheme}>
             <svg class="fill-light h-[25px]" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">

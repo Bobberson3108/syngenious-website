@@ -42,12 +42,12 @@
 {#if buttonType === "button"}
     <button on:click={onClickFunction} bind:this={buttonTextElement} class="{hasFill ? 'bg-dark dark:bg-light text-light hover:text-dark dark:text-dark dark:hover:text-light' : 'text-dark hover:text-light dark:text-light dark:hover:text-dark'} group overflow-hidden relative uppercase w-[auto] px-[15px] h-[auto] py-[10px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] ">
         <div id="buttonText" class="buttonText z-[2] font-display font-medium">{buttonText}</div>
-        <div class="introButtonHover group-hover:top-0 z-[0] ease-out duration-[200ms] absolute w-full h-full {hasFill ? 'bg-light dark:bg-dark' : 'bg-dark dark:bg-light'} bg-light dark:bg-dark top-[100%]"></div>
+        <div class="introButtonHover group-hover:top-0 z-[0] ease-out duration-[200ms] absolute w-full h-full {hasFill ? 'bg-light dark:bg-dark' : 'bg-dark dark:bg-light'}  top-[100%]"></div>
     </button>
 {:else}
     <a href={href} bind:this={buttonTextElement} class="{hasFill ? 'bg-dark dark:bg-light text-light hover:text-dark dark:text-dark dark:hover:text-light' : 'text-dark hover:text-light dark:text-light dark:hover:text-dark'} group overflow-hidden relative uppercase w-[auto] px-[15px] h-[auto] py-[10px] border-2 border-dark dark:border-light flex justify-center items-center rounded-[10px] ">
         <div id="buttonText" class="buttonText z-[2] font-display font-medium">{buttonText}</div>
-        <div class="introButtonHover group-hover:top-0 z-[0] ease-out duration-[200ms] absolute w-full h-full {hasFill ? 'bg-light dark:bg-dark' : 'bg-dark dark:bg-light'} bg-light dark:bg-dark top-[100%]"></div>
+        <div class="introButtonHover group-hover:top-0 z-[0] ease-out duration-[200ms] absolute w-full h-full {hasFill ? 'bg-light dark:bg-dark' : 'bg-dark dark:bg-light'}  top-[100%]"></div>
     </a>
 {/if}
     

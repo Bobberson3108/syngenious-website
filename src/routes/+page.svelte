@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
 	import SlidingButton from "$lib/components/reusable/buttons/SlidingButton.svelte";
 	import WhatWeOffer from "$lib/components/reusable/WhatWeOffer.svelte";
+	import OurValues from "$lib/components/reusable/OurValues.svelte";
 
     // declare variables for the percentage of mouse position and the viewport width
     let mouseXPercentage:number;
@@ -170,16 +171,16 @@
 </header>
 
 
-<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection z-[5] py-[150px] bg-light dark:bg-dark relative flex justify-start items-center w-[100%] min-h-[50vh]">
-    <div class="introParWrapper relative ml-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] mobile:max-w-full h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] mobile:text-[] text-[40px] leading-[1] font-medium text-dark dark:text-light">
+<section bind:this={introParagraphSection} role="presentation" class="introParagraphSection overflow-hidden z-[5] py-[150px] bg-light dark:bg-dark relative flex justify-start items-center w-[100%] min-h-[50vh]">
+    <div class="introParWrapper relative px-[50px] w-full max-w-[750px] regularDesk:max-w-[1116px] firstDeskBreakpoint:max-w-[850px] secondDeskBreakpoint:max-w-[850px] deskBreak:max-w-[750px] mobile:max-w-full h-auto flex flex-col justify-center items-start font-display regularDesk:text-[58px] firstDeskBreakpoint:text-[45px] secondDeskBreakpoint:text-[45px] deskBreak:text-[40px] mobile:text-[6vw] text-[40px] leading-[1] font-medium text-dark dark:text-light">
         <h1 class="ease-out duration-300">Syngenious is an online space for young innovators to explore their passions, collaborate on ground-breaking projects, and connect with like-minded peers.</h1>
-        <SlidingButton buttonText={"Join Us Today"} textSize={27.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15} hasFill/>
+        <SlidingButton buttonText={"Join Us Today"} textSize={22.5} marginTop={25} paddingX={25} paddingY={10} borderRadius={15} hasFill/>
         <div class="bigStarIntro bg-bigStarLight dark:bg-bigStar bg-center bg-contain bg-no-repeat absolute regularDesk:h-[500px] firstDeskBreakpoint:h-[400px] secondDeskBreakpoint:h-[350px] deskBreak:h-[350px] h-[350px] regularDesk:w-[500px] firstDeskBreakpoint:w-[400px] secondDeskBreakpoint:w-[350px] deskBreak:w-[350px] w-[350px] right-[-175px] mt-[-50px]"></div>
     </div>
 </section>
 
 <WhatWeOffer sectionTitle="What we offer" marginTop={100} titleOne={"Community"} paragraphOne={communityParagraph} titleTwo={"Projects"} paragraphTwo={projectsParagraph} titleThree={"Competitions"} paragraphThree={competitionsParagraph} titleFour={"Events"} paragraphFour={eventsParagraph} buttonsArePresent/>
-<WhatWeOffer sectionTitle="Our values" marginTop={200} marginBottom={200} titleOne={"opportunity"} paragraphOne={opportunityParagraph} titleTwo={"collaboration"} paragraphTwo={collaborationParagraph} titleThree={"openness"} paragraphThree={opennessParagraph} titleFour={"creativity"} paragraphFour={creativityParagraph}/>
+<OurValues sectionTitle="Our values" marginTop={200} marginBottom={200} titleOne={"opportunity"} paragraphOne={opportunityParagraph} titleTwo={"collaboration"} paragraphTwo={collaborationParagraph} titleThree={"openness"} paragraphThree={opennessParagraph} titleFour={"creativity"} paragraphFour={creativityParagraph}/>
 
 <style lang="postcss">
     /* styling for the header */
