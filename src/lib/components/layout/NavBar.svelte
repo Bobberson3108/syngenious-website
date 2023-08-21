@@ -22,7 +22,7 @@
     <div id="logo" class="logo cursor-pointer h-[50px] w-[200px] bg-logoLightMode dark:bg-logoDarkMode bg-contain bg-center bg-no-repeat"></div>
     <div class="flex justify-center items-center">
         {#if Object.keys($page.data.session || {}).length > 0}
-            <a id="dashboardLink" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark">Forum</a>
+            <a href="/forum" id="dashboardLink" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark">Forum</a>
             <a id="dashboardLink" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark">Dashboard</a>
              {#if $page.data?.session?.user?.image}
                 <div class="relative" on:blur={closeProfileMenu} >
