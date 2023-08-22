@@ -80,6 +80,24 @@
     const hoverThreshold:number = 10;
     const hoverTimeFrame:number = 1000; // 1 second in milliseconds
     let hoverTimeout: NodeJS.Timeout;
+    let comeBuildInnerHTML: string = 'Come Build One<br>With Us';
+
+    let hoverUpdateCount = 0;
+    function updateComeBuildInnerHTML() {
+        switch (hoverUpdateCount) {
+            case 0:
+                comeBuildInnerHTML = "Slow down you're<br>gonna break the<br>website";
+                break;
+            case 1:
+                comeBuildInnerHTML = 'Seriously, stop<br>hovering over<br>the asterisks';
+                break;
+            case 2:
+                comeBuildInnerHTML = 'What did I just<br>say?';
+                break;
+        }
+        hoverUpdateCount++;
+    }
+
     function hoverTester(hoverElement: HTMLElement, direction: boolean) {
         clearTimeout(hoverTimeout);
 
@@ -87,13 +105,13 @@
         if (hoverCount === hoverThreshold && direction === true) {
             hoverElement.style.rotate = `${Math.random() * 360}deg`;
             hoverElement.style.translate = `${randomValue(200,100)}px`
-            alert("Slow down you're gonna break the website!!");
+            updateComeBuildInnerHTML();
             hoverElement.style.opacity = `0`;
             hoverCount = 0; // Reset the counter
         } else if (hoverCount === hoverThreshold && direction === false){
             hoverElement.style.rotate = `${Math.random() * 360}deg`;
             hoverElement.style.translate = `${randomValue(-200,-100)}px`
-            alert("Slow down you're gonna break the website!!");
+            updateComeBuildInnerHTML();
             hoverElement.style.opacity = `0`;
             hoverCount = 0; // Reset the counter
         }
@@ -164,7 +182,10 @@
         <div class="headerLine relative w-full flex regularDesk:justify-center deskBreak:justify-center mobile:justify-start items-center font-display font-medium text-dark dark:text-light text-header regularDesk:text-header firstDeskBreakpoint:text-[6rem] secondDeskBreakpoint:text-[6rem] deskBreak:text-[4rem] mobile:text-[10vw]  max-w-[100%] min-w-[50px] mt-[-80px] regularDesk:mt-[-80px] firstDeskBreakpoint:mt-[-70px] secondDeskBreakpoint:mt-[-70px] deskBreak:mt-[-40px] mobile:mt-[-4vw]">
             <div role="presentation" class="select-none text-light ease-out duration-500 pt-[7.5px] regularDesk:ml-[-10px] deskBreak:ml-[-10px] mobile:ml-0 mr-[20px] regularDesk:mr-[20px] firstDeskBreakpoint:mr-[15px] secondDeskBreakpoint:mr-[15px] deskBreak:mr-[7.5px] mobile:mr-[3vw] w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] mobile:w-[7.5vw] h-[80px] regularDesk:h-[80px] secondDeskBreakpoint:h-[80px] deskBreak:h-[50px] mobile:h-[7.5vw] bg-starLight dark:bg-star bg-center bg-contain bg-no-repeat"></div>
             <div class="headerText select-none text-dark dark:text-light regularDesk:mr-[0] deskBreak:mr-[0] mobile:mr-[2vw]">space</div>
-            <div class="smallHeaderText duration-300 ease-out font-mono text-[20px] ml-[0px] mr-[0px] regularDesk:ml-[10px] deskBreak:ml-[10px] mobile:ml-[0px] regularDesk:text-[20px] firstDeskBreakpoint:text-[15px] secondDeskBreakpoint:text-[15px] deskBreak:text-[10px] mobile:text-[2vw]">Come Build One<br>With Us</div>
+            <div class="smallHeaderText duration-300 ease-out font-mono text-[20px] ml-[0px] mr-[0px] regularDesk:ml-[10px] deskBreak:ml-[10px] mobile:ml-[0px] regularDesk:text-[20px] firstDeskBreakpoint:text-[15px] secondDeskBreakpoint:text-[15px] deskBreak:text-[10px] mobile:text-[2vw]">
+                <!-- Come Build One With Us -->
+                {@html comeBuildInnerHTML}
+            </div>
         </div>
     </div>
     <div on:click={() => window.scrollTo({top: window.scrollY + 0.8 * window.innerHeight, behavior: 'smooth'})} role="presentation" class="headerScrollPrompt ease-out duration-300 w-[80px] regularDesk:w-[80px] firstDeskBreakpoint:w-[60px] secondDeskBreakpoint:w-[60px] deskBreak:w-[50px] mobile:w-[10vw] h-[120px] absolute regularDesk:bottom-[25px] deskBreak:botom-[25px] mobile:bottom-[-1vh] bg-scrollArrowLight dark:bg-scrollArrow bg-center bg-contain bg-no-repeat animate-bounce"></div>

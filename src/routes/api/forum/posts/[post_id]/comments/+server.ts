@@ -17,12 +17,17 @@ export const GET = async ({ params }) => {
     return new Response(JSON.stringify(commentsArr));
 }
 
-export const POST = async ({ request, params }) => {
+export const POST = async ({ request, params, locals }) => {
     /* parameters:
-    - author
-    - content
-    - title
-    - subject */
+    - content */
+    const session = await locals.getSession();
+
+    if (!session || !session.user?.id) {
+        throw error(401, JSON.stringify({ error: 'Unauthorized' }));
+    }
+
+    const user_id = session.user.id;
+
     const id = params.post_id;
     const comments = await getCollection("comments");
 
@@ -30,14 +35,14 @@ export const POST = async ({ request, params }) => {
 
     const timestamp = new Date();
 
-    const result = await comments.insertOne(Object.assign(data, {"time" : timestamp, "post_id" : new ObjectId(id)}))
+    const result = await comments.insertOne(Object.assign(data, {"time" : timestamp, "post_id" : new ObjectId(id), 'author' : new ObjectId(user_id)}))
 
     const response = {
-        "id" : result.insertedId,
-        "post_id" : id,
-        "title": data.title,
-        "content" : data.content,
-        "time" : timestamp
+        id : result.insertedId,
+        post_id : id,
+        author: data.author,
+        content : data.content,
+        time : timestamp
     }
 
     return new Response(JSON.stringify(response));

@@ -38,6 +38,7 @@
 		"@next/font": "^13.4.12",
 		"joi": "^17.9.2",
 		"mongodb": "^5.7.0",
+		"mongoose": "^7.4.3",
 		"nodemailer": "^6.9.4"
 	}
 }

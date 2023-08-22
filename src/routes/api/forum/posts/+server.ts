@@ -2,8 +2,9 @@ import { getCollection } from '$lib/db';
 import Joi from 'joi';
 import { error } from '@sveltejs/kit'
 import { ObjectId } from 'mongodb';
+import type { RequestHandler } from './$types';
 
-export const GET = async ({ url }) => {
+export const GET: RequestHandler = async ({ url }) => {
     /* get posts according to specified filters:
     - author
     - before
@@ -46,7 +47,7 @@ const postSchema = Joi.object({
     tags: Joi.array().items(Joi.string().trim()).required()
 });
 
-export const POST = async ({ request, locals }) => {
+export const POST: RequestHandler = async ({ request, locals }) => {
     /* parameters:
     - author
     - content
@@ -77,6 +78,7 @@ export const POST = async ({ request, locals }) => {
 
     const response = {
         id : result.insertedId,
+        author: data.author,
         title: data.title,
         content : data.content,
         time : timestamp
