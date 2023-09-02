@@ -16,10 +16,28 @@ export const handle = SvelteKitAuth({
         EmailProvider({
             server: EMAIL_SERVER,
             from: EMAIL_FROM,
+            profile(profile) {
+                console.log("HI HELLO THERE")
+                return {
+                    id: profile.id,
+                    name: profile.name,
+                    email: profile.email,
+                    test: 'test',
+                }
+            }
         }),
         Discord({
             clientId: DISCORD_ID,
             clientSecret: DISCORD_SECRET,
+            profile(profile) {
+                return {
+                    id: profile.id,
+                    name: profile.username,
+                    image: profile.avatar,
+                    email: profile.email,
+                    test: 'test',
+                }
+            }
         }),
         SpotifyProvider({
             clientId: SPOTIFY_ID,

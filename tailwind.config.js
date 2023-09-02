@@ -21,9 +21,9 @@ export default {
       }
     },
     colors: {
-      'light': '#D9DCC9',
+      'light': '#B5C1EB',
       'footerlight': '#d3d7c1',
-      'dark': '#01131D',
+      'dark': '#000B31',
       'footerDark': '#011019',
       'cursor': '#D8C9AC',
       'footerDarkLine': '#03314a'

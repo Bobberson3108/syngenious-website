@@ -89,10 +89,10 @@
                 comeBuildInnerHTML = "Slow down you're<br>gonna break the<br>website";
                 break;
             case 1:
-                comeBuildInnerHTML = 'Seriously, stop<br>hovering over<br>the asterisks';
+                comeBuildInnerHTML = "Seriously, stop<br>hovering over<br>the asterisks";
                 break;
             case 2:
-                comeBuildInnerHTML = 'What did I just<br>say?';
+                comeBuildInnerHTML = "Now look what<br>you've done";
                 break;
         }
         hoverUpdateCount++;
