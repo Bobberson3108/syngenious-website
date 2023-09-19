@@ -19,16 +19,20 @@ const userSchema = new mongoose.Schema({
     bio: String,
     location: String,
     birthdate: Date,
-    settings: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UserSettings',
-        required: true,
-    },
     createdAt: {
         type: Date,
         default: Date.now,
     },
+    permissions: {
+        admin: {type: Boolean, default: false},
+        teamMember: {type: Boolean, default: false}
+    },
+    branchLeaderOf: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Branch',
+    }
 });
+
 
 const User = mongoose.model("User", userSchema);
 export default User;
