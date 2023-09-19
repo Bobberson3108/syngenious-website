@@ -17,31 +17,45 @@ export const handle = SvelteKitAuth({
             server: EMAIL_SERVER,
             from: EMAIL_FROM,
             profile(profile) {
-                console.log("HI HELLO THERE")
                 return {
                     id: profile.id,
-                    name: profile.name,
+                    name: profile.username,
+                    image: profile.avatar,
                     email: profile.email,
-                    test: 'test',
+                    branches: [],
+                    createdAt: Date.now(),
                 }
             }
         }),
         Discord({
             clientId: DISCORD_ID,
             clientSecret: DISCORD_SECRET,
+            allowDangerousEmailAccountLinking: true,
             profile(profile) {
                 return {
                     id: profile.id,
                     name: profile.username,
                     image: profile.avatar,
                     email: profile.email,
-                    test: 'test',
+                    branches: [],
+                    createdAt: Date.now(),
                 }
-            }
+            },
         }),
         SpotifyProvider({
             clientId: SPOTIFY_ID,
             clientSecret: SPOTIFY_SECRET,
+            allowDangerousEmailAccountLinking: true,
+            profile(profile) {
+                return {
+                    id: profile.id,
+                    name: profile.username,
+                    image: profile.avatar,
+                    email: profile.email,
+                    branches: [],
+                    createdAt: Date.now(),
+                }
+            },
         }),
     ],
     adapter: MongoDBAdapter(clientPromise, {
