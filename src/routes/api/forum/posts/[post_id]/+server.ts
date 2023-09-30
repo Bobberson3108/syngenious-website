@@ -1,15 +1,14 @@
 import { Post } from "$lib/db/models";
+import { json, error } from "@sveltejs/kit";
 
 export const GET = async ({ params }) => {
     const id = params.post_id;
     
-    const posts = await getCollection("posts");
-
-    const post = await posts.findOne({"_id" : new ObjectId(id)});
+    const post = await Post.findById(id);
 
     if (!post) {
-        return new Response(`Post with ID ${id} not found.`, {status: 404});
+        throw error(404, `Post with ID ${id} not found.`)
     }
 
-    return new Response(JSON.stringify(post));
+    return json(post);
 }
