@@ -1,5 +1,4 @@
-import { getCollection } from "$lib/db";
-import { ObjectId } from "mongodb";
+import { Post } from "$lib/db/models";
 
 export const GET = async ({ params }) => {
     const id = params.post_id;

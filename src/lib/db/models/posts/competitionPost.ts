@@ -36,3 +36,6 @@ const postSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+
+const Post = mongoose.model("Post", postSchema);
+export default Post;
