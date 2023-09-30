@@ -1,10 +1,11 @@
-import { getCollection } from '$lib/db';
-import Joi from 'joi';
-import { error } from '@sveltejs/kit'
-import { ObjectId } from 'mongodb';
+import { json, error } from '@sveltejs/kit'
+import Post from "$lib/db/models/posts/post";
+//import { ObjectId } from 'mongodb';
 import type { RequestHandler } from './$types';
+import mongoose from 'mongoose';
+import { MONGODB_URI, DB_NAME } from '$env/static/private';
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET = async ({ url }) => {
     /* get posts according to specified filters:
     - author
     - before
@@ -12,7 +13,7 @@ export const GET: RequestHandler = async ({ url }) => {
     - subject
     - max_posts */
 
-    const posts = await getCollection('posts')
+    //const posts = await getCollection('posts')
 
     const author = url.searchParams.get('author');
     const subject = url.searchParams.get('subject');
@@ -36,16 +37,22 @@ export const GET: RequestHandler = async ({ url }) => {
         Object.assign(query, {'time' : {$gte : new Date(after).toISOString()}})
     }
 
-    const postsArr = await posts.find(query).limit(max_posts ? max_posts : 0).toArray();    
+    //const postsArr = await posts.find(query).limit(max_posts ? max_posts : 0).toArray();   
+    if (mongoose.connection.readyState == 0) {
+        mongoose.connect(`${MONGODB_URI}/${DB_NAME}`);
+    }
 
-    return new Response(JSON.stringify(postsArr));
+    const posts = await Post.find({});
+
+    //return new Response(JSON.stringify(postsArr));
+    return json(posts);
 }
 
-const postSchema = Joi.object({
+/*const postSchema = Joi.object({
     title: Joi.string().trim().required(),
     content: Joi.string().trim().required(),
     tags: Joi.array().items(Joi.string().trim()).required()
-});
+});*/
 
 export const POST: RequestHandler = async ({ request, locals }) => {
     /* parameters:
