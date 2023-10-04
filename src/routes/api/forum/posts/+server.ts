@@ -1,7 +1,5 @@
-import { getCollection } from '$lib/db';
-import Joi from 'joi';
-import { error } from '@sveltejs/kit'
-import { ObjectId } from 'mongodb';
+import { error } from '@sveltejs/kit';
+import Post from '$lib/db/models/posts/post';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {
@@ -11,8 +9,6 @@ export const GET: RequestHandler = async ({ url }) => {
     - after
     - subject
     - max_posts */
-
-    const posts = await getCollection('posts')
 
     const author = url.searchParams.get('author');
     const subject = url.searchParams.get('subject');
@@ -36,16 +32,13 @@ export const GET: RequestHandler = async ({ url }) => {
         Object.assign(query, {'time' : {$gte : new Date(after).toISOString()}})
     }
 
-    const postsArr = await posts.find(query).limit(max_posts ? max_posts : 0).toArray();    
+
+
+    const postsArr = await Post.find(query).sort({'time' : -1}).limit(max_posts).populate('author', 'username');  
 
     return new Response(JSON.stringify(postsArr));
 }
 
-const postSchema = Joi.object({
-    title: Joi.string().trim().required(),
-    content: Joi.string().trim().required(),
-    tags: Joi.array().items(Joi.string().trim()).required()
-});
 
 export const POST: RequestHandler = async ({ request, locals }) => {
     /* parameters:
@@ -55,34 +48,21 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 
     const session = await locals.getSession();
 
+    let author;
     if (!session || !session.user?.id) {
-        throw error(401, JSON.stringify({ error: 'Unauthorized' }));
+        // throw error(401, JSON.stringify({ error: 'Unauthorized' }));
+        author = '';
+    } else {
+        author = session.user.id;
     }
-
-    const user_id = session.user.id;
-
-    const posts = await getCollection('posts');
 
     const data = await request.json();
 
     const timestamp = new Date();
 
-    //validate data
-    const { error: validationError } = postSchema.validate(data);
-    if (validationError) {
-        throw error(400, JSON.stringify({ error: validationError.details }));
-    }
+    const post = new Post({author, ...data, timestamp});
 
-
-    const result = await posts.insertOne(Object.assign(data, {'time' : timestamp, 'author' : new ObjectId(user_id)}))
-
-    const response = {
-        id : result.insertedId,
-        author: data.author,
-        title: data.title,
-        content : data.content,
-        time : timestamp
-    }
+    const response = await post.save();
 
     return new Response(JSON.stringify(response));
 };

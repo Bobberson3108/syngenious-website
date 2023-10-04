@@ -1,18 +1,18 @@
-import { getCollection } from "$lib/db";
-import { ObjectId } from "mongodb";
+import type { RequestHandler } from '@sveltejs/kit';
+import { json, error } from '@sveltejs/kit';
+import { Comment, Post } from '$lib/db/models';
 
-export const GET = async ({ params }) => {
-    const id = params.post_id;
-
-    const posts = await getCollection("posts");
-    const post = await posts.findOne({"_id" : new ObjectId(id)});
+export const GET: RequestHandler = async ({ params }) => {
+    const _id = params.post_id;
+;
+    const post = Post.findById(_id);
     if (!post) {
-        return new Response(`Post with ID ${id} not found.`, {status: 404});
+        throw error(404, `Post with ID ${_id} not found.`);
     }
 
     const comments = await getCollection("comments");
 
-    const commentsArr = await comments.find({"post_id" : new ObjectId(id)}).toArray();
+    const commentsArr = await Comment.find({ post: _id }).populate('author').populate('replies').exec();
 
     return new Response(JSON.stringify(commentsArr));
 }
