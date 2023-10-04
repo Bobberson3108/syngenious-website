@@ -19,6 +19,11 @@ const postSchema = new mongoose.Schema({
             return !this.text
         }
     },
+    comments: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "Comment",
+        default: []
+    },
     branches: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Branch",

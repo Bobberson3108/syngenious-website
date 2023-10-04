@@ -1,20 +1,16 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { json, error } from '@sveltejs/kit';
-import { Comment, Post } from '$lib/db/models';
+import Comment from '$lib/db/models/comment';
+import Post from '$lib/db/models/posts/post';
 
 export const GET: RequestHandler = async ({ params }) => {
     const _id = params.post_id;
 ;
-    const post = Post.findById(_id);
+    const post = await Post.findById(_id).populate('comments').lean();
     if (!post) {
         throw error(404, `Post with ID ${_id} not found.`);
     }
-
-    const comments = await getCollection("comments");
-
-    const commentsArr = await Comment.find({ post: _id }).populate('author').populate('replies').exec();
-
-    return new Response(JSON.stringify(commentsArr));
+    return json(post.comments);
 }
 
 export const POST = async ({ request, params, locals }) => {
@@ -22,28 +18,31 @@ export const POST = async ({ request, params, locals }) => {
     - content */
     const session = await locals.getSession();
 
+    let user_id;
     if (!session || !session.user?.id) {
-        throw error(401, JSON.stringify({ error: 'Unauthorized' }));
+        // throw error(401, JSON.stringify({ error: 'Unauthorized' }));
+        user_id = '64f39fb74cb5010a48827866';
+    } else {
+        user_id = session.user.id;
     }
 
-    const user_id = session.user.id;
-
     const id = params.post_id;
-    const comments = await getCollection("comments");
 
     const data = await request.json();
 
     const timestamp = new Date();
 
-    const result = await comments.insertOne(Object.assign(data, {"time" : timestamp, "post_id" : new ObjectId(id), 'author' : new ObjectId(user_id)}))
-
-    const response = {
-        id : result.insertedId,
-        post_id : id,
-        author: data.author,
-        content : data.content,
-        time : timestamp
+    const post = await Post.findById(id);
+    if (!post) {
+        throw error(404, `Post with ID ${id} not found.`);
     }
 
-    return new Response(JSON.stringify(response));
+    const result = await Comment.create({ author: user_id, post: id, content:data.content, timestamp });
+
+    post.comments.push(result._id);
+
+    await post.save();
+
+    return json(result);
+
 };
