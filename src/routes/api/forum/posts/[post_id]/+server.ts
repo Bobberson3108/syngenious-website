@@ -1,4 +1,4 @@
-import { Post } from "$lib/db/models";
+import Post from "$lib/db/models/posts/post";
 import { json, error } from "@sveltejs/kit";
 
 export const GET = async ({ params }) => {

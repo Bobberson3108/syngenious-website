@@ -1,8 +1,8 @@
-import { error } from '@sveltejs/kit';
-import Post from '$lib/db/models/posts/post';
+import { json, error } from '@sveltejs/kit'
+import Post from "$lib/db/models/posts/post";
 import type { RequestHandler } from './$types';
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET = async ({ url }) => {
     /* get posts according to specified filters:
     - author
     - before
@@ -33,10 +33,10 @@ export const GET: RequestHandler = async ({ url }) => {
     }
 
 
+    const posts = await Post.find(query).sort({'time' : -1}).limit(max_posts).populate('author', 'username');  
 
-    const postsArr = await Post.find(query).sort({'time' : -1}).limit(max_posts).populate('author', 'username');  
-
-    return new Response(JSON.stringify(postsArr));
+    //return new Response(JSON.stringify(postsArr));
+    return json(posts);
 }
 
 
@@ -51,7 +51,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
     let author;
     if (!session || !session.user?.id) {
         // throw error(401, JSON.stringify({ error: 'Unauthorized' }));
-        author = '';
+        author = '64f39fb74cb5010a4882786';
     } else {
         author = session.user.id;
     }
