@@ -30,7 +30,12 @@ const userSchema = new mongoose.Schema({
     branchLeaderOf: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'Branch',
-    }
+    },
+    likedPosts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Post',
+        default: []
+    }]
 });
 
 
