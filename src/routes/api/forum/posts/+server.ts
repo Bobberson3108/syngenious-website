@@ -14,7 +14,7 @@ export const GET = async ({ url }) => {
     - max_posts */
 
     if (mongoose.connection.readyState !== 1) {
-        await mongoose.connect(`${MONGODB_URI}/${DB_NAME}/?retryWrites=true&w=majority`);
+        await mongoose.connect(`${MONGODB_URI}/${DB_NAME}`);
     }
 
     const author = url.searchParams.get('author');
