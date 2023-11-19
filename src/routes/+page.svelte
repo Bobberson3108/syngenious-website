@@ -3,6 +3,10 @@
 	import SlidingButton from "$lib/components/reusable/buttons/SlidingButton.svelte";
 	import WhatWeOffer from "$lib/components/reusable/WhatWeOffer.svelte";
 	import OurValues from "$lib/components/reusable/OurValues.svelte";
+    import Diamond from "$lib/svg/Diamond.svelte";
+    import Globe from "$lib/svg/Globe.svelte";
+    import BigStar from "$lib/svg/BigStar.svelte";
+    import Star from "$lib/svg/Star.svelte";
 
     // declare variables for the percentage of mouse position and the viewport width
     let mouseXPercentage:number;
