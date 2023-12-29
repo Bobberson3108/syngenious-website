@@ -1,5 +1,9 @@
+<script lang='ts'>
+    export let width = 4498;
+    export let height = 878;
+</script>
 
-<svg width="4498" height="878" viewBox="0 0 4498 878" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg {width} {height} viewBox="0 0 4498 878" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Logo">
 <g id="logoVector">
 <g id="Vector 2">

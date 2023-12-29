@@ -5,7 +5,7 @@
     import SlidingButton from '../reusable/buttons/SlidingButton.svelte';
     import { signIn } from "@auth/sveltekit/client";
 	import { onMount } from 'svelte';
-	import type { NumericType } from 'mongodb';
+	import Logo from '$lib/svg/Logo.svelte';
 
     console.log($page.data.session);
     let windowWidth:number;
@@ -28,7 +28,8 @@
 </script>
 
 <nav class="z-[8] fixed h-[10vh] top-0 bg-light dark:bg-dark bg-opacity-90 w-full px-6 flex justify-between items-center">
-    <div id="logo" class="logo cursor-pointer h-[50px] deskBreak:w-[200px] mobile:w-[150px] bg-logoLightMode dark:bg-logoDarkMode bg-contain bg-center bg-no-repeat"></div>
+    <!-- <div id="logo" class="logo cursor-pointer h-[50px] deskBreak:w-[200px] mobile:w-[150px] bg-logoLightMode dark:bg-logoDarkMode bg-contain bg-center bg-no-repeat"></div> -->
+    <Logo height=50/>
     <div class="flex justify-center items-center">
         {#if Object.keys($page.data.session || {}).length > 0}
             <a href="/forum" id="dashboardLink" class="menuButton h-9 w-auto bg-dark hover:bg-light px-4 font-display font-medium text-light hover:text-dark ease-out duration-200 uppercase rounded-xl border-2 border-dark">Forum</a>

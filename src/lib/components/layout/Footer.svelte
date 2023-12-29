@@ -14,7 +14,7 @@
         <div class="footerLinksContainer mr-[50px] min-h-[10vh]">
             <div class="title text-dark dark:text-light uppercase font-display font-extrabold deskBreak:mb-[10px] mobile:mb-[5px]">Navigation</div>
             <FooterButton text={"Home"}/>
-            <FooterButton text={"projetcs"}/>
+            <FooterButton text={"projects"}/>
             <FooterButton text={"Events"}/>
             <FooterButton text={"competitions"}/>
         </div>

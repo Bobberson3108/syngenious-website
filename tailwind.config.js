@@ -22,9 +22,9 @@ export default {
     },
     colors: {
       'light': '#B5C1EB',
-      'footerlight': '#d3d7c1',
+      'footerlight': '#9faee5',
       'dark': '#000B31',
-      'footerDark': '#011019',
+      'footerDark': '#000824',
       'cursor': '#D8C9AC',
       'footerDarkLine': '#03314a'
     },
