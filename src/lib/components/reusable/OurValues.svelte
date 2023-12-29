@@ -48,10 +48,6 @@
                 <DropDown title={titleFour} buttonText={"see latest events"} paragraph={paragraphFour} buttonsPresent={buttonsArePresent}/>
                 
             </div>
-            <div class="valueDropDownWrapperContainer flex regularDesk:flex-row secondDeskBreakpoint:flex-row deskBreak:flex-col mobile:flex-col justify-between items-start w-[auto] h-[auto]">
-                <!--DropDowns------------------------------------------------------------------------------------------------->
-                <DropDown title={"Title here"} buttonText={"see latest events"} paragraph={"paragraph"} buttonsPresent={buttonsArePresent}/>
-            </div>
         </div>
         
     </div>
