@@ -1,6 +1,4 @@
 <script lang="ts">
-   
-
     async function test() {
         await fetch('http://localhost:5173/api/forum/posts', {
             method: 'POST',
