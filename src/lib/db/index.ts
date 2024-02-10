@@ -13,7 +13,7 @@ class MongoConnection {
 
     static getClientPromise(): Promise<MongoClient> {
         if (!this.clientPromise) {
-            this.clientInstance = new MongoClient(MONGODB_URI, options);
+            this.clientInstance = new MongoClient(`${MONGODB_URI}/${DB_NAME}`, options);
             this.clientPromise = this.clientInstance.connect();
         }
         return this.clientPromise;

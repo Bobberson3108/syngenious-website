@@ -14,7 +14,7 @@ export const GET = async ({ url }) => {
     - max_posts */
 
     if (mongoose.connection.readyState !== 1) {
-        await mongoose.connect(`${MONGODB_URI}/${DB_NAME}`);
+        await mongoose.connect(`${MONGODB_URI}/${DB_NAME}`);    
     }
 
     const author = url.searchParams.get('author');
@@ -41,6 +41,7 @@ export const GET = async ({ url }) => {
 
 
     const posts = await Post.find(query).sort({'time' : -1}).limit(max_posts).populate('author');  
+    console.log(posts);2
 
     //return new Response(JSON.stringify(postsArr));
     return json(posts);
